@@ -1,3 +1,5 @@
+import categories from "../data/menu";
+
 function Home() {
     return (
         <main>
@@ -12,10 +14,14 @@ function Home() {
 
             <section className="popular-items"> 
                 <h2>Popular Dishes</h2>
+
+                {/* Add popular dishes later - MenuItem component*/}
             </section>
 
             <section className="menu-categories">
                 <h2>Menu Categories</h2>
+
+                {/* Add menu categories later - MenuCategory component */}
             </section>
         </main>
     )
