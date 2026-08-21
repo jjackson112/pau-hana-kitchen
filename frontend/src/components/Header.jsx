@@ -10,6 +10,8 @@ function Header() {
             <button 
                 className="hamburger"
                 onClick={() => setOpen(!open)}
+                aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={open}
             >
                 {open ? <X size={20} /> : <Menu size={20} />}
             </button>
