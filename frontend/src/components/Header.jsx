@@ -23,10 +23,10 @@ function Header() {
 
             <div className="nav-menu">
                 <nav>
-                    <Link to="/home">Home</Link>
-                    <Link to="/menu">Menu</Link>
-                    <Link to="/orders">Orders</Link>
-                    <Link to="/cart">Cart</Link>
+                    <Link to="/home" onClick={() => setOpen(false)}>Home</Link>
+                    <Link to="/menu" onClick={() => setOpen(false)}>Menu</Link>
+                    <Link to="/orders" onClick={() => setOpen(false)}>Orders</Link>
+                    <Link to="/cart" onClick={() => setOpen(false)}>Cart</Link>
                 </nav>
             </div>
         </header>
