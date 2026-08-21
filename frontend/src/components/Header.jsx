@@ -21,7 +21,7 @@ function Header() {
                 <h1 className="app-title">Pau Hana Kitchen</h1>
             </div>
 
-            <div className="nav-menu">
+            <div className={`nav-menu ${open ? "open" : ""}`}>
                 <nav>
                     <Link to="/home" onClick={() => setOpen(false)}>Home</Link>
                     <Link to="/menu" onClick={() => setOpen(false)}>Menu</Link>
