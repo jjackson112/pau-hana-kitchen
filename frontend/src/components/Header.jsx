@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Utensils } from "lucide-react";
+import { Menu, X, Utensils, ShoppingCart } from "lucide-react";
 
 function Header() {
     const [open, setOpen] = useState(false)
@@ -26,7 +26,10 @@ function Header() {
                     <Link to="/home" onClick={() => setOpen(false)}>Home</Link>
                     <Link to="/menu" onClick={() => setOpen(false)}>Menu</Link>
                     <Link to="/orders" onClick={() => setOpen(false)}>Orders</Link>
-                    <Link to="/cart" onClick={() => setOpen(false)}>Cart</Link>
+                    <Link to="/cart" onClick={() => setOpen(false)}>
+                        <ShoppingCart size={18} />
+                        <span>Cart</span>
+                    </Link>
                 </nav>
             </div>
         </header>
