@@ -12,3 +12,16 @@
   --pauhana-muted: #766963;
   --pauhana-border: #EADDD4;
 }
+
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
+
+/* Home Styles*/
+.home-container {
+  background-image: "url('/src/assets/hawaiian-food.png')";
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}

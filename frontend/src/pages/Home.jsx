@@ -1,4 +1,4 @@
-import categories from "../data/menu";
+import menuItems from "../data/menu.js";
 
 function Home() {
     return (

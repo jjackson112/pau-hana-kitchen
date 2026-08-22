@@ -4,6 +4,7 @@ const categories = [
     "Musubi",
     "Bowls",
     "Sides",
+    "Desserts",
     "Drinks"
 ]
 
@@ -82,6 +83,22 @@ const menuItems = [
     },
     {
         id: 10,
+        name: "Haupia",
+        description: "A traditional coconut pudding.",
+        price: 5.95,
+        category: "Desserts",
+        popular: true
+    },
+    {
+        id: 11,
+        name: "Butter Mochi",
+        description: "A chewy, sweet cake made from coconut milk, butter, and mochiko - sweet rice flour.",
+        price: 6.95,
+        category: "Desserts",
+        popular: false
+    },
+    {
+        id: 12,
         name: "POG Juice",
         description: "A refreshing blend of passion fruit, orange, and guava.",
         price: 4.25,
@@ -89,7 +106,7 @@ const menuItems = [
         popular: false
     },
     {
-        id: 11,
+        id: 13,
         name: "Hawaiian Sun Guava",
         description: "Chilled guava nectar.",
         price: 3.25,
