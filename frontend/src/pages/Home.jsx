@@ -1,4 +1,4 @@
-import './App.css';
+import { Link } from "react-router-dom";
 import menuItems from "../data/menu.js";
 
 function Home() {
@@ -8,14 +8,12 @@ function Home() {
                 <h1>Pau Hana Kitchen</h1>
                 <h2>Local favorites. Made fresh.</h2>
                 <p>Plate lunches, poke, loco moco, and more.</p>
-                <button className="cta-btn">
-                    Order now
-                </button>
+                    
+                <Link to="/menu" className="cta-btn">Order now</Link>
             </section>
 
             <section className="popular-items"> 
                 <h2>Popular Dishes</h2>
-
                 {/* Add popular dishes later - MenuItem component*/}
             </section>
 
