@@ -1,4 +1,3 @@
-import menuItems from "../data/menu.js";
 
 function MenuItem({ item }) {
     return (
