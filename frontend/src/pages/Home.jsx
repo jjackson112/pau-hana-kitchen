@@ -4,6 +4,10 @@ import MenuCategory from "../components/MenuCategory";
 import menuItems from "../data/menu";
 
 function Home() {
+    // Set keeps only unique values - no "Plate Lunches " & "Plate Lunches"
+    const categories = [...new Set(menuItems.map((item) => item.category))]
+
+
     return (
         <main>
             <section className="hero-container">
@@ -22,7 +26,12 @@ function Home() {
 
             <section className="menu-categories">
                 <h2>Menu Categories</h2>
-                <MenuCategory category={} />
+                {categories.map((category) => (
+                    <MenuCategory 
+                        key={category}
+                        category={category} 
+                    />
+                ))}
 
                 <MenuItem item={menuItems[0]} />
                 {/* Add menu categories later - MenuCategory component */}
