@@ -33,7 +33,12 @@ function Home() {
                     />
                 ))}
 
-                <MenuItem item={menuItems[0]} />
+                {menuItems.map((item) => (
+                    <MenuItem 
+                        key={item.id}
+                        item={item} 
+                    />
+                ))}
                 {/* Add menu categories later - MenuCategory component */}
             </section>
         </main>
