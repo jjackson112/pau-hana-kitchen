@@ -1,7 +1,7 @@
 
 function MenuItem({ item }) {
     return (
-        <div>
+        <div className="menu-item">
             <h3>{item.name}</h3>
             <p>{item.description}</p>
             <p>{item.price}</p>

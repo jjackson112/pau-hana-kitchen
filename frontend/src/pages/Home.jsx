@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import menuItems from "../data/menu.js";
+import MenuItem from "../components/MenuItem";
+import menuItems from "../data/menu";
 
 function Home() {
     return (
@@ -14,12 +15,13 @@ function Home() {
 
             <section className="popular-items"> 
                 <h2>Popular Dishes</h2>
+                
                 {/* Add popular dishes later - MenuItem component*/}
             </section>
 
             <section className="menu-categories">
                 <h2>Menu Categories</h2>
-
+                <MenuItem item={menuItems[0]} />
                 {/* Add menu categories later - MenuCategory component */}
             </section>
         </main>
