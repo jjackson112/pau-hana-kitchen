@@ -11,7 +11,7 @@ function Home() {
     return (
         <main>
             <section className="hero-container">
-                <h1>Pau Hana Kitchen</h1>
+                <h1 className="text-4xl font-bold">Pau Hana Kitchen</h1>
                 <h2>Local favorites. Made fresh.</h2>
                 <p>Plate lunches, poke, loco moco, and more.</p>
                     
@@ -20,7 +20,13 @@ function Home() {
 
             <section className="popular-items"> 
                 <h2>Popular Dishes</h2>
-                
+                {menuItems.map((item) => (
+                    <MenuItem 
+                        key={item.id}
+                        item={item} 
+                    />
+                ))}
+
                 {/* Add popular dishes later - MenuItem component*/}
             </section>
 
@@ -33,12 +39,6 @@ function Home() {
                     />
                 ))}
 
-                {menuItems.map((item) => (
-                    <MenuItem 
-                        key={item.id}
-                        item={item} 
-                    />
-                ))}
                 {/* Add menu categories later - MenuCategory component */}
             </section>
         </main>

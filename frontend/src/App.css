@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --pauhana-red: #C84A3D; 
   --pauhana-red-dark: #A63A30;
