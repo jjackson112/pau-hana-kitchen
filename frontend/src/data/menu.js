@@ -9,7 +9,9 @@
     "Drinks"
 ] */
 
-const categories = menuItems.map((item) => item.category)
+// Set keeps only unique values - no "Plate Lunches " & "Plate Lunches"
+const categories = [...new Set(menuItems.map((item) => item.category))]
+
 
 const menuItems = [
         {
