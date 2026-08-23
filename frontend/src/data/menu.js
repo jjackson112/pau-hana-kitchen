@@ -1,5 +1,5 @@
 // do I really need this if menuItems already has category as a key?
-const categories = [
+/*const categories = [
     "Plate lunches",
     "Poke",
     "Musubi",
@@ -7,7 +7,9 @@ const categories = [
     "Sides",
     "Desserts",
     "Drinks"
-]
+] */
+
+const categories = menuItems.map((item) => item.category)
 
 const menuItems = [
         {
