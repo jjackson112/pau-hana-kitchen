@@ -1,4 +1,3 @@
-import MenuCategory from "../components/MenuCategory";
 import MenuItem from "../components/MenuItem";
 import menuItems from "../data/menu";
 
@@ -17,16 +16,21 @@ function Menu() {
                     const categoryItems = menuItems.filter(
                         (item) => item.category === category
                     )
+
+                    return (
+                        <section key={category} className="menu-category-section">
+                            <h2>{category}</h2>
+                            <div className="menu-category-items">
+                                {categoryItems.map((items) => (
+                                    <MenuItem
+                                        key={item.id}
+                                        item={item}
+                                    />
+                                ))}
+                            </div>
+                        </section>
+                    )
                 })}
-                <section>
-                    <h2>{category}</h2>
-                    {categoryItems.map((item) => {
-                        <MenuItem 
-                            key={item.id}
-                            item={item}
-                        />
-                    })}
-                </section>
             </section>
         </main>
     )
