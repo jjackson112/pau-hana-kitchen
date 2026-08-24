@@ -31,16 +31,16 @@ function Home() {
                 </div>
             </section>
 
-            <section className="menu-categories">
+            <section className="categories-section">
                 <h2 className="categories-title">Menu Categories</h2>
-                {categories.map((category) => (
-                    <MenuCategory 
-                        key={category}
-                        category={category} 
-                    />
-                ))}
-
-                {/* Add menu categories later - MenuCategory component */}
+                <div className="menu-categories">
+                    {categories.map((category) => (
+                        <MenuCategory 
+                            key={category}
+                            category={category} 
+                        />
+                    ))}
+                </div>
             </section>
         </main>
     )
