@@ -63,9 +63,8 @@ body {
 .cta-btn {
   background-color: var(--pauhana-red-dark);
   color: var(--pauhana-surface);
-  padding: 0.5rem;
+  padding: 0.6rem;
   border-radius: 10px;
-  margin: 20px;
 }
 
 .popular-title, .categories-title {
@@ -73,6 +72,13 @@ body {
   padding: 1rem;
   margin-bottom: 2rem;
   text-align: center;
+}
+
+.popular-dishes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 2rem 1rem;
 }
 
 .menu-item-card {

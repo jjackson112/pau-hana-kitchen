@@ -19,16 +19,16 @@ function Home() {
                 </div>
             </section>
 
-            <section className="popular-items"> 
+            <section className="popular-section"> 
                 <h2 className="popular-title">Popular Dishes</h2>
-                {menuItems.map((item) => (
-                    <MenuItem 
-                        key={item.id}
-                        item={item} 
-                    />
-                ))}
-
-                {/* Add popular dishes later - MenuItem component*/}
+                <div className="popular-dishes">
+                    {menuItems.map((item) => (
+                        <MenuItem 
+                            key={item.id}
+                            item={item} 
+                        />
+                    ))}
+                </div>
             </section>
 
             <section className="menu-categories">
