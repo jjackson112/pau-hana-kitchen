@@ -22,7 +22,7 @@ function Home() {
             <section className="popular-section"> 
                 <h2 className="popular-title">Popular Dishes</h2>
                 <div className="popular-dishes">
-                    {menuItems.map((item) => (
+                    {menuItems.slice(0, 4).map((item) => (
                         <MenuItem 
                             key={item.id}
                             item={item} 
