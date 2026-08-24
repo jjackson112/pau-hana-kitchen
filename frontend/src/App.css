@@ -56,8 +56,24 @@ body {
   margin: 0 auto;
 }
 
+.hero-text {
+  background-color: #000000;
+  padding: 1.25rem;
+  opacity: .8;
+  border-radius: 20px;
+}
+
 .hero-title {
   color: var(--pauhana-coral);
+}
+
+.hero-tagline {
+  color: var(--pauhana-gold);
+}
+
+.hero-sentence {
+  color: var(--pauhana-surface);
+  margin-bottom: 1rem;
 }
 
 .cta-btn {

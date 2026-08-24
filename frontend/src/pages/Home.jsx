@@ -12,8 +12,8 @@ function Home() {
             <section className="hero-container">
                 <div className="hero-text">
                     <h1 className="hero-title">Pau Hana Kitchen</h1>
-                    <h2>Local favorites. Made fresh.</h2>
-                    <p>Plate lunches, poke, loco moco, and more.</p>
+                    <h2 className="hero-tagline">Local favorites. Made fresh.</h2>
+                    <p className="hero-sentence">Plate lunches, poke, loco moco, and more.</p>
                     
                     <Link to="/menu" className="cta-btn">Order now</Link>
                 </div>
