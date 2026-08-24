@@ -8,17 +8,19 @@ function Home() {
     const categories = [...new Set(menuItems.map((item) => item.category))]
 
     return (
-        <main>
+        <main className="home-container">
             <section className="hero-container">
-                <h1 className="text-4xl font-bold">Pau Hana Kitchen</h1>
-                <h2>Local favorites. Made fresh.</h2>
-                <p>Plate lunches, poke, loco moco, and more.</p>
+                <div className="hero-text">
+                    <h1 className="hero-title">Pau Hana Kitchen</h1>
+                    <h2>Local favorites. Made fresh.</h2>
+                    <p>Plate lunches, poke, loco moco, and more.</p>
                     
-                <Link to="/menu" className="cta-btn">Order now</Link>
+                    <Link to="/menu" className="cta-btn">Order now</Link>
+                </div>
             </section>
 
             <section className="popular-items"> 
-                <h2>Popular Dishes</h2>
+                <h2 className="popular-title">Popular Dishes</h2>
                 {menuItems.map((item) => (
                     <MenuItem 
                         key={item.id}
@@ -30,7 +32,7 @@ function Home() {
             </section>
 
             <section className="menu-categories">
-                <h2>Menu Categories</h2>
+                <h2 className="categories-title">Menu Categories</h2>
                 {categories.map((category) => (
                     <MenuCategory 
                         key={category}

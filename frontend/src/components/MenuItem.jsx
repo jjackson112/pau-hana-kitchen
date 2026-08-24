@@ -5,7 +5,7 @@ function MenuItem({ item }) {
             <h3>{item.name}</h3>
             <p>{item.description}</p>
             <p>{item.price}</p>
-            <p>{item.category}</p>
+            <p className="category-badge">{item.category}</p>
         </div>
     )
 }

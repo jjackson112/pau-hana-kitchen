@@ -7,19 +7,27 @@ function Menu() {
 
     return (
         <main>
-            <div className="full-menu">
+            <section className="full-menu">
                 <div className="menu-title">
                     <h1>Menu</h1>
                 </div>
 
-                <div className="menu-categories-list">
-                    {categories.map((category) => {
-                        const categoryItems = menuItems.filter(
-                            (item) => item.category === category
-                        )
+                {categories.map((category) => {
+                    const categoryItems = menuItems.filter(
+                        (item) => item.category === category
+                    )
+                })}
+                <section>
+                    <h2>{category}</h2>
+                    {categoryItems.map((item) => {
+                        <MenuItem 
+                            key={item.id}
+                            item={item}
+                        />
                     })}
-                </div>
-            </div>
+                </section>
+
+            </section>
         </main>
     )
 }
