@@ -96,8 +96,9 @@ body {
 }
 
 .category-badge {
+  display: inline-block;
   background-color: var(--pauhana-coral);
-  padding: 0.35rem;
-  border-radius: 10px;
-  max-width: 120px;
+  padding: 0.4rem .75rem;
+  border-radius: 999px;
+  width: fit-content;
 }
