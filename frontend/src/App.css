@@ -194,6 +194,9 @@ a {
   padding: 0.5rem .75rem;
 }
 
+/* Menu Page Styles */ 
+
+
 @media (max-width: 900px) {
   .popular-dishes {
     grid-template-columns: repeat(2, 1fr);

@@ -1,4 +1,5 @@
 import MenuCategory from "../components/MenuCategory";
+import MenuItem from "../components/MenuItem";
 import menuItems from "../data/menu";
 
 function Menu() {
@@ -6,7 +7,7 @@ function Menu() {
     const categories = [...new Set(menuItems.map((item) => item.category))]
 
     return (
-        <main>
+        <main className="menu-page">
             <section className="full-menu">
                 <div className="menu-title">
                     <h1>Menu</h1>
@@ -26,7 +27,6 @@ function Menu() {
                         />
                     })}
                 </section>
-
             </section>
         </main>
     )
