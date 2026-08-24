@@ -29,6 +29,9 @@ function Home() {
                         />
                     ))}
                 </div>
+                <div className="menu-link-container">
+                    <Link to="/menu" className="menu-link-btn">View Menu</Link>
+                </div>
             </section>
 
             <section className="categories-section">

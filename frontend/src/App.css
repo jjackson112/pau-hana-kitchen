@@ -104,10 +104,14 @@ a {
 }
 
 .cta-btn {
-  background-color: var(--pauhana-red-dark);
+  background-color: var(--pauhana-red);
   color: var(--pauhana-surface);
   padding: 0.6rem;
   border-radius: 10px;
+}
+
+.cta-btn:hover {
+  background-color: var(--pauhana-red-dark);
 }
 
 .popular-section {
@@ -153,6 +157,26 @@ a {
   border-radius: 999px;
   width: fit-content;
   font-weight: 600;
+}
+
+.menu-link-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.menu-link-btn {
+  background-color: var(--pauhana-red);
+  color: var(--pauhana-surface);
+  padding: .75rem 1.25rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+
+}
+
+.menu-link-btn:hover {
+  background-color: var(--pauhana-red-dark);
 }
 
 .menu-categories {
