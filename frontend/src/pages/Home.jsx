@@ -7,7 +7,6 @@ function Home() {
     // Set keeps only unique values - no "Plate Lunches " & "Plate Lunches"
     const categories = [...new Set(menuItems.map((item) => item.category))]
 
-
     return (
         <main>
             <section className="hero-container">
