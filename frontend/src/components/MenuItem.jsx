@@ -1,5 +1,9 @@
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../store/cartSlice';
 
 function MenuItem({ item }) {
+    const dispatch = useDispatch()
+
     return (
         <div className="menu-item-card">
             <h3>{item.name}</h3>
