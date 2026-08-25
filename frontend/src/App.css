@@ -158,6 +158,19 @@ a {
   font-weight: 600;
 }
 
+.add-cart-btn {
+  background-color: var(--pauhana-gold);
+  width: 40px;
+  padding: 0.3rem;
+  border-radius: 12px;
+  border: none;
+}
+
+.add-cart-btn:hover {
+  background-color: var(--pauhana-muted);
+  color: var(--pauhana-surface);
+}
+
 .menu-link-container {
   display: flex;
   justify-content: center;
@@ -223,6 +236,14 @@ a {
 
 .menu-category-section {
   margin-bottom: 3rem;
+}
+
+/* Cart Styles */
+
+.cart-title {
+  color: var(--pauhana-red-dark);
+  padding: 1rem;
+  text-align: center;
 }
 
 @media (max-width: 900px) {
