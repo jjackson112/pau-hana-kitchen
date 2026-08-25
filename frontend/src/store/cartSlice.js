@@ -7,7 +7,7 @@ import { createSlice } from '@reduxjs/toolkit';
 // define initial state and the slice with an addToCart reducer
 const cartSlice = createSlice({
     name: 'cart',
-    initialState: { itemList: [], totalQuantity: 0 },
+    initialState: { itemList: [], totalQuantity: 0, isOpen: false },
 
     reducers: {
         addToCart(state, action) {
@@ -21,7 +21,20 @@ const cartSlice = createSlice({
                 existingItem.quantity++;
                 existingItem.totalPrice += newItem.price;
             }
+        },
+
+        openSidebarCart(state, action) {
+
+        },
+
+        openCart(state) {
+            state.isOpen = true
+        },
+
+        closeCart(state) {
+            state.isOpen = false
         }
+
     }
 })
 
