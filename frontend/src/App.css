@@ -16,6 +16,7 @@
 }
 
 /* General Styles */
+
 * {
   box-sizing: border-box;
 }
@@ -194,8 +195,22 @@ a {
   padding: 0.5rem .75rem;
 }
 
-/* Menu Page Styles */ 
+/* Menu Styles */
 
+.menu-title {
+  color: var(--pauhana-red);
+  text-align: center;
+  padding: 1rem;
+}
+
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.category-title {
+  color: var(--pauhana-red-dark);
+}
 
 @media (max-width: 900px) {
   .popular-dishes {

@@ -34,8 +34,48 @@ const menuItems = [
         category: "Plate Lunches",
         popular: false
     },
-    {
+        {
         id: 4,
+        name: "Huli Huli Chicken",
+        description: "Sweet and savory grilled chicken rotated over an open fire with mac salad.",
+        price: 11.99,
+        category: "Plate Lunches",
+        popular: false
+    },
+    {
+        id: 5,
+        name: "Kālua Pork Plate",
+        description: "Tender and smokey shredded pork served with mac salad and white rice.",
+        price: 18.99,
+        category: "Plate Lunches",
+        popular: true
+    },
+    {
+        id: 6,
+        name: "Shoyu Chicken",
+        description: "A comfort dish made with braising bone-in, skin-on chicken thighs in a sweet and savory mixture of soy sauce (shoyu), sugar, ginger, and garlic.",
+        price: 15.99,
+        category: "Plate Lunches",
+        popular: true
+    },
+    {
+        id: 7,
+        name: "Garlic Shrimp Plate",
+        description: "Shell-on jumbo shrimp pan-fried in olive oil and butter with garlic. Served with white rice.",
+        price: 16.99,
+        category: "Plate Lunches", 
+        popular: true
+    },
+    {
+        id: 8,
+        name: "Laulau",
+        description: "A dish made of pork and butterfish wrapped in lu'au and ti leaves.",
+        price: 12.95, 
+        category: "Plate Lunches",
+        popular: true
+    },
+    {
+        id: 9,
         name: "Shoyu Ahi Poke",
         description: "Ahi tuna tossed with shoyu, sesame oil, onion, and green onion over rice.",
         price: 13.99,
@@ -43,7 +83,7 @@ const menuItems = [
         popular: false
     },
     {
-        id: 5,
+        id: 10,
         name: "Spicy Tuna Poke",
         description: "Ahi tuna, rice, spicy mayo, and cucumber.",
         price: 15.99,
@@ -51,7 +91,23 @@ const menuItems = [
         popular: true
     },
     {
-        id: 6,
+        id: 11,
+        name: "Ginger-Ponzu Salmon Poke",
+        description: "A poke bowl with salmon, ponzu, Korean perilla oil, sea salt, and white rice.",
+        price: 15.99,
+        category: "Poke",
+        popular: true
+    },
+    {
+        id: 12, 
+        name: "Portuguese Sausage Musubi",
+        description: "Swap traditional spam for Redondo's Hawaiian Portuguese Sausage, pressed with rice, and furikake sprinkles.",
+        price: 4.95,
+        category: "Musubi",
+        popular: false
+    },
+    {
+        id: 13,
         name: "Spam Musubi",
         description: "Grilled spam and rice wrapped with nori.",
         price: 4.50,
@@ -59,7 +115,7 @@ const menuItems = [
         popular: true
     },
     {
-        id: 7,
+        id: 14,
         name: "Teriyaki Chicken Musubi",
         description: "Teriyaki-glazed chicken and rice wrapped with nori.",
         price: 4.95,
@@ -67,7 +123,87 @@ const menuItems = [
         popular: false
     },
     {
-        id: 8,
+        id: 15,
+        name: "Chicken Katsu Musubi",
+        description: "Crispy, panko breaded chicken with rice, tonkatsu sauce, and rice.",
+        price: 4.95,
+        category: "Musubi",
+        popular: false
+    },
+    {
+        id: 16,
+        name: "Chicken Long Rice",
+        description: "A noodle dish made from vermicelli noodles, chicken, ginger, and scallions.",
+        price: 9.95,
+        category: "Soup/Stew",
+        popular: false
+    },
+    {
+        id: 17,
+        name: "Beef Stew",
+        description: "A hearty, local beef stew made with beef, carrots, and potatoes.",
+        price: 11.95,
+        category: "Soup/Stew",
+        popular: false
+    },
+    {
+        id: 18,
+        name: "Saimin",
+        description: "Made from wheat egg noodles garnished with scallions, kamaboko, mushrooms, spam, nori, and bok choy.",
+        price: 10.95,
+        category: "Soup/Stew",
+        popular: true
+    },
+    {
+        id: 19,
+        name: "Portuguese Bean Soup",
+        description: "Portuguese sausage, smoked ham hocks, red kidney beans, vegetables, and macaroni.",
+        price: 11.95,
+        category: "Soup/Stew",
+        popular: false
+    },
+    {
+        id: 20,
+        name: "Luau Stew",
+        description: "A plant-based stew made with simmering taro leaves, coconut milk, vegetable broth, onion, garlic, and ginger.",
+        price: 8.95,
+        category: "Vegetarian",
+        popular: false
+    },
+    {
+        id: 21,
+        name: "Vegetarian Laulau",
+        description: "A dish made of root vegetables and squash wrapped in lu'au and ti leaves.",
+        price: 10.95, 
+        category: "Vegetarian",
+        popular: true
+    },
+    {
+        id: 22,
+        name: "Sweet Potato and Taro Plate",
+        description: "Roasted sweet potato - 'uala and taro - kalo - served with steamed rice and seasonal vegetables.",
+        price: 9.95,
+        category: "Vegetarian",
+        popular: false
+    },
+        {
+        id: 23,
+        name: "Avocado Poke",
+        description: "Creamy avocado tossed with shoyu, sesame oil, scallions, and seaweed.",
+        price: 10.95,
+        category: "Vegetarian",
+        popular: false
+    },
+    {
+        id: 24,
+        name: "Avocado Musubi",
+        description: "Rice and avocado wrapped in crisp nori with a teriyaki glaze.",
+        price: 5.50,
+        category: "Vegetarian",
+        popular: true
+    },
+    {
+        id: 25,
         name: "Macaroni Salad",
         description: "Creamy local-style macaroni salad.",
         price: 3.95,
@@ -75,7 +211,15 @@ const menuItems = [
         popular: true
     },
     {
-        id: 9,
+        id: 26,
+        name: "French Fries",
+        description: "Crisp and golden french fries seasoned with salt.",
+        price: 3.95,
+        category: "Sides",
+        popular: false
+    },
+    {
+        id: 27,
         name: "Garlic Edamame",
         description: "Steamed edamae tossed with garlic and savory seasoning.",
         price: 5.95,
@@ -83,7 +227,31 @@ const menuItems = [
         popular: false
     },
     {
-        id: 10,
+        id: 28,
+        name: "Grilled pineapple",
+        description: "Fresh, caramelized pineapple sprinkled with brown sugar.",
+        price: 4.50,
+        category: "Sides",
+        popular: true
+    },
+    {
+        id: 29,
+        name: "Seaweed salad",
+        description: "",
+        price: 6.95,
+        category: "Sides",
+        popular: false
+    },
+    {
+        id: 30,
+        name: "Poi",
+        description: "A traditional staple made from taro root.",
+        price: 3.50,
+        category: "Sides",
+        popular: true
+    },
+    {
+        id: 31,
         name: "Haupia",
         description: "A traditional coconut pudding.",
         price: 5.95,
@@ -91,7 +259,7 @@ const menuItems = [
         popular: true
     },
     {
-        id: 11,
+        id: 32,
         name: "Butter Mochi",
         description: "A chewy, sweet cake made from coconut milk, butter, and mochiko - sweet rice flour.",
         price: 6.95,
@@ -99,7 +267,15 @@ const menuItems = [
         popular: false
     },
     {
-        id: 12,
+        id: 33,
+        name: "Malasadas",
+        description: "Portuguese fried doughnuts.",
+        price: 7.99,
+        category: "Desserts",
+        popular: true
+    },
+    {
+        id: 34,
         name: "POG Juice",
         description: "A refreshing blend of passion fruit, orange, and guava.",
         price: 4.25,
@@ -107,12 +283,20 @@ const menuItems = [
         popular: false
     },
     {
-        id: 13,
+        id: 35,
         name: "Hawaiian Sun Guava",
         description: "Chilled guava nectar.",
         price: 3.25,
         category: "Drinks",
         popular: false
+    },
+    {
+        id: 36,
+        name: "Lilikoi Lemonade",
+        description: "A refreshing, tropical drink that mixes tart lemon and passion fruit juice.",
+        price: 3.95,
+        category: "Drinks",
+        popular: true
     }
 ]
 

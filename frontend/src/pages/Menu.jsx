@@ -9,28 +9,30 @@ function Menu() {
         <main className="menu-page">
             <section className="full-menu">
                 <div className="menu-title">
-                    <h1>Menu</h1>
+                    <h1>Pau Hana Kitchen Menu</h1>
                 </div>
 
-                {categories.map((category) => {
-                    const categoryItems = menuItems.filter(
-                        (item) => item.category === category
-                    )
+                <div className="menu-container">
+                    {categories.map((category) => {
+                        const categoryItems = menuItems.filter(
+                            (item) => item.category === category
+                        )
 
-                    return (
-                        <section key={category} className="menu-category-section">
-                            <h2>{category}</h2>
-                            <div className="menu-category-items">
-                                {categoryItems.map((items) => (
-                                    <MenuItem
-                                        key={item.id}
-                                        item={item}
-                                    />
-                                ))}
-                            </div>
-                        </section>
-                    )
-                })}
+                        return (
+                            <section key={category} className="menu-category-section">
+                                <h2 className="category-title">{category}</h2>
+                                <div className="menu-category-items">
+                                    {categoryItems.map((item) => (
+                                        <MenuItem
+                                            key={item.id}
+                                            item={item}
+                                        />
+                                    ))}
+                                </div>
+                            </section>
+                        )
+                    })}
+                </div>
             </section>
         </main>
     )
