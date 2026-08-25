@@ -169,6 +169,7 @@ a {
 .add-cart-btn:hover {
   background-color: var(--pauhana-muted);
   color: var(--pauhana-surface);
+  cursor: pointer;
 }
 
 .menu-link-container {
