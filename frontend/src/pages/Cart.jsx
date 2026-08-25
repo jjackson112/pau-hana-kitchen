@@ -10,13 +10,17 @@ function Cart() {
             <h1 className="cart-title">Your Cart</h1>
             <p>Total Items: {totalQuantity}</p>
 
-            {cartItems.map((item) => (
+            {cartItems.length === 0 ? (
+                <p>Cart is empty</p>
+            ) :
+            (cartItems.map((item) => (
                 <div key={item.id}>
                     <h2>{item.name}</h2>
                     <p>Quantity: {item.quantity}</p>
                     <p>${item.totalPrice.toFixed(2)}</p>
                 </div>
-            ))}
+                ))
+            )}
         </main>
     )
 }
