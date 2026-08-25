@@ -8,6 +8,7 @@ function MenuItem({ item }) {
     const dispatch = useDispatch()
 
     const handleAddToCart = () => {
+        console.log("Adding", item)
         dispatch(addToCart(item)) // send the item as the action payload
     }
 
