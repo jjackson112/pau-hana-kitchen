@@ -14,7 +14,7 @@ function Cart() {
                 <div key={item.id}>
                     <h2>{item.name}</h2>
                     <p>Quantity: {item.quantity}</p>
-                    <p>${item.price.toFixed(2)}</p>
+                    <p>${item.totalPrice.toFixed(2)}</p>
                 </div>
             ))}
         </main>
