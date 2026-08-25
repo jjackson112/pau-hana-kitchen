@@ -198,28 +198,37 @@ a {
 /* Menu Styles */
 
 .menu-title {
-  color: var(--pauhana-red);
+  color: var(--pauhana-red-dark);
   text-align: center;
   padding: 1rem;
 }
 
 .menu-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  margin: 2rem;
 }
 
 .category-title {
-  color: var(--pauhana-red-dark);
+  padding: 1rem;
+}
+
+.menu-category-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.category-title {
+  color: var(--pauhana-red);
 }
 
 @media (max-width: 900px) {
-  .popular-dishes {
+  .popular-dishes, .menu-category-items {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .popular-dishes {
+  .popular-dishes, .menu-category-items {
     grid-template-columns: 1fr;
   }
 }
