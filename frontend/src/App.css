@@ -204,7 +204,9 @@ a {
 }
 
 .menu-container {
-  margin: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  padding: 2rem;
 }
 
 .category-title {
@@ -219,6 +221,10 @@ a {
 
 .category-title {
   color: var(--pauhana-red);
+}
+
+.menu-category-section {
+  margin-bottom: 3rem;
 }
 
 @media (max-width: 900px) {
