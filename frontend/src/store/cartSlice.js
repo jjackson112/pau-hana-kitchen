@@ -29,24 +29,25 @@ const cartSlice = createSlice({
 
             if (existingItem) {
                 state.totalQuantity--;
-                if (existingItem == 1) {
+                if (existingItem === 1) {
                     state.itemList = state.itemList.filter((item) => item.id !== id)
                 } else {
                     existingItem.quantity--;
+                    existingItem.totalPrice -= existingItem.price
                 }
             }
         },
 
-        openCart(state) {
+        openCartSidebar(state) {
             state.isOpen = true
         },
 
-        closeCart(state) {
+        closeCartSidebar(state) {
             state.isOpen = false
         }
 
     }
 })
 
-export const { addToCart, removeFromCart, openCart, closeCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, openCartSidebar, closeCartSidebar } = cartSlice.actions;
 export default cartSlice.reducer;
