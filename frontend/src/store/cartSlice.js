@@ -23,8 +23,18 @@ const cartSlice = createSlice({
             }
         },
 
-        openSidebarCart(state, action) {
+        removeFromCart(state, action) {
+            const id = action.payload;
+            const existingItem = state.itemList.find((item) => item.id === id);
 
+            if (existingItem) {
+                state.totalQuantity--;
+                i
+            }
+        },
+
+        openSidebarCart(state) {
+            state.isOpen = true
         },
 
         openCart(state) {
@@ -38,5 +48,5 @@ const cartSlice = createSlice({
     }
 })
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, openSidebarCart, openCart, closeCart } = cartSlice.actions;
 export default cartSlice.reducer;
