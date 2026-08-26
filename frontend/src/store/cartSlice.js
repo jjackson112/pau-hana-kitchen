@@ -29,12 +29,12 @@ const cartSlice = createSlice({
 
             if (existingItem) {
                 state.totalQuantity--;
-                i
+                if (existingItem == 1) {
+                    state.itemList = state.itemList.filter((item) => item.id !== id)
+                } else {
+                    existingItem.quantity--;
+                }
             }
-        },
-
-        openSidebarCart(state) {
-            state.isOpen = true
         },
 
         openCart(state) {
@@ -48,5 +48,5 @@ const cartSlice = createSlice({
     }
 })
 
-export const { addToCart, removeFromCart, openSidebarCart, openCart, closeCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, openCart, closeCart } = cartSlice.actions;
 export default cartSlice.reducer;
