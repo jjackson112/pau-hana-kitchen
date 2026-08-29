@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../store/cartSlice';
 import { Plus } from 'lucide-react';
 
@@ -6,6 +6,13 @@ import { Plus } from 'lucide-react';
  
 function MenuItem({ item }) {
     const dispatch = useDispatch()
+
+    // useSelector reads the data from the store and updates the state
+    const cartItems = useSelector(
+        (state) => state.cart.itemList
+    )
+
+    console.log("Redux cart", cartItems)
 
     const handleAddToCart = () => {
         console.log("Adding", item)
