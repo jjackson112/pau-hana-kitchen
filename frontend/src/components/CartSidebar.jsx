@@ -6,12 +6,12 @@ import { X } from "lucide-react";
 function Sidebar() {
     return (
         <aside>
-            <Link 
+            <button 
                 to="/menu"
                 className="full-menu-from-sidebar-btn"
             >
                 View full menu
-            </Link>
+            </button>
         </aside>
     )
 }

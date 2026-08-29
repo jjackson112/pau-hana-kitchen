@@ -5,6 +5,8 @@ function Cart() {
     const cartItems = useSelector((state) => state.cart.itemList)
     const totalQuantity = useSelector((state) => state.cart.totalQuantity)
 
+    console.log("CART ITEMS", cartItems)
+
     return (
         <main className="cart-page">
             <h1 className="cart-title">Your Cart</h1>
