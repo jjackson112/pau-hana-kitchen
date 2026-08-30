@@ -4,10 +4,16 @@
 // cart slice
 import { createSlice } from '@reduxjs/toolkit';
 
+const savedCart = localStorage.getItem("cart")
+
 // define initial state and the slice with an addToCart reducer
 const cartSlice = createSlice({
     name: 'cart',
-    initialState: { itemList: [], totalQuantity: 0, isOpen: false },
+    initialState: { 
+        itemList: [], 
+        totalQuantity: 0, 
+        isOpen: false 
+    },
 
     reducers: {
         addToCart(state, action) {
