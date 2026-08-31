@@ -12,6 +12,12 @@ function Cart() {
         0
     )
 
+    // tip options
+    const tipOptions = [0.10, 0.15, 0.20]
+    const tip10 = subtotal * 0.10
+    const tip15 = subtotal * 0.15
+    const tip20 = subtotal * 0.20
+
     const taxRate = 0.08
     const tax = subtotal * taxRate
     const total = subtotal + tax
