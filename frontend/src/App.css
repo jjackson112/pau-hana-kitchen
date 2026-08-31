@@ -249,7 +249,7 @@ a {
 
 /* Cart Item */
 .cart-item {
-  padding: .05rem 1rem;
+  padding: .5rem 1rem;
 }
 
 @media (max-width: 900px) {
