@@ -9,7 +9,7 @@ function App() {
 
     return (
         <>
-            <Toaster position="top-right"/>
+            <Toaster position="top-right" toastOptions={{ duration: 2000 }}/>
 
             <Routes>
                 <Route path= "/" element={< Home />} />
