@@ -21,7 +21,8 @@ function Cart() {
 
     const taxRate = 0.08
     const tax = subtotal * taxRate
-    const total = subtotal + tax
+    const tip = useSelector((state) => state.cart.tip)
+    const total = subtotal + tax + tip
 
     console.log("CART ITEMS", cartItems)
 
@@ -82,6 +83,7 @@ function Cart() {
                         20% (${(subtotal * 0.20).toFixed(2)})
                     </button>
                     <input 
+                        className="custom-tip-field"
                         type="number"
                         min="0"
                         placeholder="Custom tip"
