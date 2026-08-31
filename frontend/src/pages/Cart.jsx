@@ -6,6 +6,11 @@ function Cart() {
     const cartItems = useSelector((state) => state.cart.itemList)
     const totalQuantity = useSelector((state) => state.cart.totalQuantity)
 
+    
+    const taxRate = 0.08
+    const tax = subtotal * taxRate
+    const total = subtotal + tax
+
     console.log("CART ITEMS", cartItems)
 
     return (

@@ -55,7 +55,7 @@ const cartSlice = createSlice({
             )
 
             if (existingItem) {
-                state.totalQuantity -= existingItem.quantity
+                state.totalQuantity -= existingItem.quantity // current cart quantity - item quantity to be deleted
 
                 state.itemList = state.itemList.filter(
                     (item) => item.id !== id

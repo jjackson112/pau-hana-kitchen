@@ -292,6 +292,11 @@ a {
   justify-content: center;
 }
 
+.decrease-quantity-btn:hover, .increase-quantity-btn:hover {
+  background-color: var(--pauhana-muted);
+  color: var(--pauhana-surface);
+}
+
 .cart-item-quantity span {
   color: var(--pauhana-red-dark);
   font-weight: 600;
