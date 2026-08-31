@@ -8,7 +8,7 @@ function Cart() {
 
     // use reducer function - outputs a single value - to find subtotal
     const subtotal = cartItems.reduce(
-        (sum, total) => sum + item.totalPrice,
+        (sum, item) => sum + item.totalPrice,
         0
     )
 
@@ -39,12 +39,26 @@ function Cart() {
             </div>  
 
             <div className="fees">
-                <h4 className="subtotal">Subtotal</h4>
-                <h4 className="delivery-fees">Delivery Fees</h4>
-                <h4 className="tax">Tax</h4>
-                <h4 className="tip">Tip</h4>
-                <p className="tip-options"></p>
-                <h4 className="total">Total</h4>
+                <div className="subtotal">
+                    <h4>Subtotal </h4>
+                    <p>{subtotal.toFixed(2)}</p>
+                </div>
+                <div className="delivery-fees">
+                    <h4>Delivery Fees</h4>
+                </div>
+                <div className="tax">
+                    <h4>Tax</h4>
+                    <p>{tax.toFixed(2)}</p>
+                </div>
+                <div className="tip">
+                    <h4 >Tip</h4>
+                </div>
+                <div className="tip-options">
+                </div>
+                <div className="total">
+                    <h4>Total</h4>
+                    <p>{total.toFixed(2)}</p>
+                </div>
             </div> 
         </main>
     )
