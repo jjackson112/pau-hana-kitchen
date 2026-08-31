@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../store/cartSlice';
 import { Plus } from 'lucide-react';
+import toast from "react-hot-toast";
 
 // MenuItem (user clicks) + handleAddToCart() + dispatch(addToCart(item)) + cartSlice + Redux store updates
  
@@ -17,6 +18,8 @@ function MenuItem({ item }) {
     const handleAddToCart = () => {
         console.log("Adding", item)
         dispatch(addToCart(item)) // send the item as the action payload
+    
+        toast.success(`${item.name} added to cart!`)
     }
 
     return (
