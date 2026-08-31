@@ -4,6 +4,7 @@
 // cart slice
 import { createSlice } from '@reduxjs/toolkit';
 
+// guaranteed structure
 const defaultState = {
     itemList: [],
     totalQuantity: 0,
@@ -13,14 +14,13 @@ const defaultState = {
 
 const savedCart = localStorage.getItem("cart")
 
+// combine defaultState with saved cart or just use defaultState
 const initialState = savedCart
-    ? JSON.parse(savedCart)
-    : {
-        itemList: [],
-        totalQuantity: 0,
-        isOpen: false,
-        tip: 0
+    ? {
+        ...defaultState,
+        ...JSON.parse(savedCart)
     }
+    : defaultState
 
 // define initial state and the slice with an addToCart reducer
 const cartSlice = createSlice({
