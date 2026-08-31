@@ -247,6 +247,11 @@ a {
   text-align: center;
 }
 
+/* Cart Item */
+.cart-item {
+  padding: .05rem 1rem;
+}
+
 @media (max-width: 900px) {
   .popular-dishes, .menu-category-items {
     grid-template-columns: repeat(2, 1fr);

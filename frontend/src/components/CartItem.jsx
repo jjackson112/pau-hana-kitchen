@@ -2,7 +2,7 @@ function CartItem({ item }) {
     return (
         <article className="cart-item">
             <div className="cart-item-info">
-                <h3>{item.name}</h3>
+                <h4>{item.name}</h4>
                 <p>{item.description}</p>
             </div>
 
