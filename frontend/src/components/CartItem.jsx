@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addToCart, removeFromCart } from "../store/cartSlice";
+import { addToCart, removeFromCart, deleteFromCart } from "../store/cartSlice";
 import { Plus, Minus, Trash2 } from "lucide-react";
 
 function CartItem({ item }) {
