@@ -6,7 +6,12 @@ function Cart() {
     const cartItems = useSelector((state) => state.cart.itemList)
     const totalQuantity = useSelector((state) => state.cart.totalQuantity)
 
-    
+    // use reducer function - outputs a single value - to find subtotal
+    const subtotal = cartItems.reduce(
+        (sum, total) => sum + item.totalPrice,
+        0
+    )
+
     const taxRate = 0.08
     const tax = subtotal * taxRate
     const total = subtotal + tax
