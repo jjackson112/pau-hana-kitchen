@@ -4,6 +4,13 @@
 // cart slice
 import { createSlice } from '@reduxjs/toolkit';
 
+const defaultState = {
+    itemList: [],
+    totalQuantity: 0,
+    isOpen: false,
+    tip: 0
+}
+
 const savedCart = localStorage.getItem("cart")
 
 const initialState = savedCart
@@ -79,5 +86,5 @@ const cartSlice = createSlice({
     }
 })
 
-export const { addToCart, removeFromCart, deleteFromCart, openCartSidebar, closeCartSidebar } = cartSlice.actions;
+export const { addToCart, removeFromCart, deleteFromCart, setTip, openCartSidebar, closeCartSidebar } = cartSlice.actions;
 export default cartSlice.reducer;
