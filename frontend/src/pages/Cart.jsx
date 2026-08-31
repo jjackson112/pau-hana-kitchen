@@ -1,5 +1,6 @@
 // useSelector hook lets React read data from the global Redux store state
 import { useSelector } from 'react-redux';
+import CartItem from "../components/CartItem";
 
 function Cart() {
     const cartItems = useSelector((state) => state.cart.itemList)
@@ -15,14 +16,15 @@ function Cart() {
             {cartItems.length === 0 ? (
                 <p>Cart is empty</p>
             ) :
-            (cartItems.map((item) => (
-                <div key={item.id}>
-                    <h2>{item.name}</h2>
-                    <p>Quantity: {item.quantity}</p>
-                    <p>${item.totalPrice.toFixed(2)}</p>
-                </div>
-                ))
-            )}
+            <div className="cart-items">
+                {cartItems.map((item) => (
+                    <CartItem 
+                        key={item.id}
+                        item={item}
+                    />
+                ))}
+            </div>
+            }   
         </main>
     )
 }
