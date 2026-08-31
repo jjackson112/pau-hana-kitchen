@@ -48,6 +48,17 @@ const cartSlice = createSlice({
             }
         },
 
+        deleteFromCart(state, action) {
+            const id = action.payload;
+            const existingItem = state.itemList.find(
+                (item) => item.id === id
+            )
+
+            if (existingItem) {
+                
+            }
+        },
+
         openCartSidebar(state) {
             state.isOpen = true
         },

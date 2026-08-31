@@ -298,6 +298,20 @@ a {
   padding: .5rem;
 }
 
+.delete-item-btn {
+  background-color: var(--pauhana-red);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.delete-item-btn:hover {
+  background-color: var(--pauhana-red-dark);
+  color: var(--pauhana-surface);
+  cursor: pointer;
+}
+
 @media (max-width: 900px) {
   .popular-dishes, .menu-category-items {
     grid-template-columns: repeat(2, 1fr);

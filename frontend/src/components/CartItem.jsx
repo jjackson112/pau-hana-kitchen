@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { addToCart, removeFromCart } from "../store/cartSlice";
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, Trash2 } from "lucide-react";
 
 function CartItem({ item }) {
     const dispatch = useDispatch()
@@ -11,6 +11,10 @@ function CartItem({ item }) {
 
     const handleIncrease = () => {
         dispatch(addToCart(item))
+    }
+
+    const handleDelete = () => {
+        dispatch(deleteFromCart(item.id))
     }
 
     return (
@@ -36,6 +40,15 @@ function CartItem({ item }) {
                     aria-label={`Increase quantity of ${item.name}`}
                 >
                     <Plus size={14} />
+                </button>
+            </div>
+            <div className="delete-item-div">
+                <button
+                    className="delete-item-btn"
+                    onClick={handleDelete}
+                    aria-label={`Delete ${item.name} from cart`}
+                >
+                    <Trash2 size={18} />
                 </button>
             </div>
         </article>
