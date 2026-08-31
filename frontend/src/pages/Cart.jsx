@@ -1,8 +1,9 @@
 // useSelector hook lets React read data from the global Redux store state
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import CartItem from "../components/CartItem";
 
 function Cart() {
+    const dispatch = useDispatch()
     const cartItems = useSelector((state) => state.cart.itemList)
     const totalQuantity = useSelector((state) => state.cart.totalQuantity)
 
@@ -60,6 +61,26 @@ function Cart() {
                     <h4 >Tip</h4>
                 </div>
                 <div className="tip-options">
+                    <button
+                        className="tip10-btn"
+                        onClick={() => dispatch()}
+                    >
+
+                    </button>
+
+                    <button
+                        className="tip15-btn"
+                        onClick={() => dispatch()}
+                    >
+
+                    </button>
+
+                    <button
+                        className="tip20-btn"
+                        onClick={() => dispatch()}
+                    >
+
+                    </button>
                 </div>
                 <div className="total">
                     <h4>Total</h4>
