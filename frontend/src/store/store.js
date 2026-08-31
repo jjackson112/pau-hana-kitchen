@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import cartReducer from './cartSlice';
 
+// Redux state - save cart when it changes
 export const store = configureStore({
     reducer: {
         cart: cartReducer,
