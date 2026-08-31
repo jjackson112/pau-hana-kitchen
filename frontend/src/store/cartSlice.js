@@ -17,7 +17,7 @@ const initialState = savedCart
 // define initial state and the slice with an addToCart reducer
 const cartSlice = createSlice({
     name: 'cart',
-    initialState,
+    initialState, // loading saved cart state
 
     reducers: {
         addToCart(state, action) {
