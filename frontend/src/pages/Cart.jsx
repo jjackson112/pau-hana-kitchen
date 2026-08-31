@@ -11,9 +11,9 @@ function Cart() {
     return (
         <main className="cart-page">
             <h1 className="cart-title">Your Cart</h1>
-            <p><strong>Total Items: {totalQuantity}</strong></p>
 
             <div className="cart-items-list">
+                <h3>Total Items: {totalQuantity}</h3>
                 {cartItems.length === 0 ? (
                     <p>Cart is empty</p>
                 ) :
