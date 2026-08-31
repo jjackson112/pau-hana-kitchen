@@ -25,15 +25,17 @@ function CartItem({ item }) {
                 <button 
                     className="decrease-quantity-btn"
                     onClick={handleDecrease}
+                    aria-label={`Decrease quantity of ${item.name}`}
                 >
-                    <Minus size={10} />
+                    <Minus size={14} />
                 </button>
                 <span>{item.quantity}</span>
                 <button 
                     className="increase-quantity-btn"
                     onClick={handleIncrease}
+                    aria-label={`Increase quantity of ${item.name}`}
                 >
-                    <Plus size={10} />
+                    <Plus size={14} />
                 </button>
             </div>
         </article>
