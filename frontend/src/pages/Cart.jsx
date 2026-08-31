@@ -63,24 +63,30 @@ function Cart() {
                 <div className="tip-options">
                     <button
                         className="tip10-btn"
-                        onClick={() => dispatch()}
+                        onClick={() => dispatch(setTip(subtotal * 0.10))}
                     >
-                        10%
+                        10% (${(subtotal * 0.10).toFixed(2)})
                     </button>
 
                     <button
                         className="tip15-btn"
-                        onClick={() => dispatch()}
+                        onClick={() => dispatch(setTip(subtotal * 0.15))}
                     >
-                        15%
+                        15% (${(subtotal * 0.15).toFixed(2)})
                     </button>
 
                     <button
                         className="tip20-btn"
-                        onClick={() => dispatch()}
+                        onClick={() => dispatch(setTip(subtotal * 0.20))}
                     >
-                        20%
+                        20% (${(subtotal * 0.20).toFixed(2)})
                     </button>
+                    <input 
+                        type="number"
+                        min="0"
+                        placeholder="Custom tip"
+                        onChange={(e) => dispatch(setTip(Number(e.target.value)))}
+                    />
                 </div>
                 <div className="total">
                     <h4>Total</h4>
