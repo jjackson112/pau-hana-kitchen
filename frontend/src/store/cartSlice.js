@@ -11,7 +11,8 @@ const initialState = savedCart
     : {
         itemList: [],
         totalQuantity: 0,
-        isOpen: false
+        isOpen: false,
+        tip: 0
     }
 
 // define initial state and the slice with an addToCart reducer
@@ -61,6 +62,10 @@ const cartSlice = createSlice({
                     (item) => item.id !== id
                 )
             }
+        },
+
+        setTip(state, action) {
+            state.tip = action.payload
         },
 
         openCartSidebar(state) {

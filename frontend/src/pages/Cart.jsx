@@ -65,21 +65,21 @@ function Cart() {
                         className="tip10-btn"
                         onClick={() => dispatch()}
                     >
-
+                        10%
                     </button>
 
                     <button
                         className="tip15-btn"
                         onClick={() => dispatch()}
                     >
-
+                        15%
                     </button>
 
                     <button
                         className="tip20-btn"
                         onClick={() => dispatch()}
                     >
-
+                        20%
                     </button>
                 </div>
                 <div className="total">

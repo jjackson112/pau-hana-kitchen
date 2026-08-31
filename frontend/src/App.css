@@ -304,7 +304,7 @@ a {
 }
 
 .delete-item-btn {
-  background-color: var(--pauhana-red);
+  background-color: var(--pauhana-coral);
   border: none;
   border-radius: 50%;
   width: 35px;
