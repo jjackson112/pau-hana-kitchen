@@ -17,7 +17,7 @@ function Cart() {
                 {cartItems.length === 0 ? (
                     <p>Cart is empty</p>
                 ) :
-                <div>
+                <div className="all-cart-items">
                     {cartItems.map((item) => (
                         <CartItem 
                             key={item.id}
