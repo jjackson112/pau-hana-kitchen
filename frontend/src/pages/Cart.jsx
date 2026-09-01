@@ -14,8 +14,7 @@ function Cart() {
         0
     )
 
-    // tip options
-    const tipOptions = [0.10, 0.15, 0.20]
+    // tip options *const tipOptions = [0.10, 0.15, 0.20]
     const tip10 = subtotal * 0.10
     const tip15 = subtotal * 0.15
     const tip20 = subtotal * 0.20
@@ -67,21 +66,21 @@ function Cart() {
                         className={`tip10-btn ${tip === subtotal * 0.10 ? "active" : ""}`}
                         onClick={() => dispatch(setTip({amount: subtotal * 0.10, option: 0.10}))}
                     >
-                        10% (${(subtotal * 0.10).toFixed(2)})
+                        10% (${tip10.toFixed(2)})
                     </button>
 
                     <button
                         className={`tip15-btn ${tip === subtotal * 0.15 ? "active" : ""}`}
                         onClick={() => dispatch(setTip({amount: subtotal * 0.15, option: 0.15}))}
                     >
-                        15% (${(subtotal * 0.15).toFixed(2)})
+                        15% (${tip15.toFixed(2)})
                     </button>
 
                     <button
                         className={`tip20-btn ${tip === subtotal * 0.20 ? "active" : ""}`}
                         onClick={() => dispatch(setTip({amount: subtotal * 0.20, option: 0.20}))}
                     >
-                        20% (${(subtotal * 0.20).toFixed(2)})
+                        20% (${tip20.toFixed(2)})
                     </button>
                     <input 
                         className="custom-tip-field"
