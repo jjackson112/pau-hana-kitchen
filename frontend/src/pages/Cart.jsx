@@ -96,7 +96,10 @@ function Cart() {
                         onChange={(e) => {
                             const value = e.target.value
 
-                            dispatch(setTip(value === "" ? 0 : Number(value)))
+                            dispatch(setTip({
+                                amount: value === "" ? 0 : Number(value),
+                                option: value === "" ? null : "custom"
+                            }))
                         }}
                     />
                 </div>
