@@ -9,7 +9,8 @@ const defaultState = {
     itemList: [],
     totalQuantity: 0,
     isOpen: false,
-    tip: 0
+    tip: 0,
+    tipOption: null
 }
 
 const savedCart = localStorage.getItem("cart")
@@ -72,7 +73,7 @@ const cartSlice = createSlice({
         },
 
         setTip(state, action) {
-            state.tip = action.payload.amount
+            state.tip = Number(action.payload.amount)
             state.tipOption = action.payload.option
         },
 

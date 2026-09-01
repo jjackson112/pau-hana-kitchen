@@ -63,25 +63,26 @@ function Cart() {
                 </div>
                 <div className="tip">
                     <h4 >Tip</h4>
+                    <p>{tip.toFixed(2)}</p>
                 </div>
                 <div className="tip-options">
                     <button
-                        className={`tip10-btn ${tip === subtotal * 0.10 ? "active" : ""}`}
-                        onClick={() => dispatch(setTip({amount: tip10, option: 0.10}))}
+                        className={`tip-btn ${tip === tip10 ? "active" : ""}`}
+                        onClick={() => dispatch(setTip(tip10))}
                     >
                         10% (${tip10.toFixed(2)})
                     </button>
 
                     <button
-                        className={`tip15-btn ${tip === subtotal * 0.15 ? "active" : ""}`}
-                        onClick={() => dispatch(setTip({amount: tip15, option: 0.15}))}
+                        className={`tip-btn ${tip === tip15 ? "active" : ""}`}
+                        onClick={() => dispatch(setTip(tip15))}
                     >
                         15% (${tip15.toFixed(2)})
                     </button>
 
                     <button
-                        className={`tip20-btn ${tip === subtotal * 0.20 ? "active" : ""}`}
-                        onClick={() => dispatch(setTip({amount: tip20, option: 0.20}))}
+                        className={`tip-btn ${tip === tip20 ? "active" : ""}`}
+                        onClick={() => dispatch(setTip(tip20))}
                     >
                         20% (${tip20.toFixed(2)})
                     </button>
@@ -91,7 +92,11 @@ function Cart() {
                         min="0"
                         step="0.01"
                         placeholder="Custom tip"
-                        onChange={(e) => dispatch(setTip(Number(e.target.value)))}
+                        onChange={(e) => {
+                            const value = e.target.value
+
+                            dispatch(setTip(value === "" ? 0 : Number(value)))
+                        }}
                     />
                 </div>
                 <div className="total">
