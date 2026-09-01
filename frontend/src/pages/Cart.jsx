@@ -1,6 +1,7 @@
 // useSelector hook lets React read data from the global Redux store state
 import { useDispatch, useSelector } from 'react-redux';
 import { setTip } from '../store/cartSlice';
+import { Link } from "react-router-dom";
 import CartItem from "../components/CartItem";
 
 function Cart() {
@@ -32,6 +33,8 @@ function Cart() {
 
             <div className="cart-items-list">
                 <h3>Total Items: {totalQuantity}</h3>
+                <Link to="/menu" className="more-menu-items-btn">Add more items</Link>
+
                 {cartItems.length === 0 ? (
                     <p>Cart is empty</p>
                 ) :
@@ -64,21 +67,21 @@ function Cart() {
                 <div className="tip-options">
                     <button
                         className={`tip10-btn ${tip === subtotal * 0.10 ? "active" : ""}`}
-                        onClick={() => dispatch(setTip({amount: subtotal * 0.10, option: 0.10}))}
+                        onClick={() => dispatch(setTip({amount: tip10, option: 0.10}))}
                     >
                         10% (${tip10.toFixed(2)})
                     </button>
 
                     <button
                         className={`tip15-btn ${tip === subtotal * 0.15 ? "active" : ""}`}
-                        onClick={() => dispatch(setTip({amount: subtotal * 0.15, option: 0.15}))}
+                        onClick={() => dispatch(setTip({amount: tip15, option: 0.15}))}
                     >
                         15% (${tip15.toFixed(2)})
                     </button>
 
                     <button
                         className={`tip20-btn ${tip === subtotal * 0.20 ? "active" : ""}`}
-                        onClick={() => dispatch(setTip({amount: subtotal * 0.20, option: 0.20}))}
+                        onClick={() => dispatch(setTip({amount: tip20, option: 0.20}))}
                     >
                         20% (${tip20.toFixed(2)})
                     </button>
@@ -86,6 +89,7 @@ function Cart() {
                         className="custom-tip-field"
                         type="number"
                         min="0"
+                        step="0.01"
                         placeholder="Custom tip"
                         onChange={(e) => dispatch(setTip(Number(e.target.value)))}
                     />

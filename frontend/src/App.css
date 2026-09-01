@@ -239,7 +239,7 @@ a {
   margin-bottom: 3rem;
 }
 
-/* Cart Styles */
+/* Cart Page Styles */
 
 .cart-title {
   color: var(--pauhana-red-dark);
@@ -247,8 +247,21 @@ a {
   text-align: center;
 }
 
+.more-menu-items-btn {
+  background-color: var(--pauhana-gold);
+  border-radius: 12px;
+  border: none;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+.more-menu-items-btn:hover {
+  background-color: var(--pauhana-coral);
+  color: var(--pauhana-surface);
+}
+
 .cart-items-list, .fees {
-  padding: .25rem 1rem;
+  padding: .5rem 1rem;
 }
 
 .tip-options {
