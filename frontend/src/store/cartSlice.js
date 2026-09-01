@@ -72,7 +72,8 @@ const cartSlice = createSlice({
         },
 
         setTip(state, action) {
-            state.tip = action.payload
+            state.tip = action.payload.amount
+            state.tipOption = action.payload.option
         },
 
         openCartSidebar(state) {

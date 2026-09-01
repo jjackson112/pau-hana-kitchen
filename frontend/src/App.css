@@ -264,10 +264,15 @@ a {
   padding: 0.75rem;
 }
 
+.tip-options button:hover {
+  background-color: var(--pauhana-red);
+  cursor: pointer;
+}
 .custom-tip-field {
   width: 125px;
   border-radius: 12px;
   border: 1px solid var(--pauhana-muted);
+  padding-left: 10px;
 }
 
 /* Cart Item */
