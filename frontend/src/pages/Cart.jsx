@@ -23,6 +23,7 @@ function Cart() {
     const taxRate = 0.08
     const tax = subtotal * taxRate
     const tip = useSelector((state) => state.cart.tip)
+    const tipOption = useSelector((state) => state.cart.tipOption)
     const total = subtotal + tax + tip
 
     console.log("CART ITEMS", cartItems)
@@ -63,34 +64,34 @@ function Cart() {
                 </div>
                 <div className="tip">
                     <h4 >Tip</h4>
-                    <p>{tip.toFixed(2)}</p>
                 </div>
                 <div className="tip-options">
                     <button
-                        className={`tip-btn ${tip === tip10 ? "active" : ""}`}
-                        onClick={() => dispatch(setTip(tip10))}
+                        className={`tip-btn ${tipOption === "10" ? "active" : ""}`}
+                        onClick={() => dispatch(setTip({ amount: tip10, option: "10"}))}
                     >
                         10% (${tip10.toFixed(2)})
                     </button>
 
                     <button
-                        className={`tip-btn ${tip === tip15 ? "active" : ""}`}
-                        onClick={() => dispatch(setTip(tip15))}
+                        className={`tip-btn ${tipOption === "15" ? "active" : ""}`}
+                        onClick={() => dispatch(setTip( {amount: tip15, option: "15"}))}
                     >
                         15% (${tip15.toFixed(2)})
                     </button>
 
                     <button
-                        className={`tip-btn ${tip === tip20 ? "active" : ""}`}
-                        onClick={() => dispatch(setTip(tip20))}
+                        className={`tip-btn ${tipOption === "20" ? "active" : ""}`}
+                        onClick={() => dispatch(setTip({ amount: tip20, option: "20"}))}
                     >
                         20% (${tip20.toFixed(2)})
                     </button>
                     <input 
-                        className="custom-tip-field"
+                        className={`custom-tip-field ${tipOption === "custom" ? "active" : ""}`}
                         type="number"
                         min="0"
                         step="0.01"
+                        value={tipOption === "custom" ? tip : ""}
                         placeholder="Custom tip"
                         onChange={(e) => {
                             const value = e.target.value
