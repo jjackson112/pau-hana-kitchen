@@ -251,6 +251,25 @@ a {
   padding: .25rem 1rem;
 }
 
+.tip-options {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.tip-options button {
+  background-color: var(--pauhana-coral);
+  border-radius: 12px;
+  border: none;
+  padding: 0.75rem;
+}
+
+.custom-tip-field {
+  width: 125px;
+  border-radius: 12px;
+  border: 1px solid var(--pauhana-muted);
+}
+
 /* Cart Item */
 
 .total-cart {

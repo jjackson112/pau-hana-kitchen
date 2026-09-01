@@ -1,5 +1,6 @@
 // useSelector hook lets React read data from the global Redux store state
 import { useDispatch, useSelector } from 'react-redux';
+import { setTip } from '../store/cartSlice';
 import CartItem from "../components/CartItem";
 
 function Cart() {
