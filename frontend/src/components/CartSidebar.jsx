@@ -13,6 +13,7 @@ function Cart() {
     return (
         <aside className="cart-page">
             <h1 className="cart-title">Your Cart</h1>
+            <p>from Pau Hana Kitchen</p>
 
             <div className="cart-items-list">
                 <h3>Total Items: {totalQuantity}</h3>
@@ -31,6 +32,10 @@ function Cart() {
                 </div>
                 }
             </div>  
+
+            <div className="compliment-cart">
+                
+            </div>
         </aside>
     )
 }
