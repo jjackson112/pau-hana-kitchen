@@ -21,7 +21,6 @@ function CartItem({ item }) {
         <article className="total-cart">
             <div className="cart-item-info">
                 <h4>{item.name}</h4>
-                <p>{item.description}</p>
                 <p>${item.totalPrice.toFixed(2)}</p>
             </div>
 
