@@ -265,6 +265,11 @@ a {
   padding: .5rem 1rem;
 }
 
+.cart-subtotal {
+  display: flex;
+  flex-direction: row;
+}
+
 .other-cart-details {
   display: flex;
   justify-content: center;
@@ -289,7 +294,7 @@ a {
   width: min(420px, 100%);
   height: 100vh;
   padding: 1.5rem;
-  background: white;
+  background-color: var(--pauhana-cream);
   box-shadow: -4px 0 18px rgb(0 0 0 / 0.18);
   overflow-y: auto;
   transform: translateX(100%);

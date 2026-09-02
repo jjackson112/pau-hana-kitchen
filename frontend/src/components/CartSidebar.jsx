@@ -14,6 +14,12 @@ function Cart() {
 
     console.log("CART ITEMS", cartItems)
 
+    // add subtotal reducer function
+    const subtotal = cartItems.reduce(
+        (sum, item) => sum + item.totalPrice,
+        0
+    )
+
     return (
         <aside 
             className={`cart-sidebar ${isOpen ? "cart-sidebar-open" : ""}`}
@@ -47,6 +53,11 @@ function Cart() {
                 </div>
                 }
             </div>  
+
+            <div className="cart-subtotal">
+                <h4>Subtotal</h4>
+                <p>{subtotal.toFixed(2)}</p>
+            </div>
 
             <div className="other-cart-details">
                 <Link to="/checkout" className="checkout-btn">Checkout</Link>

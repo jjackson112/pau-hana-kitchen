@@ -14,7 +14,6 @@ function Header() {
             <button 
                 type="button"
                 className="hamburger-menu"
-                onClick={() => dispatch(openCartSidebar())}
                 aria-label={`Open cart with ${totalQuantity} items`}
             >
                 {open ? <X size={20} /> : <Menu size={20} />}
