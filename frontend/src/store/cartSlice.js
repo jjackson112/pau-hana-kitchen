@@ -73,7 +73,8 @@ const cartSlice = createSlice({
         },
 
         emptyCart(state) {
-            state.itemList = []
+            state.itemList = [] // clears list
+            state.totalQuantity = 0 // clears any old menu items from cart
         },
 
         setTip(state, action) {
