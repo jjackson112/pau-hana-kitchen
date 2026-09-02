@@ -268,10 +268,15 @@ a {
 
 .cart-subtotal {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  padding: .5rem;
+  width: 100%;
+  border-top: 1px solid var(--pauhana-border);
+}
+
+.cart-subtotal h4, .cart-subtotal p {
+  margin: 0;
 }
 
 .other-cart-details {
@@ -295,12 +300,18 @@ a {
   top: 0;
   right: 0;
   z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+
   width: min(420px, 100%);
   height: 100vh;
   padding: 1.5rem;
+
   background-color: var(--pauhana-cream);
   box-shadow: -4px 0 18px rgb(0 0 0 / 0.18);
   overflow-y: auto;
+
   transform: translateX(100%);
   visibility: hidden;
   transition:
