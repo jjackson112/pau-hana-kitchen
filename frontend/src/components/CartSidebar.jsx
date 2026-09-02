@@ -26,7 +26,6 @@ function Cart() {
 
             <div className="cart-text">
                 <h1 className="cart-title"> Cart</h1>
-                <h2 className="cart-tagline"> from Pau Hana Kitchen</h2>
             </div>
 
             <div className="cart-items-list">

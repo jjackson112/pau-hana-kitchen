@@ -348,6 +348,12 @@ a {
   padding-left: 10px;
 }
 
+/* Footer Styles */
+.footer-container {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 900px) {
   .popular-dishes, .menu-category-items {
     grid-template-columns: repeat(2, 1fr);
