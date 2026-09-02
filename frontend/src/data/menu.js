@@ -246,7 +246,7 @@ const menuItems = [
         id: 30,
         name: "Grilled Pineapple",
         description: "Fresh, caramelized pineapple sprinkled with brown sugar.",
-        price: 4.50,
+        price: 4.59,
         category: "Sides",
         popular: true
     },

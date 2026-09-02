@@ -56,7 +56,7 @@ function Cart() {
 
             <div className="cart-subtotal">
                 <h4>Subtotal</h4>
-                <p>{subtotal.toFixed(2)}</p>
+                <h4>{subtotal.toFixed(2)}</h4>
             </div>
 
             <div className="other-cart-details">
