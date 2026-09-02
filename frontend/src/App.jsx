@@ -19,10 +19,10 @@ function App() {
             <Routes>
                 <Route path= "/" element={< Home />} />
                 <Route path="/menu" element={<Menu />} />
-                <Route path="/cart" element={<CartSidebar />} />
                 <Route path="/checkout" element={<Checkout />} />
             </Routes>
 
+            <CartSidebar />
             <Footer />
         </>
 
