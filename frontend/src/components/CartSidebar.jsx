@@ -11,14 +11,14 @@ function Cart() {
 
     const dispatch = useDispatch()
     const isOpen = useSelector((state) => state.cart.isOpen)
-    
+
     console.log("CART ITEMS", cartItems)
 
     return (
-        <aside className="cart-page">
+        <aside className="cart-sidebar">
             <div className="cart-text">
                 <h1 className="cart-title"> Cart</h1>
-                <h2>from Pau Hana Kitchen</h2>
+                <h2 className="cart-tagline"> from Pau Hana Kitchen</h2>
             </div>
 
             <div className="cart-items-list">
@@ -36,7 +36,7 @@ function Cart() {
                 }
             </div>  
 
-            <div className="other-car">
+            <div className="other-cart">
                 <h3>Total Items: {totalQuantity}</h3>
                 <Link to="/menu" className="more-menu-items-btn">Add more menu items</Link>
             </div>
