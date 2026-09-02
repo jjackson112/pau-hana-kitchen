@@ -34,7 +34,6 @@ function Menu() {
                         )
                     })}
                 </div>
-                <Link to="/cart">View Cart</Link>
             </section>
         </main>
     )

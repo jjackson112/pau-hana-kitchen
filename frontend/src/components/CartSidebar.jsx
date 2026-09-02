@@ -29,7 +29,8 @@ function Cart() {
             </button>
 
             <div className="cart-title">
-                <h1> Cart</h1>
+                <h1>Cart</h1>
+                <h3>Total Items: {totalQuantity}</h3>
             </div>
 
             <div className="cart-items-list">
@@ -48,8 +49,8 @@ function Cart() {
             </div>  
 
             <div className="other-cart-details">
-                <h3>Total Items: {totalQuantity}</h3>
-                <Link to="/checkout" className="checkout-btn">Continue to Checkout</Link>
+                <Link to="/checkout" className="checkout-btn">Checkout</Link>
+                <button className="empty-cart-btn">Empty cart</button>
             </div>
         </aside>
     )
