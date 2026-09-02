@@ -241,7 +241,7 @@ a {
 
 /* Cart Sidebar Styles */
 
-.cart-text {
+.cart-title {
   color: var(--pauhana-red-dark);
   padding: 1rem;
   text-align: center;
