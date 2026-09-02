@@ -60,7 +60,13 @@ function Cart() {
             </div>
 
             <div className="other-cart-details">
-                <Link to="/checkout" className="checkout-btn">Checkout</Link>
+                <Link 
+                    to="/checkout" 
+                    className="checkout-btn"
+                    onClick={() => dispatch(closeCartSidebar())}
+                >
+                    Checkout
+                </Link>
                 <button
                     type="button" 
                     className="empty-cart-btn"
