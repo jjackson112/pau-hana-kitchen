@@ -242,11 +242,12 @@ a {
 /* Cart Sidebar Styles */
 
 .close-sidebar-btn {
-  background-color: var(--pauhana-gold);
-  border: 1px solid var(--pauhana-muted);
-  border: none;
-  border-radius: 12px;
+  display: flex;
+  margin-right: auto;
+  border: 0;
+  background: var(--pauhana-gold);
   padding: .5rem;
+  border-radius: 50%;
   cursor: pointer;
 }
 
@@ -268,6 +269,9 @@ a {
 .cart-subtotal {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .other-cart-details {
@@ -307,14 +311,6 @@ a {
 .cart-sidebar-open {
   transform: translateX(0);
   visibility: visible;
-}
-
-.close-cart-button {
-  display: flex;
-  margin-left: auto;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
 }
 
 /* Cart Item */
