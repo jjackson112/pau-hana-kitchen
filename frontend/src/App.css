@@ -239,9 +239,9 @@ a {
   margin-bottom: 3rem;
 }
 
-/* Cart Page Styles */
+/* Cart Sidebar Styles */
 
-.cart-title {
+.cart-text {
   color: var(--pauhana-red-dark);
   padding: 1rem;
   text-align: center;

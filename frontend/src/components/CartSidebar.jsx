@@ -12,13 +12,12 @@ function Cart() {
 
     return (
         <aside className="cart-page">
-            <h1 className="cart-title">Your Cart</h1>
-            <p>from Pau Hana Kitchen</p>
+            <div className="cart-text">
+                <h1 className="cart-title"> Cart</h1>
+                <h2>from Pau Hana Kitchen</h2>
+            </div>
 
             <div className="cart-items-list">
-                <h3>Total Items: {totalQuantity}</h3>
-                <Link to="/menu" className="more-menu-items-btn">Add more items</Link>
-
                 {cartItems.length === 0 ? (
                     <p>Cart is empty</p>
                 ) :
@@ -32,6 +31,11 @@ function Cart() {
                 </div>
                 }
             </div>  
+
+            <div className="other-car">
+                <h3>Total Items: {totalQuantity}</h3>
+                <Link to="/menu" className="more-menu-items-btn">Add more menu items</Link>
+            </div>
 
             <div className="compliment-cart">
                 
