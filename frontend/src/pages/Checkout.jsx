@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setTip } from '../store/cartSlice';
+import CartSummary from '../components/CartSummary';
 
 function Checkout() {
     const dispatch = useDispatch()
@@ -21,6 +22,8 @@ function Checkout() {
     const total = subtotal + tax + tip
 
     return (
+        <div><CartSummary /></div>
+        
         <div className="fees">
             <div className="subtotal">
                 <h4>Subtotal </h4>

@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Menu from './pages/Menu';
 import Checkout from './pages/Checkout';
 import CartSidebar from './components/CartSidebar';
+import CartSummary from './components/CartSummary';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
             </Routes>
 
             <CartSidebar />
+            <CartSummary />
             <Footer />
         </>
 
