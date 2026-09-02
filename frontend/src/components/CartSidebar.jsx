@@ -6,16 +6,24 @@ import { X } from "lucide-react";
 import CartItem from "../components/CartItem";
 
 function Cart() {
+    const dispatch = useDispatch()
+
     const cartItems = useSelector((state) => state.cart.itemList)
     const totalQuantity = useSelector((state) => state.cart.totalQuantity)
-
-    const dispatch = useDispatch()
     const isOpen = useSelector((state) => state.cart.isOpen)
 
     console.log("CART ITEMS", cartItems)
 
     return (
         <aside className="cart-sidebar">
+            <button
+                className="close-sidebar-btn"
+                onClick={() => dispatch(closeCartSidebar())}
+                aria-label="Close cart"
+            >
+                <X size={20} />
+            </button>
+
             <div className="cart-text">
                 <h1 className="cart-title"> Cart</h1>
                 <h2 className="cart-tagline"> from Pau Hana Kitchen</h2>
