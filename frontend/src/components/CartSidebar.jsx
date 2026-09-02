@@ -36,9 +36,8 @@ function Cart() {
                 }
             </div>  
 
-            <div className="other-cart">
+            <div className="other-cart-details">
                 <h3>Total Items: {totalQuantity}</h3>
-                <Link to="/menu" className="more-menu-items-btn">Add more menu items</Link>
             </div>
 
             <div className="compliment-cart">
