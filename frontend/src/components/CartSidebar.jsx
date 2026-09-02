@@ -1,5 +1,6 @@
 // useSelector hook lets React read data from the global Redux store state
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { openCartSidebar, closeCartSidebar } from '../store/cartSlice';
 import { Link } from "react-router-dom";
 import { X } from "lucide-react";
 import CartItem from "../components/CartItem";
@@ -8,6 +9,9 @@ function Cart() {
     const cartItems = useSelector((state) => state.cart.itemList)
     const totalQuantity = useSelector((state) => state.cart.totalQuantity)
 
+    const dispatch = useDispatch()
+    const isOpen = useSelector((state) => state.cart.isOpen)
+    
     console.log("CART ITEMS", cartItems)
 
     return (
