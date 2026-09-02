@@ -241,6 +241,20 @@ a {
 
 /* Cart Sidebar Styles */
 
+.close-sidebar-btn {
+  background-color: var(--pauhana-gold);
+  border: 1px solid var(--pauhana-muted);
+  border: none;
+  border-radius: 12px;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+.close-sidebar-btn:hover, .checkout-btn:hover {
+  background-color: var(--pauhana-muted);
+  color: var(--pauhana-surface);
+}
+
 .cart-title {
   color: var(--pauhana-red-dark);
   padding: 1rem;
@@ -249,6 +263,22 @@ a {
 
 .cart-items-list, .other-cart-details {
   padding: .5rem 1rem;
+}
+
+.other-cart-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.checkout-btn {
+  background-color: var(--pauhana-coral);
+  border-radius: 12px;
+  border: none;
+  padding: .75rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .cart-sidebar {
