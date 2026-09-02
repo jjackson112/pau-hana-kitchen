@@ -275,6 +275,8 @@ a {
 .checkout-btn, .empty-cart-btn {
   background-color: var(--pauhana-coral);
   border-radius: 12px;
+  padding: .75rem;
+  font-weight: 600;
   border: none;
   cursor: pointer;
 }

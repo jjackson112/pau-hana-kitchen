@@ -1,6 +1,6 @@
 // useSelector hook lets React read data from the global Redux store state
 import { useDispatch, useSelector } from 'react-redux';
-import { closeCartSidebar } from '../store/cartSlice';
+import { closeCartSidebar, emptyCart } from '../store/cartSlice';
 import { Link } from "react-router-dom";
 import { X } from "lucide-react";
 import CartItem from "../components/CartItem";
@@ -50,7 +50,14 @@ function Cart() {
 
             <div className="other-cart-details">
                 <Link to="/checkout" className="checkout-btn">Checkout</Link>
-                <button className="empty-cart-btn">Empty cart</button>
+                <button
+                    type="button" 
+                    className="empty-cart-btn"
+                    onClick={() => dispatch(emptyCart())}
+                    aria-label="Empty menu items from cart"
+                >
+                    Empty cart
+                </button>
             </div>
         </aside>
     )

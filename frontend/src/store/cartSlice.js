@@ -72,6 +72,10 @@ const cartSlice = createSlice({
             }
         },
 
+        emptyCart(state) {
+            state.itemList = []
+        },
+
         setTip(state, action) {
             state.tip = Number(action.payload.amount)
             state.tipOption = action.payload.option
@@ -88,5 +92,5 @@ const cartSlice = createSlice({
     }
 })
 
-export const { addToCart, removeFromCart, deleteFromCart, setTip, openCartSidebar, closeCartSidebar } = cartSlice.actions;
+export const { addToCart, removeFromCart, deleteFromCart, emptyCart, setTip, openCartSidebar, closeCartSidebar } = cartSlice.actions;
 export default cartSlice.reducer;
