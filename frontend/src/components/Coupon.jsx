@@ -2,6 +2,10 @@ import { useState } from "react";
 
 function Coupon() {
     const [coupon, setCoupon] = useState("")
+    const couponCodes = {
+        ALOHA10: 0.10,
+        PAUHANA5: 5
+    }
 
     return (
         <section className="coupon-container">
