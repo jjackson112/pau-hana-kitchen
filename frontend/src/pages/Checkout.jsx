@@ -38,16 +38,18 @@ function Checkout() {
     const tip10 = subtotal * 0.10
     const tip15 = subtotal * 0.15
     const tip20 = subtotal * 0.20
+    
     const taxRate = 0.08
     const tax = discountedSubtotal * taxRate
+    const total = discountedSubtotal + tax + tip
+
     const tip = useSelector((state) => state.cart.tip)
     const tipOption = useSelector((state) => state.cart.tipOption)
-    const total = discountedSubtotal + tax + tip
 
     return (
         <div className="checkout-page">
-            <OrderType />
-            <Time />
+            <OrderType orderType={orderType} setOrderType={setOrderType} />
+            <Time orderType={orderType} />
             <CartSummary />
             <Coupon onApplyCoupon={setAppliedCoupon} />
 
