@@ -14,10 +14,9 @@ function Home() {
                     <h1 className="hero-title">Pau Hana Kitchen</h1>
                     <h2 className="hero-tagline">Local favorites. Made fresh.</h2>
                     <p className="hero-sentence">Plate lunches, poke, loco moco, and more.</p>
-                    
-                    <Link to="/menu" className="cta-btn">Order now</Link>
-
                     <p className="coupon-banner">Get $5 off your order with code <strong>PAUHANA5</strong></p>
+
+                    <Link to="/menu" className="cta-btn">Order now</Link>
                 </div>
             </section>
 

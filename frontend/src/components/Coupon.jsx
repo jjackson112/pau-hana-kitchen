@@ -2,6 +2,8 @@ import { useState } from "react";
 
 function Coupon() {
     const [coupon, setCoupon] = useState("")
+    const [message, setMessage] = useState("")
+
     const couponCodes = {
         ALOHA10: {
             type: "percentage",
@@ -10,6 +12,16 @@ function Coupon() {
         PAUHANA5: {
             type: "fixed",
             value: 5
+        }
+    }
+
+    const handleAppliedCoupon = () => {
+        const enteredCoupon = coupon.trim()
+
+        if (couponCodes[enteredCoupon]) {
+            setMessage("Coupon applied!")
+        } else {
+            setMessage("Invalid coupon code!")
         }
     }
 
@@ -29,6 +41,7 @@ function Coupon() {
                 className="coupon-btn"
                 type="button"
                 disabled={!coupon.trim()}
+                onClick={handleAppliedCoupon}
             >
                 Apply
             </button>

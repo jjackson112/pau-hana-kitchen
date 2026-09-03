@@ -102,6 +102,10 @@ a {
   margin-bottom: 1rem;
 }
 
+.coupon-banner {
+  color: var(--pauhana-gold);
+}
+
 .cta-btn {
   background-color: var(--pauhana-red);
   color: var(--pauhana-surface);
