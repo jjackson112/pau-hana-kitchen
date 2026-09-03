@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Coupon() {
+function Coupon({ onApplyCoupon }) {
     const [coupon, setCoupon] = useState("")
     const [message, setMessage] = useState("")
 

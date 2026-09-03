@@ -52,7 +52,6 @@ function Checkout() {
             <OrderType orderType={orderType} setOrderType={setOrderType} />
             <Time orderType={orderType} />
             <CartSummary />
-            <Coupon onApplyCoupon={setAppliedCoupon} />
 
             <section className="fees">
                 <div className="subtotal">
@@ -66,6 +65,9 @@ function Checkout() {
                     <h4>Tax</h4>
                     <p>${tax.toFixed(2)}</p>
                 </div>
+                
+                <Coupon onApplyCoupon={setAppliedCoupon} />
+
                 <div className="tip">
                     <h4 >Tip</h4>
                 </div>
@@ -103,11 +105,16 @@ function Checkout() {
                             }))
                         }}
                     />
+                    <button
+                        className="no-tip-btn"
+                    >
+                        No tip
+                    </button>
                 </div>
 
                 {appliedCoupon && (
                     <div className="discount">
-                        <h4>Discount({appliedCoupon.code})</h4>
+                        <h4>Discount ({appliedCoupon.code})</h4>
                         <p>- ${discount.toFixed(2)}</p>
                     </div>
                 )}
