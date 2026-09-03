@@ -405,49 +405,100 @@ a {
   padding: 2rem 0;
 }
 
+.checkout-components,
+.fees {
+  min-width: 0;
+}
+
 .fees {
   background-color: var(--pauhana-surface);
+  border: 1px solid var(--pauhana-border);
+  align-self: start;
   border-radius: 20px;
-  padding: 1rem;
+  padding: 1.5rem;
+}
+
+.fee-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.75rem 0;
+}
+
+.fee-row h4,
+.fee-row p {
+  margin: 0;
+}
+
+.total {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--pauhana-border);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.coupon-container {
+  padding: 1rem 0;
+}
+
+.coupon-title {
+  margin: 0 0 0.75rem;
 }
 
 .coupon-controls {
   display: flex;
-  justify-content: flex-start;
   gap: 1rem;
 }
 
-.coupon-input-field, .custom-tip-field {
-  border-radius: 12px;
+.coupon-input-field,
+.custom-tip-field {
+  min-height: 44px;
+  padding: 0 0.75rem;
   border: 1px solid var(--pauhana-muted);
-  padding-left: 10px;
+  border-radius: 12px;
+  box-sizing: border-box;
 }
 
 .coupon-input-field {
-  height: 40px;
+  flex: 1;
+  width: 200px;
 }
 
 .tip-options {
-  display: flex;
-  justify-content: flex-start;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.5rem;
 }
 
-.tip-options button, .coupon-btn {
-  background-color: var(--pauhana-coral);
-  border-radius: 12px;
-  border: none;
+.tip-btn,
+.coupon-btn {
+  min-height: 44px;
   padding: 0.75rem;
-}
-
-.tip-options button:hover {
-  background-color: var(--pauhana-red);
+  border: none;
+  border-radius: 12px;
+  background-color: var(--pauhana-coral);
+  color: var(--pauhana-text);
   cursor: pointer;
 }
 
-.tip-options button.active {
+.tip-btn:hover,
+.coupon-btn:hover {
+  background-color: var(--pauhana-red);
+  color: var(--pauhana-surface);
+}
+
+.tip-btn.active {
   background-color: var(--pauhana-red-dark);
   color: var(--pauhana-surface);
+}
+
+.coupon-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
 }
 
 .custom-tip-field {

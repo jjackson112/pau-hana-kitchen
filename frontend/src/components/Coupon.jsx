@@ -32,7 +32,7 @@ function Coupon({ onApplyCoupon }) {
 
     return (
         <section className="coupon-container">
-            <h4 className="coupon-title">Save here</h4>
+            <h4 className="coupon-title">Coupon Code</h4>
             
             <div className="coupon-controls">
                 <input 
