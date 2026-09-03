@@ -11,7 +11,11 @@ function Checkout() {
     const dispatch = useDispatch()
 
     const cartItems = useSelector((state) => state.cart.itemList)
+    
+    const tip = useSelector((state) => state.cart.tip)
+    const tipOption = useSelector((state) => state.cart.tipOption)
 
+    const [orderType, setOrderType] = useState("pickup")
     const [appliedCoupon, setAppliedCoupon] = useState(null)
 
     // use reducer function - outputs a single value - to find subtotal
@@ -28,10 +32,10 @@ function Checkout() {
     }
 
     if (appliedCoupon?.type === "fixed") {
-        discount = appliedCoupon.value
+        discount = Math.min(appliedCoupon.value, subtotal) // prevent discount from exceeding the subtotal
     }
 
-    // subtract both coupons in one place
+    // subtract both coupons in one place - stop subtotal from decreasing below 0
     const discountedSubtotal = Math.max(subtotal - discount, 0)
 
     // tip options - const tipOptions = [0.10, 0.15, 0.20]
@@ -43,9 +47,6 @@ function Checkout() {
     const tax = discountedSubtotal * taxRate
     const total = discountedSubtotal + tax + tip
 
-    const tip = useSelector((state) => state.cart.tip)
-    const tipOption = useSelector((state) => state.cart.tipOption)
-
     return (
         <div className="checkout-page">
             <OrderType orderType={orderType} setOrderType={setOrderType} />
@@ -56,14 +57,14 @@ function Checkout() {
             <section className="fees">
                 <div className="subtotal">
                     <h4>Subtotal </h4>
-                    <p>{subtotal.toFixed(2)}</p>
+                    <p>${subtotal.toFixed(2)}</p>
                 </div>
                 <div className="delivery-fees">
                     <h4>Delivery Fees</h4>
                 </div>
                 <div className="tax">
                     <h4>Tax</h4>
-                    <p>{tax.toFixed(2)}</p>
+                    <p>${tax.toFixed(2)}</p>
                 </div>
                 <div className="tip">
                     <h4 >Tip</h4>
@@ -107,13 +108,13 @@ function Checkout() {
                 {appliedCoupon && (
                     <div className="discount">
                         <h4>Discount({appliedCoupon.code})</h4>
-                        <p>- {discount.toFixed(2)}</p>
+                        <p>- ${discount.toFixed(2)}</p>
                     </div>
                 )}
 
                 <div className="total">
                     <h4>Total</h4>
-                    <p>{total.toFixed(2)}</p>
+                    <p>${total.toFixed(2)}</p>
                 </div>
             </section>
         </div> 

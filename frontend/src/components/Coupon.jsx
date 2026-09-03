@@ -21,7 +21,7 @@ function Coupon() {
         const enteredCoupon = coupon.trim()
 
         if (couponCodes[enteredCoupon]) {
-            setMessage("Coupon applied!")
+            setMessage(`${enteredCoupon} applied!`)
         } else {
             setMessage("Invalid coupon code!")
         }

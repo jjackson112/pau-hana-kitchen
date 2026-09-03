@@ -27,10 +27,7 @@ function App() {
             </Routes>
 
             <CartSidebar />
-            <CartSummary />
-            <OrderType />
-            <Time />
-            <Coupon />
+
             <Footer />
         </>
 
