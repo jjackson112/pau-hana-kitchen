@@ -396,13 +396,44 @@ a {
 
 /* Checkout Styles */
 
+.checkout-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 500px);
+  gap: 2rem;
+  width: min(100% - 2rem, 1100px);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.fees {
+  background-color: var(--pauhana-surface);
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.coupon-controls {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.coupon-input-field, .custom-tip-field {
+  border-radius: 12px;
+  border: 1px solid var(--pauhana-muted);
+  padding-left: 10px;
+}
+
+.coupon-input-field {
+  height: 40px;
+}
+
 .tip-options {
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
 }
 
-.tip-options button {
+.tip-options button, .coupon-btn {
   background-color: var(--pauhana-coral);
   border-radius: 12px;
   border: none;
@@ -421,9 +452,6 @@ a {
 
 .custom-tip-field {
   width: 125px;
-  border-radius: 12px;
-  border: 1px solid var(--pauhana-muted);
-  padding-left: 10px;
 }
 
 /* Footer Styles */

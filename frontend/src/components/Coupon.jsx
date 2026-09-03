@@ -32,26 +32,28 @@ function Coupon({ onApplyCoupon }) {
 
     return (
         <section className="coupon-container">
-            <h3 className="coupon-title">Save here</h3>
+            <h4 className="coupon-title">Save here</h4>
             
-            <input 
-                className="coupon-input-field"
-                type="text"
-                placeholder="Enter coupon code"
-                value={coupon}
-                onChange={(e) => setCoupon(e.target.value.toUpperCase())}
-            />
-            
-            <button
-                className="coupon-btn"
-                type="button"
-                disabled={!coupon.trim()}
-                onClick={handleAppliedCoupon}
-            >
-                Apply
-            </button>
+            <div className="coupon-controls">
+                <input 
+                    className="coupon-input-field"
+                    type="text"
+                    placeholder="Enter coupon code"
+                    value={coupon}
+                    onChange={(e) => setCoupon(e.target.value.toUpperCase())}
+                />
 
-            {message && <p className="coupon-message">{message}</p>}
+                <button
+                    className="coupon-btn"
+                    type="button"
+                    disabled={!coupon.trim()}
+                    onClick={handleAppliedCoupon}
+                >
+                    Apply
+                </button>
+            </div>
+
+            <div className="coupon-message">{message && <p className="coupon-message">{message}</p>}</div>
         </section>
     )
 }
