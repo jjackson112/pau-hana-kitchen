@@ -19,16 +19,6 @@ function Checkout() {
         0
     )
 
-    // tip options - const tipOptions = [0.10, 0.15, 0.20]
-    const tip10 = subtotal * 0.10
-    const tip15 = subtotal * 0.15
-    const tip20 = subtotal * 0.20
-    const taxRate = 0.08
-    const tax = subtotal * taxRate
-    const tip = useSelector((state) => state.cart.tip)
-    const tipOption = useSelector((state) => state.cart.tipOption)
-    const total = subtotal + tax + tip
-
     // discount calculation - support both coupons
     let discount = 0
 
@@ -39,6 +29,19 @@ function Checkout() {
     if (appliedCoupon?.type = "fixed") {
         discount = appliedCoupon.value
     }
+
+    // subtract both coupons in one place
+    const discountedSubtotal = Math.max(subtotal - discount, 0)
+
+    // tip options - const tipOptions = [0.10, 0.15, 0.20]
+    const tip10 = subtotal * 0.10
+    const tip15 = subtotal * 0.15
+    const tip20 = subtotal * 0.20
+    const taxRate = 0.08
+    const tax = subtotal * taxRate
+    const tip = useSelector((state) => state.cart.tip)
+    const tipOption = useSelector((state) => state.cart.tipOption)
+    const total = subtotal + tax + tip
 
     return (
         <div className="checkout-page">
