@@ -45,6 +45,8 @@ function Coupon() {
             >
                 Apply
             </button>
+
+            {message && <p className="coupon-message">{message}</p>}
         </section>
     )
 }
