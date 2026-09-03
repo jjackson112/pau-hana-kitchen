@@ -7,7 +7,7 @@ function CartSummary() {
     return (
         <section className="cart-summary">
             <h3>Pau Hana Kitchen</h3>
-            <Dot />
+            <Dot aria-hidden="true" />
             <h3>{totalQuantity} items</h3> 
         </section>
     )

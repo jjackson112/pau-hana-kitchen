@@ -5,7 +5,7 @@ function Time({ orderType }) {
 
     return (
         <section className="estimated-time">
-            <Clock />
+            <Clock aria-hidden="true" />
             <div>
                 <h2>Estimated Time</h2>
                 <p>{estimatedTime}</p>

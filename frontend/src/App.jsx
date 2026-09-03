@@ -8,6 +8,8 @@ import Menu from './pages/Menu';
 import Checkout from './pages/Checkout';
 import CartSidebar from './components/CartSidebar';
 import CartSummary from './components/CartSummary';
+import OrderType from './components/OrderType';
+import Time from './components/Time';
 
 function App() {
 
@@ -25,6 +27,8 @@ function App() {
 
             <CartSidebar />
             <CartSummary />
+            <OrderType />
+            <Time />
             <Footer />
         </>
 
