@@ -6,9 +6,12 @@ import Time from "../components/Time";
 import Coupon from "../components/Coupon";
 
 function Checkout() {
+
     const dispatch = useDispatch()
 
     const cartItems = useSelector((state) => state.cart.itemList)
+
+    const [appliedCoupon, setAppliedCoupon] = useState(null)
 
     // use reducer function - outputs a single value - to find subtotal
     const subtotal = cartItems.reduce(
@@ -16,7 +19,7 @@ function Checkout() {
         0
     )
 
-    // tip options *const tipOptions = [0.10, 0.15, 0.20]
+    // tip options - const tipOptions = [0.10, 0.15, 0.20]
     const tip10 = subtotal * 0.10
     const tip15 = subtotal * 0.15
     const tip20 = subtotal * 0.20
@@ -25,6 +28,11 @@ function Checkout() {
     const tip = useSelector((state) => state.cart.tip)
     const tipOption = useSelector((state) => state.cart.tipOption)
     const total = subtotal + tax + tip
+
+    // discount calculation
+    const pauhana5Discount = subtotal - 5.00 // PAUHANA $5 off
+    const aloha10Discount = subtotal * 0.10 // ALOHA 10% off
+    const finalaloha10Discount = subtotal - aloha10Discount 
 
     return (
         <div className="checkout-page">
