@@ -19,10 +19,13 @@ function Coupon() {
 
     const handleAppliedCoupon = () => {
         const enteredCoupon = coupon.trim()
+        const selectedCoupon = couponCodes[enteredCoupon]
 
-        if (couponCodes[enteredCoupon]) {
+        if (selectedCoupon) {
+            onApplyCoupon(selectedCoupon)
             setMessage(`${enteredCoupon} applied!`)
         } else {
+            onApplyCoupon(null)
             setMessage("Invalid coupon code!")
         }
     }
