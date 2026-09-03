@@ -16,6 +16,8 @@ function Home() {
                     <p className="hero-sentence">Plate lunches, poke, loco moco, and more.</p>
                     
                     <Link to="/menu" className="cta-btn">Order now</Link>
+
+                    <p className="coupon-banner">Get $5 off your order with code <strong>PAUHANA5</strong></p>
                 </div>
             </section>
 

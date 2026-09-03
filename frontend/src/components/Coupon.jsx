@@ -3,8 +3,14 @@ import { useState } from "react";
 function Coupon() {
     const [coupon, setCoupon] = useState("")
     const couponCodes = {
-        ALOHA10: 0.10,
-        PAUHANA5: 5
+        ALOHA10: {
+            type: "percentage",
+            value: 0.10
+        },
+        PAUHANA5: {
+            type: "fixed",
+            value: 5
+        }
     }
 
     return (
