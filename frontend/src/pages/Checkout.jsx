@@ -42,9 +42,11 @@ function Checkout() {
     const tip15 = subtotal * 0.15
     const tip20 = subtotal * 0.20
     
+    const deliveryFee = orderType === "delivery" ? 3.99 : 0
+    
     const taxRate = 0.08
     const tax = discountedSubtotal * taxRate
-    const total = discountedSubtotal + tax + tip
+    const total = discountedSubtotal + tax + tip + deliveryFee
 
     return (
         <div className="checkout-page">
@@ -62,6 +64,7 @@ function Checkout() {
 
                 <div className="fee-row delivery-fees">
                     <h4>Delivery Fees</h4>
+                    <p>${deliveryFee.toFixed(2)}</p>
                 </div>
 
                 <div className="fee-row tax">

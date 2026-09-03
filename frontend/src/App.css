@@ -464,7 +464,7 @@ a {
 
 .coupon-input-field {
   flex: 1;
-  width: 200px;
+  width: 100%;
 }
 
 .tip-options {
@@ -502,7 +502,7 @@ a {
 }
 
 .custom-tip-field {
-  width: 125px;
+  width: 100%;
 }
 
 /* Footer Styles */
@@ -514,6 +514,23 @@ a {
 @media (max-width: 900px) {
   .popular-dishes, .menu-category-items {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .checkout-page {
+    grid-template-columns: 1fr;
+    padding: 1rem 0;
+  }
+
+  .tip-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .coupon-controls {
+    flex-direction: column;
+  }
+
+  .coupon-btn {
+    width: 100%;
   }
 }
 

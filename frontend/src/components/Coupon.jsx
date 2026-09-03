@@ -53,7 +53,7 @@ function Coupon({ onApplyCoupon }) {
                 </button>
             </div>
 
-            <div className="coupon-message">{message && <p className="coupon-message">{message}</p>}</div>
+            {message && (<p className="coupon-message">{message}</p>)}
         </section>
     )
 }
