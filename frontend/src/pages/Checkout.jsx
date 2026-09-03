@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setTip } from "../store/cartSlice";
 import CartSummary from "../components/CartSummary";
+import OrderType from "../components/OrderType";
+import Time from "../components/Time";
 
 function Checkout() {
     const dispatch = useDispatch()
@@ -25,6 +27,8 @@ function Checkout() {
 
     return (
         <div className="checkout-page">
+            <OrderType />
+            <Time />
             <CartSummary />
 
             <section className="fees">

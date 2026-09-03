@@ -12,7 +12,7 @@ function OrderType({ orderType, setOrderType }) {
                 className={orderType === "delivery" ? "active" : ""}
                 onclick={() => setOrderType("delivery")}
             >
-                Pickup
+                Delivery
             </button>
         </section>
     )
