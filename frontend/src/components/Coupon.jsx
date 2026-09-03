@@ -6,10 +6,12 @@ function Coupon() {
 
     const couponCodes = {
         ALOHA10: {
+            code: "ALOHA10",
             type: "percentage",
             value: 0.10
         },
         PAUHANA5: {
+            code: "PAUHANA5",
             type: "fixed",
             value: 5
         }

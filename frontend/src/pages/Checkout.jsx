@@ -22,11 +22,11 @@ function Checkout() {
     // discount calculation - support both coupons
     let discount = 0
 
-    if (appliedCoupon?.type = "percentage") {
+    if (appliedCoupon?.type === "percentage") {
         discount = subtotal * appliedCoupon.value
     }
 
-    if (appliedCoupon?.type = "fixed") {
+    if (appliedCoupon?.type === "fixed") {
         discount = appliedCoupon.value
     }
 
@@ -100,6 +100,14 @@ function Checkout() {
                         }}
                     />
                 </div>
+
+                {appliedCoupon && (
+                    <div className="discount">
+                        <h4>Discount({appliedCoupon.code})</h4>
+                        <p>- {discount.toFixed(2)}</p>
+                    </div>
+                )}
+
                 <div className="total">
                     <h4>Total</h4>
                     <p>{total.toFixed(2)}</p>
