@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setTip } from "../store/cartSlice";
 import CartSummary from "../components/CartSummary";
@@ -48,7 +49,7 @@ function Checkout() {
             <OrderType />
             <Time />
             <CartSummary />
-            <Coupon />
+            <Coupon onApplyCoupon={setAppliedCoupon} />
 
             <section className="fees">
                 <div className="subtotal">
