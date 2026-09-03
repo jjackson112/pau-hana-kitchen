@@ -7,7 +7,6 @@ import Time from "../components/Time";
 import Coupon from "../components/Coupon";
 
 function Checkout() {
-
     const dispatch = useDispatch()
 
     const cartItems = useSelector((state) => state.cart.itemList)
