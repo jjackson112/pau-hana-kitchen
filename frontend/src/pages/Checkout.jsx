@@ -3,6 +3,7 @@ import { setTip } from "../store/cartSlice";
 import CartSummary from "../components/CartSummary";
 import OrderType from "../components/OrderType";
 import Time from "../components/Time";
+import Coupon from "../components/Coupon";
 
 function Checkout() {
     const dispatch = useDispatch()
@@ -30,6 +31,7 @@ function Checkout() {
             <OrderType />
             <Time />
             <CartSummary />
+            <Coupon />
 
             <section className="fees">
                 <div className="subtotal">

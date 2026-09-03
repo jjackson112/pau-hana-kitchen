@@ -10,6 +10,7 @@ import CartSidebar from './components/CartSidebar';
 import CartSummary from './components/CartSummary';
 import OrderType from './components/OrderType';
 import Time from './components/Time';
+import Coupon from './components/Coupon';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
             <CartSummary />
             <OrderType />
             <Time />
+            <Coupon />
             <Footer />
         </>
 
