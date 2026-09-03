@@ -106,7 +106,8 @@ function Checkout() {
                         }}
                     />
                     <button
-                        className="no-tip-btn"
+                        className={`tip-btn ${tipOption === "0" ? "active" : ""}`}
+                        onClick={() => dispatch(setTip({ amount: 0, option: "0"}))}
                     >
                         No tip
                     </button>
