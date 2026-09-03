@@ -12,12 +12,13 @@ function Coupon() {
                 type="text"
                 placeholder="Enter coupon code"
                 value={coupon}
-                onChange={(e) => (e.target.value.toUpperCase())}
+                onChange={(e) => setCoupon(e.target.value.toUpperCase())}
             />
             
             <button
                 className="coupon-btn"
                 type="button"
+                disabled={!coupon.trim()}
             >
                 Apply
             </button>
