@@ -29,10 +29,16 @@ function Checkout() {
     const tipOption = useSelector((state) => state.cart.tipOption)
     const total = subtotal + tax + tip
 
-    // discount calculation
-    const pauhana5Discount = subtotal - 5.00 // PAUHANA $5 off
-    const aloha10Discount = subtotal * 0.10 // ALOHA 10% off
-    const finalaloha10Discount = subtotal - aloha10Discount 
+    // discount calculation - support both coupons
+    let discount = 0
+
+    if (appliedCoupon?.type = "percentage") {
+        discount = subtotal * appliedCoupon.value
+    }
+
+    if (appliedCoupon?.type = "fixed") {
+        discount = appliedCoupon.value
+    }
 
     return (
         <div className="checkout-page">
