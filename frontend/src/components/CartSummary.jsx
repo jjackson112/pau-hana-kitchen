@@ -1,4 +1,4 @@
-import { useSelector } from "../store/cartSlice";
+import { useSelector } from "react-redux";
 import { Dot } from "lucide-react";
 
 function CartSummary() {
