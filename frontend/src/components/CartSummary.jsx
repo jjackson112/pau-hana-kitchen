@@ -1,9 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
-import MenuItem from "./MenuItem";
+import { useSelector } from "react-redux";
 import { Dot, Utensils } from "lucide-react";
 
 function CartSummary() {
-    const dispatch = useDispatch()
     const cartItems = useSelector((state) => state.cart.itemList)
     const totalQuantity = useSelector((state) => state.cart.totalQuantity)
 

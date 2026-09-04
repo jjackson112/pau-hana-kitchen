@@ -456,8 +456,23 @@ a {
 
 .estimated-time h3,
 .estimated-time p,
-.cart-summary h3, .cart-summary p {
+.cart-summary-header h3, .cart-summary-header p {
   margin: 0;
+}
+
+.cart-summary-items {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--pauhana-border);
+}
+
+.cart-summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .estimated-time, .cart-summary, .fees {
