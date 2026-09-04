@@ -134,8 +134,8 @@ function Checkout() {
                 )}
 
                 <div className="fee-row total">
-                    <h4>Total</h4>
-                    <p>${total.toFixed(2)}</p>
+                    <h3>Total</h3>
+                    <h3>${total.toFixed(2)}</h3>
                 </div>
             </section>
         </div> 

@@ -1,14 +1,15 @@
 import { useSelector } from "react-redux";
-import { Dot } from "lucide-react";
+import { Dot, Utensils } from "lucide-react";
 
 function CartSummary() {
     const totalQuantity = useSelector((state) => state.cart.totalQuantity)
 
     return (
         <section className="cart-summary">
+            <Utensils />
             <h3>Pau Hana Kitchen</h3>
             <Dot aria-hidden="true" />
-            <h3>{totalQuantity} {totalQuantity === 1 ? "item" : "items"}</h3> 
+            <p>{totalQuantity} {totalQuantity === 1 ? "item" : "items"}</p> 
         </section>
     )
 }

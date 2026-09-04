@@ -456,7 +456,7 @@ a {
 
 .estimated-time h3,
 .estimated-time p,
-.cart-summary h3 {
+.cart-summary h3, .cart-summary p {
   margin: 0;
 }
 
@@ -584,7 +584,7 @@ a {
     width: 100%;
   }
 
-  .cart-summary {
+  .estimated-time, .cart-summary {
     gap: 0.5rem;
   }
 }

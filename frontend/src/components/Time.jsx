@@ -1,4 +1,4 @@
-import { Clock } from "lucide-react";
+import { Clock, Dot } from "lucide-react";
 
 function Time({ orderType }) {
     const estimatedTime = orderType === "pickup" ? "10-15 minutes" : orderType === "delivery" ? "35-50 minutes" : "Select pickup or delivery"
@@ -7,6 +7,7 @@ function Time({ orderType }) {
         <section className="estimated-time">
             <Clock aria-hidden="true" />
             <h3>Estimated Time</h3>
+            <Dot aria-hidden="true" />
             <p>{estimatedTime}</p>
         </section>
     )
