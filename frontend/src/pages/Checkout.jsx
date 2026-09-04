@@ -6,6 +6,7 @@ import OrderType from "../components/OrderType";
 import Time from "../components/Time";
 import Coupon from "../components/Coupon";
 import LocationMap from "../components/LocationMap";
+import Payment from "../components/Payment";
 
 function Checkout() {
     const dispatch = useDispatch()
@@ -140,6 +141,10 @@ function Checkout() {
                     <h3>Total</h3>
                     <h3>${total.toFixed(2)}</h3>
                 </div>
+            </section>
+
+            <section className="payment">
+               <Payment /> 
             </section>
         </div> 
     )

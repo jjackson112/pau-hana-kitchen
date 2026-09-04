@@ -11,6 +11,7 @@ import OrderType from './components/OrderType';
 import Time from './components/Time';
 import Coupon from './components/Coupon';
 import LocationMap from './components/LocationMap';
+import Payment from './components/Payment';
 
 function App() {
 
