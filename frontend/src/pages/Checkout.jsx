@@ -62,7 +62,7 @@ function Checkout() {
                 <CartSummary />
             </section>
 
-            <section className="fees">
+            <section className="fees-container">
                 <div className="fee-row subtotal">
                     <h4>Subtotal </h4>
                     <p>${subtotal.toFixed(2)}</p>
@@ -77,11 +77,11 @@ function Checkout() {
                     <h4>Tax</h4>
                     <p>${tax.toFixed(2)}</p>
                 </div>
-                
+
                 <Coupon onApplyCoupon={setAppliedCoupon} />
 
                 <div className="tip">
-                    <h4>Delivery Tip</h4>
+                    <h4>{orderType === "delivery" ? "Delivery Tip" : "Tip"}</h4>
 
                     <div className="tip-options">
                         <button
