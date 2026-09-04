@@ -8,7 +8,7 @@ function CartSummary() {
         <section className="cart-summary">
             <h3>Pau Hana Kitchen</h3>
             <Dot aria-hidden="true" />
-            <h3>{totalQuantity} items</h3> 
+            <h3>{totalQuantity} {totalQuantity === 1 ? "item" : "items"}</h3> 
         </section>
     )
 }

@@ -583,6 +583,10 @@ a {
   .coupon-btn {
     width: 100%;
   }
+
+  .cart-summary {
+    gap: 0.5rem;
+  }
 }
 
 @media (max-width: 600px) {
