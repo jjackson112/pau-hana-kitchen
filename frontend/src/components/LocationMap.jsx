@@ -32,7 +32,7 @@ function LocationMap({ orderType, deliveryAddress, setDeliveryAddress }) {
             ) : (
                 <div className="delivery-location">
                     <input 
-                        className=""
+                        className="delivery-location-field"
                         type="text"
                         placeholder="Enter delivery address"
                         value={deliveryAddress}

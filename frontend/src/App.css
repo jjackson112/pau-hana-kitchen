@@ -428,9 +428,13 @@ a {
   gap: .5rem;
 }
 
-.map-frame {
+.map-frame iframe {
   width: 100%;
   height: 200px;
+}
+
+.delivery-location-field {
+  width: 100%;
 }
 
 .order-type {
@@ -522,7 +526,7 @@ a {
 }
 
 .coupon-input-field,
-.custom-tip-field, .payment-field {
+.custom-tip-field, .payment-field, .delivery-location-field {
   min-height: 44px;
   padding: 0 0.75rem;
   border: 1px solid var(--pauhana-muted);
