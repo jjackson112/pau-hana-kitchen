@@ -5,6 +5,7 @@ import CartSummary from "../components/CartSummary";
 import OrderType from "../components/OrderType";
 import Time from "../components/Time";
 import Coupon from "../components/Coupon";
+import LocationMap from "../components/LocationMap";
 
 function Checkout() {
     const dispatch = useDispatch()
@@ -53,6 +54,7 @@ function Checkout() {
 
             <section className="checkout-components">
                 <h1 className="checkout-title">Checkout</h1>
+                <LocationMap orderType={orderType} />
                 <OrderType orderType={orderType} setOrderType={setOrderType} />
                 <Time orderType={orderType} />
                 <CartSummary />

@@ -37,6 +37,7 @@ function LocationMap({ orderType }) {
                         className=""
                         type="text"
                         placeholder="Enter delivery address"
+                        value={orderType}
                     />
                 </div>
             )}
