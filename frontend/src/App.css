@@ -448,7 +448,7 @@ a {
   color: var(--pauhana-surface);
 }
 
-.estimated-time, .cart-summary {
+.estimated-time, .cart-summary-header {
   display: flex;
   align-items: center;
   gap: 1rem;
