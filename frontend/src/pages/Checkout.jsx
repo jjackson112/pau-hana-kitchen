@@ -50,7 +50,9 @@ function Checkout() {
 
     return (
         <div className="checkout-page">
+
             <section className="checkout-components">
+                <h1 className="checkout-title">Checkout</h1>
                 <OrderType orderType={orderType} setOrderType={setOrderType} />
                 <Time orderType={orderType} />
                 <CartSummary />

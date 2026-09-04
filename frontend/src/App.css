@@ -416,6 +416,12 @@ a {
   min-width: 0;
 }
 
+.checkout-title {
+  color: var(--pauhana-red-dark);
+  padding: .5rem;
+  text-align: center;
+}
+
 .order-type {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -430,6 +436,16 @@ a {
   border-radius: 12px;
   width: 100%;
   cursor: pointer;
+}
+
+.order-type button:hover {
+  border-color: var(--pauhana-red);
+}
+
+.order-type button.active {
+  border-color: var(--pauhana-red-dark);
+  background-color: var(--pauhana-red-dark);
+  color: var(--pauhana-surface);
 }
 
 .estimated-time, .cart-summary {
