@@ -405,12 +405,41 @@ a {
   padding: 2rem 0;
 }
 
+.checkout-components {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+}
+
 .checkout-components,
 .fees {
   min-width: 0;
 }
 
-.fees {
+.order-type {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.order-type button {
+  background-color: var(--pauhana-gold);
+  color: var(--pauhana-text);
+  border: 2px solid transparent;
+  padding: 1rem;
+  border-radius: 12px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.estimated-time, .cart-summary {
+  display: flex;
+  justify-content: flex-start;
+  align-self: center;
+  gap: 1rem;
+}
+
+.estimated-time, .cart-summary, .fees {
   background-color: var(--pauhana-surface);
   border: 1px solid var(--pauhana-border);
   align-self: start;
