@@ -1,6 +1,6 @@
 import { MapPin, Store } from "lucide-react";
 
-function LocationMap({ orderType }) {
+function LocationMap({ orderType, deliveryAddress, setDeliveryAddress }) {
     const restaurantAddress = "Hana Town, HI"
     const isPickup = orderType === "pickup"
 
@@ -37,7 +37,8 @@ function LocationMap({ orderType }) {
                         className=""
                         type="text"
                         placeholder="Enter delivery address"
-                        value={orderType}
+                        value={deliveryAddress}
+                        onChange={(e) => setDeliveryAddress(e.target.value)}
                     />
                 </div>
             )}

@@ -17,6 +17,7 @@ function Checkout() {
 
     const [orderType, setOrderType] = useState("pickup")
     const [appliedCoupon, setAppliedCoupon] = useState(null)
+    const [deliveryAddress, setDeliveryAddress] = useState("")
 
     // use reducer function - outputs a single value - to find subtotal
     const subtotal = cartItems.reduce(
@@ -54,7 +55,7 @@ function Checkout() {
 
             <section className="checkout-components">
                 <h1 className="checkout-title">Checkout</h1>
-                <LocationMap orderType={orderType} />
+                <LocationMap orderType={orderType} deliveryAddress={deliveryAddress} setDeliveryAddress={setDeliveryAddress} />
                 <OrderType orderType={orderType} setOrderType={setOrderType} />
                 <Time orderType={orderType} />
                 <CartSummary />
