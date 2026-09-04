@@ -6,7 +6,13 @@ function LocationMap({ orderType }) {
 
     return (
         <section className="location-map">
-            
+            <MapPin aria-hidden="true" />
+
+            <div>
+                <h3></h3>
+            </div>
         </section>
     )
 }
+
+export default LocationMap;

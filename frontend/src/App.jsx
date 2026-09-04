@@ -10,6 +10,7 @@ import CartSummary from './components/CartSummary';
 import OrderType from './components/OrderType';
 import Time from './components/Time';
 import Coupon from './components/Coupon';
+import LocationMap from './components/LocationMap';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
                 <Route path= "/" element={< Home />} />
                 <Route path="/menu" element={<Menu />} />
                 <Route path="/checkout" element={<Checkout />} />
+                <Route path="/map" element={<LocationMap />} />
             </Routes>
 
             <CartSidebar />
