@@ -422,6 +422,17 @@ a {
   text-align: center;
 }
 
+.location-header, .restaurant-location {
+  display: flex;
+  justify-content: flex-start;
+  gap: .5rem;
+}
+
+.map-frame {
+  width: 100%;
+  height: 200px;
+}
+
 .order-type {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -475,7 +486,7 @@ a {
   gap: 1rem;
 }
 
-.estimated-time, .cart-summary, .fees {
+.location-map, .estimated-time, .cart-summary, .fees {
   background-color: var(--pauhana-surface);
   border: 1px solid var(--pauhana-border);
   align-self: start;
