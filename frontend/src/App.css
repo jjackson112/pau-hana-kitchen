@@ -486,7 +486,7 @@ a {
   gap: 1rem;
 }
 
-.location-map, .estimated-time, .cart-summary, .fees {
+.location-map, .estimated-time, .cart-summary, .fees, .payment-container {
   background-color: var(--pauhana-surface);
   border: 1px solid var(--pauhana-border);
   align-self: start;
@@ -508,14 +508,6 @@ a {
   margin: 0;
 }
 
-.total {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 2px solid var(--pauhana-border);
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-
 .coupon-container {
   padding: 1rem 0;
 }
@@ -530,7 +522,7 @@ a {
 }
 
 .coupon-input-field,
-.custom-tip-field {
+.custom-tip-field, .payment-field {
   min-height: 44px;
   padding: 0 0.75rem;
   border: 1px solid var(--pauhana-muted);
@@ -551,7 +543,7 @@ a {
 }
 
 .tip-btn,
-.coupon-btn {
+.coupon-btn, .place-order-btn {
   min-height: 44px;
   padding: 0.75rem;
   border: none;
@@ -562,7 +554,7 @@ a {
 }
 
 .tip-btn:hover,
-.coupon-btn:hover {
+.coupon-btn:hover, .place-order-btn:hover {
   background-color: var(--pauhana-red);
   color: var(--pauhana-surface);
 }
@@ -580,6 +572,30 @@ a {
 .custom-tip-field {
   grid-column: 1 / -1;
   width: 100%;
+}
+
+.total {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--pauhana-border);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.payment-container input {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.payment-row {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Footer Styles */
