@@ -1,4 +1,4 @@
-function Fees() {
+function Fees({ subtotal, deliveryFee, tax }) {
     return (
         <section className="fees-container">
             <div className="fee-row subtotal">

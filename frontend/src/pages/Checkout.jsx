@@ -29,15 +29,6 @@ function Checkout() {
         0
     )
 
-    // subtract both coupons in one place - stop subtotal from decreasing below 0
-    const discountedSubtotal = Math.max(subtotal - discount, 0)
-    
-    const deliveryFee = orderType === "delivery" ? 3.99 : 0
-    
-    const taxRate = 0.08
-    const tax = discountedSubtotal * taxRate
-    const total = discountedSubtotal + tax + tip + deliveryFee
-
     // discount calculation - support both coupons
     let discount = 0
 
@@ -48,6 +39,15 @@ function Checkout() {
     if (appliedCoupon?.type === "fixed") {
         discount = Math.min(appliedCoupon.value, subtotal) // prevent discount from exceeding the subtotal
     }
+
+    // subtract both coupons in one place - stop subtotal from decreasing below 0
+    const discountedSubtotal = Math.max(subtotal - discount, 0)
+    
+    const deliveryFee = orderType === "delivery" ? 3.99 : 0
+    
+    const taxRate = 0.08
+    const tax = discountedSubtotal * taxRate
+    const total = discountedSubtotal + tax + tip + deliveryFee
 
     return (
         <main className="checkout-page">
