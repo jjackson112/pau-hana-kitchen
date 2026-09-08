@@ -8,6 +8,7 @@ import Coupon from "../components/Coupon";
 import LocationMap from "../components/LocationMap";
 import Payment from "../components/Payment";
 import TipSelector from "../components/TipSelector";
+import Total from "../components/Total";
 
 function Checkout() {
     const dispatch = useDispatch()
@@ -85,15 +86,10 @@ function Checkout() {
                     </div>
                 )}
 
-                <div className="fee-row total">
-                    <h3>Total</h3>
-                    <h3>${total.toFixed(2)}</h3>
-                </div>
+                <Total />
             </section>
 
-            <section className="payment">
                <Payment /> 
-            </section>
         </div> 
     )
 }
