@@ -398,10 +398,11 @@ a {
 
 .checkout-page {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 500px);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
   gap: 2rem;
   width: min(100% - 2rem, 1100px);
   margin: 0 auto;
+  align-items: start;
   padding: 2rem 0;
 }
 
