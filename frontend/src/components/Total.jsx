@@ -1,4 +1,4 @@
-function Total() {
+function Total({ total }) {
     return (
         <div className="fee-row total">
             <h3>Total</h3>

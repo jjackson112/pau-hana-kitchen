@@ -1,4 +1,12 @@
-function TipSelector() {
+import { useDispatch, useSelector } from "react-redux";
+import { setTip } from "../store/cartSlice";
+
+function TipSelector({ orderType, subtotal }) {
+    const dispatch = useDispatch()
+    
+    const tip = useSelector((state) => state.cart.tip)
+    const tipOption = useSelector((state) => state.cart.tipOption)
+
     // tip options - const tipOptions = [0.10, 0.15, 0.20]
     const tip10 = subtotal * 0.10
     const tip15 = subtotal * 0.15
@@ -7,6 +15,7 @@ function TipSelector() {
     return (
         <div className="tip">
             <h4>{orderType === "delivery" ? "Delivery Tip" : "Tip"}</h4>
+            
             <div className="tip-options">
                 <button
                     type="button"

@@ -15,9 +15,7 @@ function Checkout() {
     const dispatch = useDispatch()
 
     const cartItems = useSelector((state) => state.cart.itemList)
-    
     const tip = useSelector((state) => state.cart.tip)
-    const tipOption = useSelector((state) => state.cart.tipOption)
 
     const [orderType, setOrderType] = useState("pickup")
     const [appliedCoupon, setAppliedCoupon] = useState(null)
@@ -63,9 +61,9 @@ function Checkout() {
             <aside className="checkout-sidebar">
                 <Fees subtotal={subtotal} deliveryFee={deliveryFee} tax={tax} />
 
-                <Coupon onApplyCoupon={setAppliedCoupon} />
+                <Coupon onApplyCoupon={setAppliedCoupon} appliedCoupon={appliedCoupon} discount={discount} />
 
-                <TipSelector subtotal={subtotal} />
+                <TipSelector subtotal={subtotal} orderType={orderType} />
 
                 <Total total={total} />
                 <Payment /> 
