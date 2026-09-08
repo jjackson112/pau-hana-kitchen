@@ -29,6 +29,15 @@ function Checkout() {
         0
     )
 
+    // subtract both coupons in one place - stop subtotal from decreasing below 0
+    const discountedSubtotal = Math.max(subtotal - discount, 0)
+    
+    const deliveryFee = orderType === "delivery" ? 3.99 : 0
+    
+    const taxRate = 0.08
+    const tax = discountedSubtotal * taxRate
+    const total = discountedSubtotal + tax + tip + deliveryFee
+
     // discount calculation - support both coupons
     let discount = 0
 
@@ -52,21 +61,14 @@ function Checkout() {
             </section>
 
             <aside className="checkout-sidebar">
-                <Fees subtotal={subtotal} deliveryAddress={deliveryAddress} tax={tax} />
+                <Fees subtotal={subtotal} deliveryFee={deliveryFee} tax={tax} />
 
                 <Coupon onApplyCoupon={setAppliedCoupon} />
 
                 <TipSelector subtotal={subtotal} />
 
-                {appliedCoupon && (
-                    <div className="fee-row discount">
-                        <h4>Discount ({appliedCoupon.code})</h4>
-                        <p>- ${discount.toFixed(2)}</p>
-                    </div>
-                )}
-
                 <Total total={total} />
-               <Payment /> 
+                <Payment /> 
             </aside>
         </main> 
     )

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Coupon({ onApplyCoupon }) {
+function Coupon({ onApplyCoupon, appliedCoupon, discount }) {
     const [coupon, setCoupon] = useState("")
     const [message, setMessage] = useState("")
 
@@ -54,6 +54,13 @@ function Coupon({ onApplyCoupon }) {
             </div>
 
             {message && (<p className="coupon-message">{message}</p>)}
+
+            {appliedCoupon && (
+                <div className="fee-row discount">
+                    <h4>Discount ({appliedCoupon.code})</h4>
+                    <p>- ${discount.toFixed(2)}</p>
+                </div>
+            )}
         </section>
     )
 }
