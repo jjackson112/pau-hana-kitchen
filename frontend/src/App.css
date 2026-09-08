@@ -406,15 +406,10 @@ a {
   padding: 2rem 0;
 }
 
-.checkout-components {
+.checkout-components, .checkout-sidebar {
   display: grid;
-  align-content: start;
+  flex-direction: column;
   gap: 1rem;
-}
-
-.checkout-components,
-.fees {
-  min-width: 0;
 }
 
 .checkout-title {
