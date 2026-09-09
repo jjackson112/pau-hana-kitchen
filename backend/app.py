@@ -1,9 +1,6 @@
-from flask import Flask, Blueprint
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask
+from extensions import db
 from routes.health import health_bp
-
-# create db without app + initialize later
-db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
