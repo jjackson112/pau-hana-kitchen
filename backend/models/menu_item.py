@@ -16,5 +16,6 @@ class MenuItem(db.Model):
             "description": self.description,
             "price": float(self.price),
             "category": self.category,
-            "popular": self.popular
+            "popular": self.popular,
+            "vegetarian": self.vegetarian
         }
