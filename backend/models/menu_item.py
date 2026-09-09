@@ -9,6 +9,7 @@ class MenuItem(db.Model):
     price = db.Column(db.Numeric(10, 2), nullable=False)
     category = db.Column(db.String(100), nullable=False)
     popular = db.Column(db.String(25), nullable=False)
+    vegetarian = db.Column(db.String(25), nullable=False)
 
     def to_dict(self):
         return {
