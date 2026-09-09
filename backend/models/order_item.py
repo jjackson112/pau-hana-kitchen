@@ -17,6 +17,6 @@ class Order_Item(db.Model):
             "order_id": self.order_id,
             "menu_item_id": self.menu_item_id,
             "name": self.name,
-            "price": self.price,
+            "price": float(self.price),
             "quantity": self.quantity
         }
