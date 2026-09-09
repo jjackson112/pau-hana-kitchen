@@ -9,6 +9,8 @@ class Order_Item(db.Model):
     price = db.Column(db.Numeric(10,2), nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
 
+    order = db.relationship("Order", back_populates="items")
+
     def to_dict(self):
         return {
             "id": self.id,
