@@ -1,6 +1,7 @@
 from flask import Flask
 from extensions import db
 from routes.health import health_bp
+from routes.order import order_bp
 
 def create_app():
     app = Flask(__name__)
@@ -14,5 +15,6 @@ def create_app():
 
 # register routes
     app.register_blueprint(health_bp)
+    app.register_blueprint(order_bp)
 
     return app
