@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify
 from extensions import db
+from models.order import Order
 
 order_bp = Blueprint("orders", __name__, url_prefix='/api/orders')
 
@@ -33,3 +34,22 @@ def create_order():
         "message": "Order created successfully",
         "data": data
     }), 200    
+
+# get a specific order
+@order_bp.route("/order/<int:id>", methods=["GET"])
+def get_order(id):
+    order = Order.query.filter_by(id=id).first_or_404()
+
+    if not order:
+        return jsonify({"message": "Order not found"}), 400
+
+    return jsonify({"message": "Order retrieved"})
+
+# get list of orders
+@order_bp.route("/orders", methods=["GET"])
+def get_orders_list():
+    order = request.args.get("order")
+
+    query = Order.query.filter_by()
+
+    return jsonify({"message": "Orders received"}), 200
