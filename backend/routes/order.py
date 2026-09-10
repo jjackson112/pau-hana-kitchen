@@ -22,4 +22,14 @@ def create_order():
         if field not in data or data[field] == "":
             return jsonify({"error": f"Missing required field: {field}"}), 400 
 
-        return jsonify({"message": "Order created successfully"}), 200    
+    menu_items = data["menu_items"]
+
+    if not menu_items:
+        return jsonify({
+            "error": "Order must have at least one menu item."
+        }), 400
+    
+    return jsonify({
+        "message": "Order created successfully",
+        "data": data
+    }), 200    
