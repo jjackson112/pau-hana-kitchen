@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from extensions import db
 
-order_bp = Blueprint("orders", __name__, url_prefix='api/orders')
+order_bp = Blueprint("orders", __name__, url_prefix='/api/orders')
 
 @order_bp.route("", methods=["POST"])
 def create_order():
