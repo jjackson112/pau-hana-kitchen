@@ -13,11 +13,13 @@ def create_order():
     if not data:
         return jsonify({"error": "Invalid JSON"}), 400
 
+    # validation
     required_fields = [
         "order_type",
         "customer_name",
         "customer_email",
         "customer_phone_number",
+        "menu_items"
     ]
 
     for field in required_fields:
@@ -39,7 +41,7 @@ def create_order():
 # get a specific order
 @order_bp.route("/<int:id>", methods=["GET"])
 def get_order(id):
-    order = Order.query.filter_by(id=id).first_or_404()
+    order = Order.query.filter_by(id=id)
 
     if not order:
         return jsonify({"message": "Order not found"}), 400
