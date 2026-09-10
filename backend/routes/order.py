@@ -63,7 +63,25 @@ def update_order(id):
     data = request.get_json() or {}
 
     if not data:
-        return jsonify({"message": "Order status not found"}), 400
+        return jsonify({"message": "Data not found"}), 400
+
+    status = data.get("status")
+
+    if not status:
+        return jsonify({"Order status unknown"}), 400
+    
+    allowed_statuses = [
+        "received",
+        "preparing",
+        "ready",
+        "completed",
+        "cancelled"
+    ]
+
+    if status not in allowed_statuses:
+        return jsonify({"error", "Invalid order status"}), 400
+
+    order.status = status
 
     return jsonify(order.to_dict()), 200
 
