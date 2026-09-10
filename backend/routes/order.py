@@ -48,8 +48,6 @@ def get_order(id):
 # get list of orders
 @order_bp.route("/orders", methods=["GET"])
 def get_orders_list():
-    order = request.args.get("order")
+    orders = Order.query.all()
 
-    query = Order.query.filter_by()
-
-    return jsonify(order.to_dict()), 200
+    return jsonify(orders.to_dict()), 200
