@@ -20,6 +20,10 @@ class Order(db.Model):
     created_at = db.Column(db.Datetime, nullable=False, default=datetime.utcnow)
     updated_at = db.Column(db.Datetime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
 
+    # OrderItem has order = db.relationship("Order", back_populates="items")
+    # Order model needs the matching side
+    items = db.relationship("OrderItem", back_populates="order", cascade="all, delete-orphan")
+
     def to_dict(self):
         return {
             "id": self.id,
@@ -27,7 +31,6 @@ class Order(db.Model):
             "order_type": self.order_type,
             "subtotal": float(self.subtotal),
             "discount": float(self.discount),
-            "tax": float(self.tax),
             "tip": float(self.tip),
             "total" : float(self.total),
             "customer_name": self.customer_name,
