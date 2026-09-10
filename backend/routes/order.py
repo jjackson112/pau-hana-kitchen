@@ -36,7 +36,7 @@ def create_order():
     }), 200    
 
 # get a specific order
-@order_bp.route("/order/<int:id>", methods=["GET"])
+@order_bp.route("/<int:id>", methods=["GET"])
 def get_order(id):
     order = Order.query.filter_by(id=id).first_or_404()
 
@@ -46,7 +46,7 @@ def get_order(id):
     return jsonify(order.to_dict()), 200
 
 # get list of orders
-@order_bp.route("/orders", methods=["GET"])
+@order_bp.route("/", methods=["GET"])
 def get_orders_list():
     orders = Order.query.all()
 
