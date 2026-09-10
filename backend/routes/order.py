@@ -43,7 +43,7 @@ def get_order(id):
     if not order:
         return jsonify({"message": "Order not found"}), 400
 
-    return jsonify({"message": "Order retrieved"})
+    return jsonify(order.to_dict()), 200
 
 # get list of orders
 @order_bp.route("/orders", methods=["GET"])
@@ -52,4 +52,4 @@ def get_orders_list():
 
     query = Order.query.filter_by()
 
-    return jsonify({"message": "Orders received"}), 200
+    return jsonify(order.to_dict()), 200
