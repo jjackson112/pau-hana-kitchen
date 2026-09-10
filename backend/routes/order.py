@@ -53,10 +53,10 @@ def get_order(id):
 def get_orders_list():
     orders = Order.query.all()
 
-    return jsonify([orders.to_dict() for order in orders]), 200
+    return jsonify([order.to_dict() for order in orders]), 200
 
 # PATCH route to update order status
-@order_bp.route("", methods=["PATCH"])
+@order_bp.route("/<int:id>", methods=["PATCH"])
 def update_order(id):
     order = Order.query.filter_by(id=id).first_or_404()
 
@@ -70,7 +70,7 @@ def update_order(id):
 # DELETE route
 @order_bp.route("/<int:id>", methods=["DELETE"])
 def delete_order(id):
-    order = Order.query.filter_by(id=id)
+    order = Order.query.filter_by(id=id).first_or_404()
 
     db.session.delete(order)
     db.session.commit()
