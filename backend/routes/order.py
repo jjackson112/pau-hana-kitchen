@@ -1,6 +1,8 @@
 from flask import Blueprint, request, jsonify
 from extensions import db
 from models.order import Order
+from models.order_item import OrderItem
+from models.menu_item import MenuItem
 
 order_bp = Blueprint("orders", __name__, url_prefix='/api/orders')
 
@@ -16,11 +18,10 @@ def create_order():
         "customer_name",
         "customer_email",
         "customer_phone_number",
-        "menu_items"
     ]
 
     for field in required_fields:
-        if field not in data or data[field] == "":
+        if field not in data:
             return jsonify({"error": f"Missing required field: {field}"}), 400 
 
     menu_items = data["menu_items"]
@@ -46,11 +47,11 @@ def get_order(id):
     return jsonify(order.to_dict()), 200
 
 # get list of orders
-@order_bp.route("/", methods=["GET"])
+@order_bp.route("", methods=["GET"])
 def get_orders_list():
     orders = Order.query.all()
 
-    return jsonify(orders.to_dict()), 200
+    return jsonify([orders.to_dict() for order in orders]), 200
 
 # PATCH route to update order status
 @order_bp.route("", methods=["PATCH"])
