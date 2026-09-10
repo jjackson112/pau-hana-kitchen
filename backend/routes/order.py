@@ -51,3 +51,15 @@ def get_orders_list():
     orders = Order.query.all()
 
     return jsonify(orders.to_dict()), 200
+
+# PATCH route to update order status
+@order_bp.route("", methods=["PATCH"])
+def update_order(id):
+    order = Order.query.filter_by(id=id).first_or_404()
+
+    data = request.get_json() or {}
+
+    if not data:
+        return jsonify({"message": "Order status not found"}), 400
+
+    return jsonify(order.to_dict()), 200
