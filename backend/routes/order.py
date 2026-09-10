@@ -1,8 +1,6 @@
 from flask import Blueprint, request, jsonify
 from extensions import db
 from models.order import Order
-from models.order_item import OrderItem
-from models.menu_item import MenuItem
 
 order_bp = Blueprint("orders", __name__, url_prefix='/api/orders')
 
@@ -29,9 +27,7 @@ def create_order():
     menu_items = data["menu_items"]
 
     if not menu_items:
-        return jsonify({
-            "error": "Order must have at least one menu item."
-        }), 400
+        return jsonify({"error": "Order must have at least one menu item."}), 400
     
     return jsonify({
         "message": "Order created successfully",
@@ -41,10 +37,7 @@ def create_order():
 # get a specific order
 @order_bp.route("/<int:id>", methods=["GET"])
 def get_order(id):
-    order = Order.query.filter_by(id=id)
-
-    if not order:
-        return jsonify({"message": "Order not found"}), 400
+    order = Order.query.filter_by(id=id).first_or_404()
 
     return jsonify(order.to_dict()), 200
 
