@@ -61,7 +61,7 @@ def update_order(id):
     status = data.get("status")
 
     if not status:
-        return jsonify({"Order status unknown"}), 400
+        return jsonify({"error": "Order status unknown"}), 400
     
     allowed_statuses = [
         "received",
@@ -75,6 +75,8 @@ def update_order(id):
         return jsonify({"error", "Invalid order status"}), 400
 
     order.status = status
+
+    db.session.commit()
 
     return jsonify(order.to_dict()), 200
 
