@@ -63,3 +63,13 @@ def update_order(id):
         return jsonify({"message": "Order status not found"}), 400
 
     return jsonify(order.to_dict()), 200
+
+# DELETE route
+@order_bp.route("/<int:id>", methods=["DELETE"])
+def delete_order(id):
+    order = Order.query.filter_by(id=id)
+
+    db.session.delete(order)
+    db.session.commit()
+
+    return "", 204
