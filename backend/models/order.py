@@ -3,7 +3,7 @@ from datetime import datetime
 
 class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    customer_id = db.Column(db.Integer, db.ForeignKey("user.id", nullable=False))
+    customer_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
 
     order_type = db.Column(db.String(25), nullable=False)
     order_status = db.Column(db.String(25), nullable=False, default="received")
