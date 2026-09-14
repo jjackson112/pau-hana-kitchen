@@ -18,8 +18,8 @@ class Order(db.Model):
     customer_phone_number = db.Column(db.String(30), nullable=True)
     delivery_address = db.Column(db.Text, nullable=False)
 
-    created_at = db.Column(db.Datetime, nullable=False, default=datetime.utcnow)
-    updated_at = db.Column(db.Datetime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     # OrderItem has order = db.relationship("Order", back_populates="items")
     # Order model needs the matching side
