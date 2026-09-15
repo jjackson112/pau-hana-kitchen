@@ -2,6 +2,7 @@ function Payment({ onCreateOrder }) {
     return (
         <section className="payment-container">
             <h3>Payment</h3>
+            <p><strong>Demo checkout - no real payment will be processed</strong></p>
 
             <label>
                 Name on card
