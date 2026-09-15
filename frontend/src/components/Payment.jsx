@@ -1,4 +1,4 @@
-function Payment() {
+function Payment({ onCreateOrder }) {
     return (
         <section className="payment-container">
             <h3>Payment</h3>
@@ -41,7 +41,13 @@ function Payment() {
                 </label>
             </div>
 
-            <button className="place-order-btn" type="button">Place Order</button>
+            <button 
+                className="place-order-btn" 
+                onClick={handleCreateOrder}
+                type="button"
+            >
+                Place Order
+            </button>
         </section>
     )
 }

@@ -56,7 +56,7 @@ function Checkout() {
         }))
 
         const orderData = {
-            "order_type": "pickup",
+            "order_type": orderType,
             "delivery_address": orderType === "delivery" ? deliveryAddress : null,
             "customer_name": "Jane Doe",
             "customer_email": "jane@mail.com",
@@ -100,7 +100,7 @@ function Checkout() {
                 <TipSelector subtotal={subtotal} orderType={orderType} />
 
                 <Total total={total} />
-                <Payment /> 
+                <Payment onCreateOrder={handleCreateOrder} /> 
             </aside>
         </main> 
     )
