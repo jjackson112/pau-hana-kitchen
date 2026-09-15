@@ -47,6 +47,22 @@ function Checkout() {
     const tax = discountedSubtotal * taxRate
     const total = discountedSubtotal + tax + tip + deliveryFee
 
+    // test out Create Order process - POST order route
+    async function handleCreateOrder() {
+        try {
+            const response = await fetch("http:127.0.0.1:5000/api/orders", {
+                method: "POST",
+                headers: {
+                    "Content--Type": "application/json"
+                },
+                body: JSON.stringify()
+            })
+            
+        } catch (error) {
+            console.error("Cannot create new order:", error)
+        }
+    }
+
     return (
         <main className="checkout-page">
 

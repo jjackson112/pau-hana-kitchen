@@ -11,17 +11,10 @@ function Header() {
 
     return (
         <header className="header-container">
-            <button 
-                type="button"
-                className="hamburger-menu"
-                aria-label={`Open cart with ${totalQuantity} items`}
-            >
-                {open ? <X size={20} /> : <Menu size={20} />}
-            </button>
 
             <div className="brand-icon">
                 <Utensils size={20} />
-                <h1 className="app-title">Pau Hana Kitchen</h1>
+                <h4 className="app-title">Pau Hana Kitchen</h4>
             </div>
 
             <div className={`nav-menu ${open ? "open" : ""}`}>
@@ -30,7 +23,7 @@ function Header() {
                     <Link to="/menu" onClick={() => setOpen(false)}>Menu</Link>
                     <Link to="/orders" onClick={() => setOpen(false)}>Orders</Link>
                     <Link to="/menu" onClick={() => dispatch(openCartSidebar())}>
-                        <ShoppingCart size={20} />
+                        <ShoppingCart className="cart-icon" size={20} />
                         <span>Cart</span>
                     </Link>
                 </nav>

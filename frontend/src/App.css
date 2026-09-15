@@ -64,6 +64,27 @@ a {
   text-decoration: none;
 }
 
+/* Header Styles */
+
+.header-container {
+  border-bottom: var(--pauhana-coral);
+  padding: 1rem;
+}
+
+.header-container, .brand-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-title, nav a {
+  margin: 5px;
+}
+
+nav a:hover {
+  color: var(--pauhana-gold);
+}
+
 /* Home Styles*/
 
 .hero-container {

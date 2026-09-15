@@ -16,7 +16,8 @@ const menuItems = [
         description: "Crispy chicken katsu served with rice and macaroni salad.",
         price: 14.95,
         category: "Plate Lunches",
-        popular: true
+        popular: true,
+        vegetarian: false
     },
     {
         id: 2,
@@ -24,7 +25,8 @@ const menuItems = [
         description: "Beef patty over rice topped with brown gravy and a fried egg.",
         price: 15.95,
         category: "Plate Lunches",
-        popular: true
+        popular: true,
+        vegetarian: false
     },
     {
         id: 3,
@@ -32,7 +34,8 @@ const menuItems = [
         description: "Grilled marinated short ribs served with rice and macaroni salad.",
         price: 17.95,
         category: "Plate Lunches",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
         {
         id: 4,
@@ -40,7 +43,8 @@ const menuItems = [
         description: "Sweet and savory grilled chicken rotated over an open fire with mac salad.",
         price: 11.99,
         category: "Plate Lunches",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 5,
@@ -48,7 +52,8 @@ const menuItems = [
         description: "Tender and smokey shredded pork served with mac salad and white rice.",
         price: 18.99,
         category: "Plate Lunches",
-        popular: true
+        popular: true,
+        vegetarian: false
     },
     {
         id: 6,
@@ -56,7 +61,8 @@ const menuItems = [
         description: "A comfort dish made with braising bone-in, skin-on chicken thighs in a sweet and savory mixture of soy sauce (shoyu), sugar, ginger, and garlic.",
         price: 15.99,
         category: "Plate Lunches",
-        popular: true
+        popular: true,
+        vegetarian: false
     },
     {
         id: 7,
@@ -64,7 +70,8 @@ const menuItems = [
         description: "Shell-on jumbo shrimp pan-fried in olive oil and butter with garlic. Served with white rice.",
         price: 16.99,
         category: "Plate Lunches", 
-        popular: true
+        popular: true,
+        vegetarian: false
     },
     {
         id: 8,
@@ -72,7 +79,8 @@ const menuItems = [
         description: "A dish made of pork and butterfish wrapped in lu'au and ti leaves.",
         price: 12.95, 
         category: "Plate Lunches",
-        popular: true
+        popular: true,
+        vegetarian: false
     },
     {
         id: 9,
@@ -80,7 +88,8 @@ const menuItems = [
         description: "Thinly sliced beef served over rice with steamed vegetables.",
         price: 14.95,
         category: "Plate Lunches",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 10,
@@ -88,7 +97,8 @@ const menuItems = [
         description: "Salmon marinated in soy sauce and sesame oil, served over rice, carrots, avocado, and other fresh vegetables.",
         price: 15.95,
         category: "Poke",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 11,
@@ -96,7 +106,8 @@ const menuItems = [
         description: "Ahi tuna tossed with shoyu, sesame oil, onion, and green onion over rice.",
         price: 13.99,
         category: "Poke",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 12,
@@ -104,7 +115,8 @@ const menuItems = [
         description: "Ahi tuna, rice, spicy mayo, and cucumber.",
         price: 15.99,
         category: "Poke",
-        popular: true
+        popular: true,
+        vegetarian: false
     },
     {
         id: 13,
@@ -112,7 +124,8 @@ const menuItems = [
         description: "A poke bowl with salmon, ponzu, Korean perilla oil, sea salt, and white rice.",
         price: 17.99,
         category: "Poke",
-        popular: true
+        popular: true,
+        vegetarian: false
     },
     {
         id: 14, 
@@ -120,7 +133,8 @@ const menuItems = [
         description: "Swap traditional spam for Redondo's Hawaiian Portuguese Sausage, pressed with rice, and furikake sprinkles.",
         price: 4.95,
         category: "Musubi",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 15,
@@ -128,7 +142,8 @@ const menuItems = [
         description: "Grilled spam and rice wrapped with nori.",
         price: 4.59,
         category: "Musubi",
-        popular: true
+        popular: true,
+        vegetarian: false
     },
     {
         id: 16,
@@ -136,7 +151,8 @@ const menuItems = [
         description: "Teriyaki-glazed chicken and rice wrapped with nori.",
         price: 4.95,
         category: "Musubi",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 17,
@@ -144,7 +160,8 @@ const menuItems = [
         description: "Crispy, panko breaded chicken with rice, tonkatsu sauce, and rice.",
         price: 4.95,
         category: "Musubi",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 18,
@@ -152,7 +169,8 @@ const menuItems = [
         description: "A noodle dish made from vermicelli noodles, chicken, ginger, and scallions.",
         price: 9.95,
         category: "Soup/Stew",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 19,
@@ -160,7 +178,8 @@ const menuItems = [
         description: "A hearty, local beef stew made with beef, carrots, and potatoes.",
         price: 11.95,
         category: "Soup/Stew",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 20,
@@ -168,7 +187,8 @@ const menuItems = [
         description: "Made from wheat egg noodles garnished with scallions, kamaboko, mushrooms, spam, nori, and bok choy.",
         price: 10.95,
         category: "Soup/Stew",
-        popular: true
+        popular: true,
+        vegetarian: false
     },
     {
         id: 21,
@@ -176,7 +196,8 @@ const menuItems = [
         description: "Portuguese sausage, smoked ham hocks, red kidney beans, vegetables, and macaroni.",
         price: 11.95,
         category: "Soup/Stew",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 22,
@@ -184,7 +205,8 @@ const menuItems = [
         description: "A plant-based stew made with simmering taro leaves, coconut milk, vegetable broth, onion, garlic, and ginger.",
         price: 8.95,
         category: "Vegetarian",
-        popular: false
+        popular: false,
+        vegetarian: true
     },
     {
         id: 23,
@@ -192,7 +214,8 @@ const menuItems = [
         description: "A dish made of root vegetables and squash wrapped in lu'au and ti leaves.",
         price: 10.95, 
         category: "Vegetarian",
-        popular: true
+        popular: true,
+        vegetarian: true
     },
     {
         id: 24,
@@ -200,7 +223,8 @@ const menuItems = [
         description: "Roasted sweet potato - 'uala and taro - kalo - served with steamed rice and seasonal vegetables.",
         price: 9.95,
         category: "Vegetarian",
-        popular: false
+        popular: false,
+        vegetarian: true
     },
         {
         id: 25,
@@ -208,7 +232,8 @@ const menuItems = [
         description: "Creamy avocado tossed with shoyu, sesame oil, scallions, and seaweed.",
         price: 10.95,
         category: "Vegetarian",
-        popular: false
+        popular: false,
+        vegetarian: true
     },
     {
         id: 26,
@@ -216,7 +241,8 @@ const menuItems = [
         description: "Rice and avocado wrapped in crisp nori with a teriyaki glaze.",
         price: 5.59,
         category: "Vegetarian",
-        popular: true
+        popular: true,
+        vegetarian: true
     },
     {
         id: 27,
@@ -224,7 +250,8 @@ const menuItems = [
         description: "Creamy local-style macaroni salad.",
         price: 3.95,
         category: "Sides",
-        popular: true
+        popular: true,
+        vegetarian: false
     },
     {
         id: 28,
@@ -232,7 +259,8 @@ const menuItems = [
         description: "Crisp and golden french fries seasoned with salt.",
         price: 3.95,
         category: "Sides",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 29,
@@ -240,7 +268,8 @@ const menuItems = [
         description: "Steamed edamame tossed with garlic and savory seasoning.",
         price: 5.95,
         category: "Sides",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 30,
@@ -248,7 +277,8 @@ const menuItems = [
         description: "Fresh, caramelized pineapple sprinkled with brown sugar.",
         price: 4.59,
         category: "Sides",
-        popular: true
+        popular: true,
+        vegetarian: false
     },
     {
         id: 31,
@@ -256,7 +286,8 @@ const menuItems = [
         description: "Chilled seaweed tossed with sesame dressing and sesame seeds.",
         price: 6.95,
         category: "Sides",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 32,
@@ -264,7 +295,8 @@ const menuItems = [
         description: "A spinach salad with tomatoes.",
         price: 4.95,
         category: "Sides",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 33,
@@ -272,7 +304,8 @@ const menuItems = [
         description: "Salted salmon mixed with tomatoes, onion, and green onions.",
         price: 6.95,
         category: "Sides",
-        popular: true
+        popular: true,
+        vegetarian: false
     },
     {
         id: 34,
@@ -280,7 +313,8 @@ const menuItems = [
         description: "A traditional staple made from taro root.",
         price: 3.59,
         category: "Sides",
-        popular: true
+        popular: true,
+        vegetarian: false
     },
     {
         id: 35,
@@ -288,7 +322,8 @@ const menuItems = [
         description: "A traditional coconut pudding.",
         price: 5.95,
         category: "Desserts",
-        popular: true
+        popular: true,
+        vegetarian: false
     },
     {
         id: 36,
@@ -296,7 +331,8 @@ const menuItems = [
         description: "A chewy, sweet cake made from coconut milk, butter, and mochiko - sweet rice flour.",
         price: 6.95,
         category: "Desserts",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 37,
@@ -304,7 +340,8 @@ const menuItems = [
         description: "Portuguese fried doughnuts.",
         price: 7.99,
         category: "Desserts",
-        popular: true
+        popular: true,
+        vegetarian: false
     },
     {
         id: 38,
@@ -312,7 +349,8 @@ const menuItems = [
         description: "A refreshing blend of passion fruit, orange, and guava.",
         price: 4.25,
         category: "Drinks",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 39,
@@ -320,7 +358,8 @@ const menuItems = [
         description: "Chilled guava nectar.",
         price: 3.25,
         category: "Drinks",
-        popular: false
+        popular: false,
+        vegetarian: false
     },
     {
         id: 40,
@@ -328,7 +367,8 @@ const menuItems = [
         description: "A refreshing, tropical drink that mixes tart lemon and passion fruit juice.",
         price: 3.95,
         category: "Drinks",
-        popular: true
+        popular: true,
+        vegetarian: false
     }
 ]
 

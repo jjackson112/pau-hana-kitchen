@@ -1,6 +1,7 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import Header from './components/Header';
 import Footer from "./components/Footer";
 import Home from './pages/Home';
 import Menu from './pages/Menu';
@@ -19,6 +20,8 @@ function App() {
         <>
             <Toaster position="top-right" toastOptions={{ duration: 2000 }}/>
 
+            <Header />
+            
             <Routes>
                 <Route path= "/" element={< Home />} />
                 <Route path="/menu" element={<Menu />} />
