@@ -49,12 +49,23 @@ function Checkout() {
 
     // test out Create Order process - POST order route
     async function handleCreateOrder() {
+        // use existing Redux cart state to map over menu items
+        const menuItems = cartItems.map((item) => ({
+            menu_item_id: item.id,
+            quantity: item.quantity
+        }))
+
         const orderData = {
             "order_type": "pickup",
             "customer_name": "Jane Doe",
             "customer_email": "jane@mail.com",
             "customer_phone_number": "555-555-5555",
-            "menu_items"
+            "menu_items": [
+                {
+                    "menu_item_id": 1,
+                    "quantity": 2
+                }
+            ]
         }
 
         try {
