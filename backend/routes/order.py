@@ -47,11 +47,6 @@ def create_order():
         if not isinstance(quantity, int) or quantity > 1:
             return jsonify({"error": "Quantity must be a positive number"}), 400
 
-        # validate incoming values
-        for item in validated_items:
-            menu_item = item["menu_item"]
-            quantity = item["quantity"]
-
         menu_item = MenuItem.query.filter_by(id=menu_item_id).first()
 
         if not menu_item:
@@ -62,6 +57,15 @@ def create_order():
             "menu_item": menu_item,
             "quantity": quantity
         })
+
+        subtotal = 0
+
+        # validate incoming values
+        for item in validated_items:
+            menu_item = item["menu_item"]
+            quantity = item["quantity"]
+
+        subtotal += menu_item.price * quantity
 
         return jsonify({
             "message": "Order created successfully",
