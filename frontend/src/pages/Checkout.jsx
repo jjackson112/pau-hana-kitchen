@@ -57,6 +57,7 @@ function Checkout() {
 
         const orderData = {
             "order_type": "pickup",
+            "delivery_address": orderType === "delivery" ? deliveryAddress : null,
             "customer_name": "Jane Doe",
             "customer_email": "jane@mail.com",
             "customer_phone_number": "555-555-5555",
@@ -71,6 +72,9 @@ function Checkout() {
                 },
                 body: JSON.stringify(orderData)
             })
+
+            const result = await response.json()
+            console.log(result)
 
         } catch (error) {
             console.error("Cannot create new order:", error)
