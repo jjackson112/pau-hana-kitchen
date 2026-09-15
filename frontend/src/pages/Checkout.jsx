@@ -60,19 +60,14 @@ function Checkout() {
             "customer_name": "Jane Doe",
             "customer_email": "jane@mail.com",
             "customer_phone_number": "555-555-5555",
-            "menu_items": [
-                {
-                    "menu_item_id": 1,
-                    "quantity": 2
-                }
-            ]
+            "menu_items": menuItems
         }
 
         try {
-            const response = await fetch("http:127.0.0.1:5000/api/orders", {
+            const response = await fetch("http://127.0.0.1:5000/api/orders", {
                 method: "POST",
                 headers: {
-                    "Content--Type": "application/json"
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify(orderData)
             })
