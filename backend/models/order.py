@@ -15,7 +15,7 @@ class Order(db.Model):
     customer_name = db.Column(db.String(150), nullable=False)
     customer_email = db.Column(db.String(100), nullable=False)
     customer_phone_number = db.Column(db.String(30), nullable=True)
-    delivery_address = db.Column(db.Text, nullable=False)
+    delivery_address = db.Column(db.Text, nullable=True)
 
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
@@ -31,6 +31,7 @@ class Order(db.Model):
             "order_status": self.order_status,
             "subtotal": float(self.subtotal),
             "discount": float(self.discount),
+            "tax": float(self.tax),
             "tip": float(self.tip),
             "total" : float(self.total),
             "customer_name": self.customer_name,
