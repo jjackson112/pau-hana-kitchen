@@ -27,13 +27,17 @@ def create_order():
 
     menu_items = data["menu_items"]
 
+    # use isinstance() to validate menu_items + quantity more carefully
+    if not isinstance(menu_items, list) or len(menu_items) == 0:
+        return jsonify({"error", "menu_items cannot be empty"}), 400
+
     # query MenuItem - validate each requested menu item against the db
     # loop through MenuItems + reject bad IDs, etc + find relevant fields (name, price) + create Order then OrderItem rows
     for item in menu_items:
         menu_item_id = item.get("menu_item_id")
         quantity = item.get("quantity")
 
-        if not menu_item_id or not quantity:
+        if not menu_item_id:
             return jsonify({"error": f"Each menu item requires the menu item id and quantity"}), 400
 
         menu_item = MenuItem.query.filter_by(id=menu_item_id).first()
