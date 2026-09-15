@@ -40,6 +40,9 @@ def create_order():
         if not menu_item_id:
             return jsonify({"error": f"Each menu item requires the menu item id and quantity"}), 400
 
+        if not isinstance(quantity, int) or quantity > 1:
+            return jsonify({"error": "Quantity must be a positive number"}), 400
+
         menu_item = MenuItem.query.filter_by(id=menu_item_id).first()
 
         if not menu_item:
