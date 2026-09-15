@@ -67,7 +67,7 @@ a {
 /* Header Styles */
 
 .header-container {
-  border-bottom: var(--pauhana-coral);
+  background-color: var(--pauhana-border);
   padding: 1rem;
 }
 

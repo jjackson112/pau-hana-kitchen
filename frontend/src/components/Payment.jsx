@@ -1,8 +1,8 @@
-function Payment({ onCreateOrder }) {
+function Payment({ handleCreateOrder }) {
     return (
         <section className="payment-container">
             <h3>Payment</h3>
-            <p><strong>Demo checkout - no real payment will be processed</strong></p>
+            <p style={{ color: "red" }}><strong>Demo checkout - no real payment will be processed</strong></p>
 
             <label>
                 Name on card

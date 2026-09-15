@@ -100,7 +100,7 @@ function Checkout() {
                 <TipSelector subtotal={subtotal} orderType={orderType} />
 
                 <Total total={total} />
-                <Payment onCreateOrder={handleCreateOrder} /> 
+                <Payment handleCreateOrder={handleCreateOrder} /> 
             </aside>
         </main> 
     )
