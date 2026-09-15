@@ -2,8 +2,8 @@ from extensions import db
 
 class OrderItem(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    order_id = db.Column(db.Integer, db.ForeignKey("order.id", nullable=False))
-    menu_item_id = db.Column(db.Integer, db.ForeignKey("menu_item_id", nullable=False))
+    order_id = db.Column(db.Integer, db.ForeignKey("order.id"), nullable=False)
+    menu_item_id = db.Column(db.Integer, db.ForeignKey("menu_item_id"), nullable=False)
     name = db.Column(db.String(150), nullable=False)
     price = db.Column(db.Numeric(10,2), nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
