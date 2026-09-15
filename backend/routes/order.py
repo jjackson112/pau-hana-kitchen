@@ -30,20 +30,21 @@ def create_order():
     # query MenuItem - validate each requested menu item against the db
     # loop through MenuItems + reject bad IDs, etc + find relevant fields (name, price) + create Order then OrderItem rows
     for item in menu_items:
-        menu_items_id = item.get("menu_items_id")
+        menu_item_id = item.get("menu_item_id")
         quantity = item.get("quantity")
 
-    if not menu_items_id or not quantity:
-        return jsonify({"error": f"Each menu item requires the menu item id and quantity"}), 400
+        if not menu_item_id or not quantity:
+            return jsonify({"error": f"Each menu item requires the menu item id and quantity"}), 400
 
-    menu_items = MenuItem.query.filter_by(id=menu_items_id).first()
-    if not menu_items:
-        return jsonify({"error": f"Menu item {menu_items_id} not found."}), 404
-    
-    return jsonify({
-        "message": "Order created successfully",
-        "data": data
-    }), 200    
+        menu_item = MenuItem.query.filter_by(id=menu_item_id).first()
+
+        if not menu_item:
+            return jsonify({"error": f"Menu item {menu_item_id} not found."}), 404
+
+        return jsonify({
+            "message": "Order created successfully",
+            "data": data
+        }), 200    
 
 # get a specific order
 @order_bp.route("/<int:id>", methods=["GET"])
