@@ -49,15 +49,23 @@ function Checkout() {
 
     // test out Create Order process - POST order route
     async function handleCreateOrder() {
+        const orderData = {
+            "order_type": "pickup",
+            "customer_name": "Jane Doe",
+            "customer_email": "jane@mail.com",
+            "customer_phone_number": "555-555-5555",
+            "menu_items"
+        }
+
         try {
             const response = await fetch("http:127.0.0.1:5000/api/orders", {
                 method: "POST",
                 headers: {
                     "Content--Type": "application/json"
                 },
-                body: JSON.stringify()
+                body: JSON.stringify(orderData)
             })
-            
+
         } catch (error) {
             console.error("Cannot create new order:", error)
         }
