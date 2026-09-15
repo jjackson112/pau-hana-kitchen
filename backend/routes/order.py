@@ -12,7 +12,7 @@ def create_order():
     if not data:
         return jsonify({"error": "Invalid JSON"}), 400
 
-    # validation
+    # validated fields
     required_fields = [
         "order_type",
         "customer_name",
@@ -25,7 +25,11 @@ def create_order():
         if field not in data:
             return jsonify({"error": f"Missing required field: {field}"}), 400 
 
+    # raw data
     menu_items = data["menu_items"]
+
+    # validated data
+    validated_items = []
 
     # use isinstance() to validate menu_items + quantity more carefully
     if not isinstance(menu_items, list) or len(menu_items) == 0:
@@ -43,10 +47,21 @@ def create_order():
         if not isinstance(quantity, int) or quantity > 1:
             return jsonify({"error": "Quantity must be a positive number"}), 400
 
+        # validate incoming values
+        for item in validated_items:
+            menu_item = item["menu_item"]
+            quantity = item["quantity"]
+
         menu_item = MenuItem.query.filter_by(id=menu_item_id).first()
 
         if not menu_item:
             return jsonify({"error": f"Menu item {menu_item_id} not found."}), 404
+
+        # append validated items - menu_items is raw data (actual db record)
+        validated_items.append({
+            "menu_item": menu_item,
+            "quantity": quantity
+        })
 
         return jsonify({
             "message": "Order created successfully",
