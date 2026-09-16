@@ -11,11 +11,11 @@ for item in menu_items:
     menu_item = MenuItem(
         name = item["name"],
         description = item["description"],
-        price = item["item"],
+        price = item["price"],
         category = item["category"],
         popular = item["popular"],
         vegetarian = item["vegetarian"]
     )
+    db.session.add(menu_item)
 
-db.session.add(menu_item)
 db.session.commit()
