@@ -7,7 +7,7 @@ from models.menu_item import MenuItem
 app = create_app()
 
 # read menu data from frontend into a Python list
-with open("data/menu.json", "r") as file:
+with open("data/menu.json", "r", encoding="utf-8") as file:
     menu_items = json.load(file)
 
 with app.app_context():
