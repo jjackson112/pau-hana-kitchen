@@ -47,7 +47,7 @@ function Payment({ handleCreateOrder }) {
                 onClick={handleCreateOrder}
                 type="button"
             >
-                Place Order
+                Place Demo Order
             </button>
         </section>
     )

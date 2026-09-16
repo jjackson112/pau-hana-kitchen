@@ -74,7 +74,11 @@ function Checkout() {
             })
 
             const result = await response.json()
-            console.log(result)
+            console.log("ORDER RESPONSE", result)
+
+            if (!response.ok) {
+                console.error("Order failed", result.error)
+            }
 
         } catch (error) {
             console.error("Cannot create new order:", error)

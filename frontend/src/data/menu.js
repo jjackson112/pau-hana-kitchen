@@ -1,14 +1,3 @@
-// do I really need this if menuItems already has category as a key?
-/*const categories = [
-    "Plate lunches",
-    "Poke",
-    "Musubi",
-    "Bowls",
-    "Sides",
-    "Desserts",
-    "Drinks"
-] */
-
 const menuItems = [
         {
         id: 1,
