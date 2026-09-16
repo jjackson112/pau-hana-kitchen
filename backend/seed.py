@@ -22,7 +22,7 @@ with app.app_context():
             vegetarian = item["vegetarian"]
         )
         db.session.add(menu_item)
-
+    
     db.session.commit()
 
     print("Seed complete")
