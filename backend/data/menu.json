@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Chicken Katsu",
+        "description": "Crispy chicken katsu served with rice and macaroni salad.",
+        "price": 14.95,
+        "category": "Plate Lunches",
+        "popular": true,
+        "vegetarian": false
+    }
+]

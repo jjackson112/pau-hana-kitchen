@@ -23,4 +23,6 @@ with app.app_context():
         )
         db.session.add(menu_item)
 
-db.session.commit()
+    db.session.commit()
+
+    print("Seed complete")
