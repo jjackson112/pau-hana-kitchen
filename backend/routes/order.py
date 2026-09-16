@@ -29,12 +29,12 @@ def create_order():
     # raw data
     menu_items = data["menu_items"]
 
-    # validated data
-    validated_items = []
-
     # use isinstance() to validate menu_items + quantity more carefully
     if not isinstance(menu_items, list) or len(menu_items) == 0:
-        return jsonify({"error", "menu_items cannot be empty"}), 400
+        return jsonify({"error": "menu_items cannot be empty"}), 400
+
+    # validated data
+    validated_items = []
 
     # query MenuItem - validate each requested menu item against the db
     # loop through MenuItems + reject bad IDs, etc + find relevant fields (name, price) + create Order then OrderItem rows
@@ -43,9 +43,9 @@ def create_order():
         quantity = item.get("quantity")
 
         if not menu_item_id:
-            return jsonify({"error": f"Each menu item requires the menu item id and quantity"}), 400
+            return jsonify({"error": "Each menu item requires the menu item id and quantity"}), 400
 
-        if not isinstance(quantity, int) or quantity > 1:
+        if not isinstance(quantity, int) or quantity < 1:
             return jsonify({"error": "Quantity must be a positive number"}), 400
 
         menu_item = MenuItem.query.filter_by(id=menu_item_id).first()
@@ -59,19 +59,19 @@ def create_order():
             "quantity": quantity
         })
 
-        subtotal = 0
+    subtotal = 0
 
-        # validate incoming values
-        for item in validated_items:
-            menu_item = item["menu_item"]
-            quantity = item["quantity"]
+    # validate incoming values
+    for item in validated_items:
+        menu_item = item["menu_item"]
+        quantity = item["quantity"]
 
         subtotal += menu_item.price * quantity
 
-        return jsonify({
-            "message": "Order created successfully",
-            "data": data
-        }), 200    
+    return jsonify({
+        "message": "Order created and validated successfully",
+        "subtotal": subtotal
+    }), 200    
 
 # get a specific order
 @order_bp.route("/<int:id>", methods=["GET"])
