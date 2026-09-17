@@ -619,6 +619,14 @@ nav a:hover {
   justify-content: space-between;
 }
 
+/* Orders Styles */
+
+.orders-title {
+  color: var(--pauhana-red-dark);
+  padding: 1rem;
+  text-align: center;
+}
+
 /* Footer Styles */
 .footer-container {
   display: flex;
