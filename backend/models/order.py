@@ -39,5 +39,6 @@ class Order(db.Model):
             "customer_phone_number": self.customer_phone_number,
             "delivery_address": self.delivery_address,
             "created_at": self.created_at,
-            "updated_at": self.updated_at
+            "updated_at": self.updated_at,
+            "items": [item.to_dict() for item in self.items]
         }
