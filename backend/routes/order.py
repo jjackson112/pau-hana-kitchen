@@ -69,7 +69,7 @@ def create_order():
         subtotal += menu_item.price * quantity
 
     return jsonify({
-        "message": "Order created and validated successfully",
+        "message": "Order validated successfully",
         "subtotal": subtotal
     }), 200    
 
@@ -83,7 +83,7 @@ def get_order(id):
 # get list of orders
 @order_bp.route("", methods=["GET"])
 def get_orders_list():
-    orders = Order.query.all()
+    orders = Order.query.order_by(Order.created_at.desc()).all()
 
     return jsonify([order.to_dict() for order in orders]), 200
 
