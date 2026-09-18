@@ -1,4 +1,32 @@
+import { useEffect, useState } from "react";
+
 function Orders() {
+    const [orders, setOrders] = useState([])
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState("")
+
+    // fetch 
+    useEffect(() => {
+        const fetchOrders = async () => {
+            try {
+                setLoading(true)
+                setError("")
+                
+                const res = await api.get("/orders")
+
+                setOrders(res.orders || [])
+                console.log("Orders fetched")
+
+            } catch (err) {
+                console.log("Failed to get orders", err)
+                setError("Failed to fetch orders")
+            } finally {
+                setLoading(false)
+            }
+        }
+        fetchOrders()
+    }, []
+
     return (
         <>
             <div className="orders-title">
@@ -6,14 +34,17 @@ function Orders() {
             </div>
 
             <section className="orders-list">
-                <div className="order-detail-card">
-                    {order.items.map((item) => (
-                        <div key={item.id}>
-                            <p>{item.id}</p>
-                            <p>Quantity: {item.quantity}</p>
-                        </div>
-                    ))}
-                </div>
+                {orders.map((order) => (
+                    <div 
+                        key={order.id}
+                        className="order-detail-card"
+                    >
+                        <p>Order #{order.id}</p>
+                        <p>{order.created_at}</p>
+                        <p>{order.order_status}</p>
+                        <p>${order.total}</p>
+                    </div>
+                ))}
             </section>
         </>
     )
