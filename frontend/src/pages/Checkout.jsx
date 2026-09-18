@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setTip } from "../store/cartSlice";
+import { useSelector } from "react-redux";
 import CartSummary from "../components/CartSummary";
 import OrderType from "../components/OrderType";
 import Time from "../components/Time";
@@ -12,8 +11,6 @@ import Total from "../components/Total";
 import Fees from "../components/Fees";
 
 function Checkout() {
-    const dispatch = useDispatch()
-
     const cartItems = useSelector((state) => state.cart.itemList)
     const tip = useSelector((state) => state.cart.tip)
 
@@ -65,23 +62,12 @@ function Checkout() {
         }
 
         try {
-            const response = await fetch("http://127.0.0.1:5000/api/orders", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(orderData)
-            })
+            const result = await api.post("/orders", orderData)
 
-            const result = await response.json()
-            console.log("ORDER RESPONSE", result)
-
-            if (!response.ok) {
-                console.error("Order failed", result.error)
-            }
+            console.log("ORDER CREATED", result)
 
         } catch (error) {
-            console.error("Cannot create new order:", error)
+            console.error("Cannot create new order:", error.message)
         }
     }
 
