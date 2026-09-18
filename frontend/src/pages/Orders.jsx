@@ -13,9 +13,9 @@ function Orders() {
                 setError("")
                 
                 const res = await api.get("/orders")
+                console.log("Orders fetched")
 
                 setOrders(res.orders || [])
-                console.log("Orders fetched")
 
             } catch (err) {
                 console.log("Failed to get orders", err)
@@ -25,7 +25,12 @@ function Orders() {
             }
         }
         fetchOrders()
-    }, []
+    }, [])
+
+    // render guards
+    if (loading) return "Loading orders..."
+
+    if (error && orders.length === 0) return <p>{error}</p>
 
     return (
         <>
