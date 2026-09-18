@@ -30,7 +30,7 @@ function Orders() {
     // render guards
     if (loading) return "Loading orders..."
 
-    if (error && orders.length === 0) return <p>{error}</p>
+    if (error) return <p>{error}</p>
 
     return (
         <>
@@ -39,17 +39,21 @@ function Orders() {
             </div>
 
             <section className="orders-list">
-                {orders.map((order) => (
-                    <div 
-                        key={order.id}
-                        className="order-detail-card"
-                    >
-                        <p>Order #{order.id}</p>
-                        <p>{order.created_at}</p>
-                        <p>{order.order_status}</p>
-                        <p>${order.total}</p>
-                    </div>
-                ))}
+                {orders.length === 0 ? (
+                    <p>No orders yet.</p>
+                ) : (
+                    orders.map((order) => (
+                        <div 
+                            key={order.id}
+                            className="order-detail-card"
+                        >
+                            <p>Order #{order.id}</p>
+                            <p>{order.created_at}</p>
+                            <p>{order.order_status}</p>
+                            <p>${order.total}</p>
+                        </div>
+                    ))
+                )}
             </section>
         </>
     )
