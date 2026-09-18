@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { api } from '../api/api';
 
 function Orders() {
     const [orders, setOrders] = useState([])
@@ -12,10 +13,10 @@ function Orders() {
                 setLoading(true)
                 setError("")
                 
-                const res = await api.get("/orders")
-                console.log("Orders fetched")
+                const data = await api.get("/orders")
+                console.log("Orders fetched", data)
 
-                setOrders(res.orders || [])
+                setOrders(data.orders || [])
 
             } catch (err) {
                 console.log("Failed to get orders", err)
