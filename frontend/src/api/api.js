@@ -14,7 +14,7 @@ const request = async (endpoint, options={}) => {
         const data = res.status === 204 ? null : await res.json();
 
         if (!res.ok) {
-            throw new Error(data.message || `Fetch failed with status ${res.status}`)
+            throw new Error(data?.message || `Fetch failed with status ${res.status}`)
         }
 
         return data

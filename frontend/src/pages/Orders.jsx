@@ -6,7 +6,7 @@ function Orders() {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState("")
 
-    // fetch 
+    // fetch orders
     useEffect(() => {
         const fetchOrders = async () => {
             try {
