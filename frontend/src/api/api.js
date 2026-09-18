@@ -11,7 +11,7 @@ const request = async (endpoint, options={}) => {
             },
         })
 
-        const data = await res.json();
+        const data = res.status === 204 ? null : await res.json();
 
         if (!res.ok) {
             throw new Error(data.message || `Fetch failed with status ${res.status}`)
@@ -19,6 +19,8 @@ const request = async (endpoint, options={}) => {
 
         return data
     }
+
+// each method has the same error handling + response parsing
 
 export const api = {
     get: (endpoint) => 
