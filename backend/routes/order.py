@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify
 from extensions import db
+from decimal import Decimal
 from models.order import Order
 from models.order_item import OrderItem
 from models.menu_item import MenuItem
@@ -35,6 +36,7 @@ def create_order():
 
     # validated data
     validated_items = []
+    subtotal = Decimal("0.00")
 
     # query MenuItem - validate each requested menu item against the db
     # loop through MenuItems + reject bad IDs, etc + find relevant fields (name, price) + create Order then OrderItem rows
@@ -42,16 +44,18 @@ def create_order():
         menu_item_id = item.get("menu_item_id")
         quantity = item.get("quantity")
 
-        if not menu_item_id:
+        if menu_item_id is None:
             return jsonify({"error": "Each menu item requires the menu item id and quantity"}), 400
 
         if not isinstance(quantity, int) or quantity < 1:
             return jsonify({"error": "Quantity must be a positive number"}), 400
 
-        menu_item = MenuItem.query.filter_by(id=menu_item_id).first()
+        menu_item = db.session.get(MenuItem, menu_item_id)
 
-        if not menu_item:
+        if menu_item is None:
             return jsonify({"error": f"Menu item {menu_item_id} not found."}), 404
+
+        subtotal += menu_item.price * quantity
 
         # append validated items - menu_items is raw data (actual db record)
         validated_items.append({
@@ -59,19 +63,50 @@ def create_order():
             "quantity": quantity
         })
 
-    subtotal = 0
 
-    # validate incoming values
-    for item in validated_items:
-        menu_item = item["menu_item"]
-        quantity = item["quantity"]
+    try: 
+        order = Order(
+            order_type=data["order_type"],
+            order_status="received",
+            subtotal=subtotal,
+            discount=Decimal("0.00"),
+            tax=subtotal * Decimal("0.08"),
+            tip=Decimal("0.00"),
+            total=subtotal + (subtotal * Decimal("0.08")),
+            customer_name=data["customer_name"],
+            customer_email=data["customer_email"],
+            customer_phone_number=data["customer_phone_number"],
+            delivery_address=data.get("delivery_address"),
+        )
 
-        subtotal += menu_item.price * quantity
+        db.session.add(order)
+        db.session.flush()
 
-    return jsonify({
-        "message": "Order validated successfully",
-        "subtotal": subtotal
-    }), 200    
+        # validate incoming values
+        for item in validated_items:
+            menu_item = item["menu_item"]
+            quantity = item["quantity"]
+
+            order_item = OrderItem(
+                order_id=order.id,
+                menu_item_id=menu_item_id,
+                name=menu_item.name,
+                price=menu_item.price,
+                quantity=quantity
+            )
+
+            db.session.add(order_item)
+
+        db.session.commit()
+
+        return jsonify({
+            "message": "Order validated successfully",
+            "subtotal": subtotal
+        }), 200    
+
+    except Exception:
+        db.session.rollback()
+        return jsonify({"error", "Could not create the order"}), 500
 
 # get a specific order
 @order_bp.route("/<int:id>", methods=["GET"])
