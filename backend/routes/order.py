@@ -93,7 +93,7 @@ def create_order():
 
             order_item = OrderItem(
                 order_id=order.id,
-                menu_item_id=menu_item_id,
+                menu_item_id=menu_item.id,
                 name=menu_item.name,
                 price=menu_item.price,
                 quantity=quantity
@@ -105,12 +105,12 @@ def create_order():
 
         return jsonify({
             "message": "Order validated successfully",
-            "subtotal": subtotal
-        }), 200    
+            "order": order.to_dict(),
+        }), 201 
 
     except Exception:
         db.session.rollback()
-        return jsonify({"error", "Could not create the order"}), 500
+        return jsonify({"error": "Could not create the order"}), 500
 
 # get a specific order
 @order_bp.route("/<int:id>", methods=["GET"])
