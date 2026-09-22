@@ -63,16 +63,20 @@ def create_order():
             "quantity": quantity
         })
 
+    discount = Decimal("0.00")
+    tax = subtotal * Decimal("0.08")
+    tip = Decimal("0.00")
+    total = subtotal + discount + tax + tip
 
     try: 
         order = Order(
             order_type=data["order_type"],
             order_status="received",
             subtotal=subtotal,
-            discount=Decimal("0.00"),
-            tax=subtotal * Decimal("0.08"),
-            tip=Decimal("0.00"),
-            total=subtotal + (subtotal * Decimal("0.08")),
+            discount=discount,
+            tax=tax,
+            tip=tip,
+            total=total,
             customer_name=data["customer_name"],
             customer_email=data["customer_email"],
             customer_phone_number=data["customer_phone_number"],
