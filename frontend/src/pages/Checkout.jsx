@@ -15,7 +15,6 @@ function Checkout() {
     const cartItems = useSelector((state) => state.cart.itemList)
     const tip = useSelector((state) => state.cart.tip)
 
-    const [error, setError] = useState("")
     const [orderType, setOrderType] = useState("pickup")
     const [appliedCoupon, setAppliedCoupon] = useState(null)
     const [deliveryAddress, setDeliveryAddress] = useState("")
@@ -48,23 +47,13 @@ function Checkout() {
 
     // test out Create Order process - POST order route
     async function handleCreateOrder() {
+        console.log("PLACE ORDER CLICKED")
+
         // use existing Redux cart state to map over menu items
         const menuItems = cartItems.map((item) => ({
             menu_item_id: item.id,
             quantity: item.quantity
         }))
-
-        const emptyCart = cartItems.length === 0
-
-        if (emptyCart) {
-            setError("Your cart is empty. Please add at least one item.")
-            return
-        }
-
-        if (orderType === "delivery" && !deliveryAddress.trim()) {
-            setError("Please enter a delivery address.")
-            return
-        }
     
         const orderData = {
             "order_type": orderType,
@@ -80,8 +69,8 @@ function Checkout() {
 
             console.log("ORDER CREATED", result)
 
-        } catch (error) {
-            setError(error.message || "Cannot create the order. Please try again.")
+        } catch (err) {
+            console.error("Cannot create the order. Please try again.", err)
         }
     }
 
@@ -97,18 +86,6 @@ function Checkout() {
             </section>
 
             <aside className="checkout-sidebar">
-                {cartEmpty && (
-                    <div className="checkout-error" role="alert">
-                        <p>Your cart is empty. Add an item before placing your order.</p>
-                    </div>
-                )}
-
-                {setError && !emptyCart && (
-                    <p className="checkout-error" role="alert" aria-live="polite">
-                        {submitError}
-                    </p>
-                )}
-
                 <Fees subtotal={subtotal} deliveryFee={deliveryFee} tax={tax} />
 
                 <Coupon onApplyCoupon={setAppliedCoupon} appliedCoupon={appliedCoupon} discount={discount} />

@@ -1,6 +1,6 @@
 // central API layer
 
-const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+const BASE_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:5000/api";
 
 const request = async (endpoint, options={}) => {
         const res = await fetch(`${BASE_URL}${endpoint}`, {
