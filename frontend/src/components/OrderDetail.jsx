@@ -22,8 +22,8 @@ function OrderDetail() {
                 setOrderDetails(data.order ?? data)
 
             } catch (err) {
-                console.log("Failed to fetch order details", err)
-                setError("Cannot fetch order details", err.message)
+                console.error("Failed to fetch order details", err)
+                setError("Cannot fetch order details" || err.message)
             } finally {
                 setLoading(false)
             }
@@ -40,13 +40,13 @@ function OrderDetail() {
         <main>
             <Link to="/orders">← Back to orders</Link>
 
-            <h1>Order #{order.id}</h1>
+            <h1>Order #{orderDetails.id}</h1>
 
             <section className="order-information">
-                <p>Status: {order.order_status}</p>
-                <p>Type: {order.order_type}</p>
-                <p>Date: {order.created_at}</p>
-                <p>Customer: {order.customer_name}</p>
+                <p>Status: {orderDetails.order_status}</p>
+                <p>Type: {orderDetails.order_type}</p>
+                <p>Date: {orderDetails.created_at}</p>
+                <p>Customer: {orderDetails.customer_name}</p>
             </section>
 
             <section className="order-items">
@@ -60,11 +60,11 @@ function OrderDetail() {
             </section>
 
             <section className="order-totals">
-                <p>Subtotal: {order.subtotal}</p>
-                <p>Tax: {order.tax}</p>
-                <p>Tip: {order.tip}</p>
-                <p>Discount: {order.discount}</p>
-                <p>Total: {order.total}</p>
+                <p>Subtotal: {orderDetails.subtotal}</p>
+                <p>Tax: {orderDetails.tax}</p>
+                <p>Tip: {orderDetails.tip}</p>
+                <p>Discount: {orderDetails.discount}</p>
+                <p>Total: {orderDetails.total}</p>
             </section>
         </main>
     )
