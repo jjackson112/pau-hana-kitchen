@@ -23,7 +23,8 @@ function OrderDetail() {
 
             } catch (err) {
                 console.error("Failed to fetch order details", err)
-                setError("Cannot fetch order details" || err.message)
+                setError(err.message || "Cannot fetch order details")
+
             } finally {
                 setLoading(false)
             }
@@ -50,21 +51,30 @@ function OrderDetail() {
             </section>
 
             <section className="order-items">
-                {order.map((item) => {
-                    <div key={item.id}>
-                        <p>{item.name}</p>
-                        <p>x {item.quantity}</p>
-                        <p>${item.price}</p>
-                    </div>
-                })}
+                <h2>Items</h2>
+
+                {orderDetails.items.length > 0 ? (
+                    orderDetails.items.map((item) => (
+                        <div 
+                            key={item.id}
+                            className="order-item"
+                        >
+                            <p>{item.name}</p>
+                            <p>x {item.quantity}</p>
+                            <p>${item.price}</p>
+                        </div>
+                    ))
+                ) : (
+                    <p>No items for this order</p>
+                )}
             </section>
 
             <section className="order-totals">
-                <p>Subtotal: {orderDetails.subtotal}</p>
-                <p>Tax: {orderDetails.tax}</p>
-                <p>Tip: {orderDetails.tip}</p>
-                <p>Discount: {orderDetails.discount}</p>
-                <p>Total: {orderDetails.total}</p>
+                <p>Subtotal: ${orderDetails.subtotal}</p>
+                <p>Tax: ${orderDetails.tax}</p>
+                <p>Tip: ${orderDetails.tip}</p>
+                <p>Discount: -${orderDetails.discount}</p>
+                <p>Total: ${orderDetails.total}</p>
             </section>
         </main>
     )
