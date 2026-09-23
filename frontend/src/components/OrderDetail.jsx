@@ -19,7 +19,7 @@ function OrderDetail() {
                 const data = await api.get(`/orders/${id}`)
 
                 console.log("Order details fetched", data)
-                setOrderDetails(data)
+                setOrderDetails(data || [])
 
             } catch (err) {
                 console.log("Failed to fetch order details", err)
