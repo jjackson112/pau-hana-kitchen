@@ -171,7 +171,12 @@ def update_order(id):
 def delete_order(id):
     order = Order.query.filter_by(id=id).first_or_404()
 
-    db.session.delete(order)
-    db.session.commit()
+    try:
+        db.session.delete(order)
+        db.session.commit()
 
-    return "", 204
+        return "", 204
+
+    except Exception:
+        db.session.rollback()
+        return jsonify({"error": "Could not delete the order."}), 500
