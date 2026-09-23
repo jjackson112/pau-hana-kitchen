@@ -645,10 +645,105 @@ nav a:hover {
   border-radius: 12px;
 }
 
-/* Footer Styles */
-.footer-container {
+/* Single Order Detail */ 
+
+.order-link {
+  padding: 1.2rem;
+  font-weight: 600;
+}
+
+.order-link:hover {
+  color: var(--pauhana-coral)
+}
+
+.order-detail-page {
+  width: min(calc(100% - 2rem), 560px);
+  margin: 3rem auto;
+  padding: 2rem;
+  background: var(--pauhana-surface);
+  color: var(--pauhana-text);
+  border: 1px solid var(--pauhana-border);
+  border-radius: 4px;
+  box-shadow: 0 12px 35px rgb(48 39 36 / 12%);
+  font-family: "Courier New", Courier, monospace;
+}
+
+.order-detail-page > a {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: var(--pauhana-red-dark);
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.order-detail-page > a:hover {
+  text-decoration: underline;
+}
+
+.order-detail-page > h1 {
+  margin: 0;
+  padding-bottom: 1.5rem;
+  text-align: center;
+  color: var(--pauhana-red-dark);
+  font-size: 1.8rem;
+  letter-spacing: 0.04em;
+  border-bottom: 2px dashed var(--pauhana-border);
+}
+
+.order-information {
+  padding: 1.5rem 0;
+  border-bottom: 2px dashed var(--pauhana-border);
+}
+
+.order-information p,
+.order-totals p {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 0.65rem 0;
+}
+
+.order-information p span:last-child,
+.order-totals p span:last-child {
+  text-align: right;
+}
+
+.order-items {
+  padding: 1.5rem 0;
+  border-bottom: 2px dashed var(--pauhana-border);
+}
+
+.order-items h2 {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 5rem;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px dotted var(--pauhana-border);
+}
+
+.order-item span:nth-child(2),
+.order-item span:last-child {
+  text-align: right;
+}
+
+.order-totals {
+  padding-top: 1.5rem;
+}
+
+.order-totals .receipt-total {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  color: var(--pauhana-red-dark);
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-top: 2px solid var(--pauhana-text);
 }
 
 @media (max-width: 900px) {
@@ -681,5 +776,19 @@ nav a:hover {
 @media (max-width: 600px) {
   .popular-dishes, .menu-category-items {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-detail-page {
+      margin: 1rem auto;
+      padding: 1.25rem;
+  }
+  .order-item {
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      gap: 0.65rem;
+  }
+  .order-information p {
+      align-items: flex-start;
   }
 }

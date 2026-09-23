@@ -38,43 +38,85 @@ function OrderDetail() {
     if(!orderDetails) return <p>Order not found</p>
 
     return (
-        <main>
-            <Link to="/orders">← Back to orders</Link>
-
-            <h1>Order #{orderDetails.id}</h1>
+        <main className="order-detail-page">
+            <Link 
+                to="/orders"
+                className="order-link"
+            >
+                ← Back to orders
+            </Link>
 
             <section className="order-information">
-                <p>Status: {orderDetails.order_status}</p>
-                <p>Type: {orderDetails.order_type}</p>
-                <p>Date: {orderDetails.created_at}</p>
-                <p>Customer: {orderDetails.customer_name}</p>
-            </section>
+                <p>
+                    <h3>Order #</h3>
+                    <h3>{orderDetails.id}</h3>
+                </p>
 
-            <section className="order-items">
-                <h2>Items</h2>
+                <p>
+                    <span>Status</span>
+                    <span>{orderDetails.order_status}</span>
+                </p>
+                    
+                <p>
+                    <span>Type</span>
+                    <span>{orderDetails.order_type}</span>
+                </p>
+                    
+                <p>
+                    <span><Date></Date></span>
+                    <span>{orderDetails.created_at}</span>
+                </p>
+                    
+                <p>
+                    <span>Customer</span> 
+                    <span>{orderDetails.customer_name}</span>
+                </p>
 
-                {orderDetails.items.length > 0 ? (
-                    orderDetails.items.map((item) => (
-                        <div 
-                            key={item.id}
-                            className="order-item"
-                        >
-                            <p>{item.name}</p>
-                            <p>x {item.quantity}</p>
-                            <p>${item.price}</p>
-                        </div>
-                    ))
-                ) : (
-                    <p>No items for this order</p>
-                )}
-            </section>
+                <section className="order-items">
+                    <h2>Items</h2>
 
-            <section className="order-totals">
-                <p>Subtotal: ${orderDetails.subtotal}</p>
-                <p>Tax: ${orderDetails.tax}</p>
-                <p>Tip: ${orderDetails.tip}</p>
-                <p>Discount: -${orderDetails.discount}</p>
-                <p>Total: ${orderDetails.total}</p>
+                    {orderDetails.items.length > 0 ? (
+                        orderDetails.items.map((item) => (
+                            <div 
+                                key={item.id}
+                                className="order-item"
+                            >
+                                <span>{item.name}</span>
+                                <span>x {item.quantity}</span>
+                                <span>${item.price}</span>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No items for this order</p>
+                    )}
+                </section>
+
+                <section className="order-totals">
+                    <p>
+                        <span>Subtotal</span>
+                        <span>${orderDetails.subtotal}</span>
+                    </p>
+
+                    <p>
+                        <span>Tax</span>
+                        <span>${orderDetails.tax}</span>
+                    </p>
+
+                    <p>
+                        <span>Tip</span> 
+                        <span>${orderDetails.tip}</span>
+                    </p>
+
+                    <p>
+                        <span>Discount</span>
+                        <span>-${orderDetails.discount}</span>
+                    </p>
+                    
+                    <p>
+                        <span>Total</span> 
+                        <span>${orderDetails.total}</span>
+                    </p>
+                </section>
             </section>
         </main>
     )
