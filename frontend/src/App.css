@@ -627,6 +627,10 @@ nav a:hover {
   text-align: center;
 }
 
+.orders-list {
+  padding: 1rem;
+}
+
 .order-detail-card {
   background-color: var(--pauhana-surface);
   border: 1px solid var(--pauhana-muted);

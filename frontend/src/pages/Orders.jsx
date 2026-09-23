@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from '../api/api';
+import { Link } from "react-router-dom";
 
 function Orders() {
     const [orders, setOrders] = useState([])
@@ -16,7 +17,7 @@ function Orders() {
                 const data = await api.get("/orders")
                 console.log("Orders fetched", data)
 
-                setOrders(data.orders || [])
+                setOrders(Array.isArray(data) ? data : [])
 
             } catch (err) {
                 console.log("Failed to get orders", err)
@@ -43,8 +44,10 @@ function Orders() {
                 {orders.length === 0 ? (
                     <p>No orders yet.</p>
                 ) : (
+                
                     orders.map((order) => (
-                        <div 
+                        <Link
+                            to={`/orders/${order.id}`} 
                             key={order.id}
                             className="order-detail-card"
                         >
@@ -52,7 +55,7 @@ function Orders() {
                             <p>{order.created_at}</p>
                             <p>{order.order_status}</p>
                             <p>${order.total}</p>
-                        </div>
+                        </Link>
                     ))
                 )}
             </section>

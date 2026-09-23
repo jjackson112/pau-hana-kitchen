@@ -5,7 +5,7 @@ const BASE_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:5000/api";
 const request = async (endpoint, options={}) => {
         // log the request to troubleshoot 404 POST error
         const url = `${BASE_URL}${endpoint}`
-        console.log("API REQUEST", url)
+        console.log("API REQUEST", options.method, url)
 
         const res = await fetch(`${BASE_URL}${endpoint}`, {
             ...options,
@@ -18,7 +18,7 @@ const request = async (endpoint, options={}) => {
         const data = res.status === 204 ? null : await res.json();
 
         if (!res.ok) {
-            throw new Error(data?.message || `Fetch failed with status ${res.status}`)
+            throw new Error(data?.error || data?.message || `Fetch failed with status ${res.status}`)
         }
 
         return data

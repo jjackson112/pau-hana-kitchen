@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Menu from './pages/Menu';
 import Checkout from './pages/Checkout';
 import Orders from './pages/Orders';
+import OrderDetail from './components/OrderDetail';
 import CartSidebar from './components/CartSidebar';
 import CartSummary from './components/CartSummary';
 import OrderType from './components/OrderType';
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/menu" element={<Menu />} />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/orders" element={<Orders />} />
+                <Route path="/orders/<:id>" element={<OrderDetail />} />
             </Routes>
 
             <CartSidebar />
