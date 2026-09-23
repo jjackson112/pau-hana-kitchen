@@ -113,7 +113,7 @@ def create_order():
         return jsonify({"error": "Could not create the order"}), 500
 
 # get a specific order
-@order_bp.route("/<int:id>", methods=["GET"])
+@order_bp.route("/<:id>", methods=["GET"])
 def get_order(id):
     order = Order.query.filter_by(id=id).first_or_404()
 
