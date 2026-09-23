@@ -66,7 +66,7 @@ def create_order():
     discount = Decimal("0.00")
     tax = subtotal * Decimal("0.08")
     tip = Decimal("0.00")
-    total = subtotal + discount + tax + tip
+    total = subtotal - discount + tax + tip
 
     try: 
         order = Order(
@@ -150,7 +150,7 @@ def update_order(id):
     ]
 
     if status not in allowed_statuses:
-        return jsonify({"error", "Invalid order status"}), 400
+        return jsonify({"error": "Invalid order status"}), 400
 
     try:
         order.order_status = status
