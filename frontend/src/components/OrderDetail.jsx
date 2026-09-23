@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { api } from "../api/api";
 
 function OrderDetail() {
@@ -30,21 +30,43 @@ function OrderDetail() {
         }
         fetchOrderDetails()
     
-    }, [])
+    }, [id])
 
     if (loading) return <p>Order details loading...</p>
     if (error) return <p>{error}</p>
     if(!orderDetails) return <p>Order not found</p>
 
     return (
-        <div>
-            {order.items.map((item) => (
-                <div key={item.id}>
-                    <p>{item.id}</p>
-                    <p>Quantity: {item.quantity}</p>
-                </div>
-            ))}
-        </div>
+        <main>
+            <Link to="/orders">← Back to orders</Link>
+
+            <h1>Order #{order.id}</h1>
+
+            <section className="order-information">
+                <p>Status: {order.order_status}</p>
+                <p>Type: {order.order_type}</p>
+                <p>Date: {order.created_at}</p>
+                <p>Customer: {order.customer_name}</p>
+            </section>
+
+            <section className="order-items">
+                {order.map((item) => {
+                    <div key={item.id}>
+                        <p>{item.name}</p>
+                        <p>x {item.quantity}</p>
+                        <p>${item.price}</p>
+                    </div>
+                })}
+            </section>
+
+            <section className="order-totals">
+                <p>Subtotal: {order.subtotal}</p>
+                <p>Tax: {order.tax}</p>
+                <p>Tip: {order.tip}</p>
+                <p>Discount: {order.discount}</p>
+                <p>Total: {order.total}</p>
+            </section>
+        </main>
     )
 }
 

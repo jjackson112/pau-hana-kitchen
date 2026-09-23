@@ -29,9 +29,7 @@ function Orders() {
         fetchOrders()
     }, [])
 
-    // render guards
     if (loading) return "Loading orders..."
-
     if (error) return <p>{error}</p>
 
     return (
