@@ -136,7 +136,7 @@ def update_order(id):
     if not data:
         return jsonify({"message": "Data not found"}), 400
 
-    status = data.get("status")
+    status = data.get("order_status")
 
     if not status:
         return jsonify({"error": "Order status unknown"}), 400
@@ -152,11 +152,19 @@ def update_order(id):
     if status not in allowed_statuses:
         return jsonify({"error", "Invalid order status"}), 400
 
-    order.status = status
+    try:
+        order.order_status = status
 
-    db.session.commit()
+        db.session.commit()
 
-    return jsonify(order.to_dict()), 200
+        return jsonify({
+            "message": "Order updated successfully",
+            "order": order.to_dict()
+        }), 200
+
+    except Exception:
+        db.session.rollback()
+        return jsonify({"error": "Could not update order"}), 500
 
 # DELETE route
 @order_bp.route("/<int:id>", methods=["DELETE"])
