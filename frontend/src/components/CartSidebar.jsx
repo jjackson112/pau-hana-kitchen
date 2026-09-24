@@ -21,16 +21,28 @@ function Cart() {
         0
     )
 
+    async function handleCancelOrder() {
+        try {
+            const result = await api.patch(`/orders/${order.id}`)
+
+            console.log("Order cancelled", result)
+        } catch (err) {
+            console.log("Cannot cancel order.")
+        }
+    }
+
     // close CartSidebar after a few seconds
-    useEffect(() => {
+    /*useEffect(() => {
         if(!isOpen) return;
 
         const timer = setTimeout(() => {
             dispatch(closeCartSidebar())
-        }, 4000)
+        }, 6000)
 
         return () => clearTimeout(timer)
-    }, [isOpen])
+    }, [isOpen])*/
+
+
 
     return (
         <aside 
@@ -44,6 +56,14 @@ function Cart() {
                 aria-label="Close cart"
             >
                 <X size={20} />
+            </button>
+
+            <button
+                type="button"
+                className="cancel-order-btn"
+                onClick={handleCancelOrder}
+            >
+                Cancel Order
             </button>
 
             <div className="cart-title">
