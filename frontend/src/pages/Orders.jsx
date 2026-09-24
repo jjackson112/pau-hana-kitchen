@@ -32,6 +32,15 @@ function Orders() {
     if (loading) return "Loading orders..."
     if (error) return <p>{error}</p>
 
+    function displayCancelOrder(order) {
+        const createdAt = new Date(order.created_at).getTime()
+
+        return (
+            order.order_status === "received" &&
+            Number(isFinite(createdAt)) && // ensures that the date is a finite value
+            Date.now() - createdAt < 30 * 60 * 1000
+        )
+    }
         
     async function handleCancelOrder(orderId) {
         if (!window.confirm("Cancel this order?")) return;
@@ -79,7 +88,7 @@ function Orders() {
                                 <p>{order.order_status}</p>
                                 <p>${order.total}</p>
 
-                                {order.order_status === "received" && (
+                                {displayCancelOrder(order) && order.order_status === "received" && (
                                     <button
                                         type="button"
                                         className="cancel-order-btn"
