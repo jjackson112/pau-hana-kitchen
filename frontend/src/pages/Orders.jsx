@@ -43,6 +43,10 @@ function Orders() {
 
             console.log("Order cancelled", result)
 
+            setOrders((current) => 
+                current.map((order) => 
+                    order.id === order.id ? result : order))
+
         } catch (err) {
             console.log("Cannot cancel order.")
         }
@@ -59,14 +63,18 @@ function Orders() {
                     {orders.length === 0 ? (
                         <p>No orders yet.</p>
                     ) : (
-                    
                         orders.map((order) => (
-                            <Link
-                                to={`/orders/${order.id}`} 
-                                key={order.id}
+                            <article 
                                 className="order-detail-card"
+                                key={order.id}
                             >
-                                <p>Order #{order.id}</p>
+                                <Link 
+                                    to={`/orders/${order.id}`}
+                                    className="order-id-link"
+                                >
+                                    <p>Order #{order.id}</p>
+                                </Link>
+
                                 <p>{order.created_at}</p>
                                 <p>{order.order_status}</p>
                                 <p>${order.total}</p>
@@ -74,11 +82,12 @@ function Orders() {
                                 <button
                                     type="button"
                                     className="cancel-order-btn"
-                                    onClick={handleCancelOrder}
-                                >        
+                                    onClick={() => handleCancelOrder(order.id)}
+                                >
                                     Cancel Order
                                 </button>
-                            </Link>
+                            </article>
+
                         ))
                     )}
                 </section>
