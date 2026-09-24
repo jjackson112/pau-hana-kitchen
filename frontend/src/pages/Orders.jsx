@@ -45,7 +45,7 @@ function Orders() {
 
             setOrders((current) => 
                 current.map((order) => 
-                    order.id === orderId ? result : order))
+                    order.id === orderId ? result.order : order))
 
         } catch (err) {
             console.log("Cannot cancel order.")
