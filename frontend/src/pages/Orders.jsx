@@ -32,6 +32,22 @@ function Orders() {
     if (loading) return "Loading orders..."
     if (error) return <p>{error}</p>
 
+        
+    async function handleCancelOrder() {
+        if (!window.confirm("Cancel this order?")) return;
+
+        try {
+            const result = await api.patch(`/orders/${order.id}`, {
+                order_status: "cancelled"
+            })
+
+            console.log("Order cancelled", result)
+
+        } catch (err) {
+            console.log("Cannot cancel order.")
+        }
+    }
+
     return (
         <>
             <main className="orders-page">
@@ -54,6 +70,14 @@ function Orders() {
                                 <p>{order.created_at}</p>
                                 <p>{order.order_status}</p>
                                 <p>${order.total}</p>
+
+                                <button
+                                    type="button"
+                                    className="cancel-order-btn"
+                                    onClick={handleCancelOrder}
+                                >        
+                                    Cancel Order
+                                </button>
                             </Link>
                         ))
                     )}
