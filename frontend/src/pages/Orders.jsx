@@ -34,29 +34,31 @@ function Orders() {
 
     return (
         <>
-            <div className="orders-title">
-                <h1>Order History</h1>
-            </div>
+            <main className="orders-page">
+                <div className="orders-title">
+                    <h1>Order History</h1>
+                </div>
 
-            <section className="orders-list">
-                {orders.length === 0 ? (
-                    <p>No orders yet.</p>
-                ) : (
-                
-                    orders.map((order) => (
-                        <Link
-                            to={`/orders/${order.id}`} 
-                            key={order.id}
-                            className="order-detail-card"
-                        >
-                            <p>Order #{order.id}</p>
-                            <p>{order.created_at}</p>
-                            <p>{order.order_status}</p>
-                            <p>${order.total}</p>
-                        </Link>
-                    ))
-                )}
-            </section>
+                <section className="orders-list">
+                    {orders.length === 0 ? (
+                        <p>No orders yet.</p>
+                    ) : (
+                    
+                        orders.map((order) => (
+                            <Link
+                                to={`/orders/${order.id}`} 
+                                key={order.id}
+                                className="order-detail-card"
+                            >
+                                <p>Order #{order.id}</p>
+                                <p>{order.created_at}</p>
+                                <p>{order.order_status}</p>
+                                <p>${order.total}</p>
+                            </Link>
+                        ))
+                    )}
+                </section>
+            </main>
         </>
     )
 }

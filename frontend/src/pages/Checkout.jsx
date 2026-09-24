@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { emptyCart } from "../store/cartSlice";
 import { api } from "../api/api";
 import CartSummary from "../components/CartSummary";
 import OrderType from "../components/OrderType";
@@ -12,6 +14,9 @@ import Total from "../components/Total";
 import Fees from "../components/Fees";
 
 function Checkout() {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
     const cartItems = useSelector((state) => state.cart.itemList)
     const tip = useSelector((state) => state.cart.tip)
 
@@ -47,6 +52,8 @@ function Checkout() {
 
     // test out Create Order process - POST order route
     async function handleCreateOrder() {
+        if (cartItems.length === 0) return;
+        
         console.log("PLACE ORDER CLICKED")
 
         // use existing Redux cart state to map over menu items
@@ -68,6 +75,9 @@ function Checkout() {
             const result = await api.post("/orders", orderData)
 
             console.log("ORDER CREATED", result)
+
+            dispatch(emptyCart())
+            navigate("/orders")
 
         } catch (err) {
             console.error("Cannot create the order. Please try again.", err)

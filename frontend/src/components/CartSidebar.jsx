@@ -1,4 +1,5 @@
 // useSelector hook lets React read data from the global Redux store state
+import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { closeCartSidebar, emptyCart } from '../store/cartSlice';
 import { Link } from "react-router-dom";
@@ -19,6 +20,17 @@ function Cart() {
         (sum, item) => sum + item.totalPrice,
         0
     )
+
+    // close CartSidebar after a few seconds
+    useEffect(() => {
+        if(!isOpen) return;
+
+        const timer = setTimeout(() => {
+            dispatch(closeCartSidebar())
+        }, 4000)
+
+        return () => clearTimeout(timer)
+    }, [isOpen])
 
     return (
         <aside 

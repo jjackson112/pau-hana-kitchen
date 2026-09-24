@@ -621,6 +621,10 @@ nav a:hover {
 
 /* Orders Styles */
 
+.orders-page {
+  padding: 1rem;
+}
+
 .orders-title {
   color: var(--pauhana-red-dark);
   padding: 1rem;
@@ -628,7 +632,10 @@ nav a:hover {
 }
 
 .orders-list {
-  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .order-detail-card {
@@ -744,6 +751,13 @@ nav a:hover {
   font-size: 1.2rem;
   font-weight: 700;
   border-top: 2px solid var(--pauhana-text);
+}
+
+/* Footer Styles */
+
+.footer-container {
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 900px) {
