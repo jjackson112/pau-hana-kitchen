@@ -33,11 +33,11 @@ function Orders() {
     if (error) return <p>{error}</p>
 
         
-    async function handleCancelOrder() {
+    async function handleCancelOrder(orderId) {
         if (!window.confirm("Cancel this order?")) return;
 
         try {
-            const result = await api.patch(`/orders/${order.id}`, {
+            const result = await api.patch(`/orders/${orderId}`, {
                 order_status: "cancelled"
             })
 
@@ -45,7 +45,7 @@ function Orders() {
 
             setOrders((current) => 
                 current.map((order) => 
-                    order.id === order.id ? result : order))
+                    order.id === orderId ? result : order))
 
         } catch (err) {
             console.log("Cannot cancel order.")
@@ -79,13 +79,16 @@ function Orders() {
                                 <p>{order.order_status}</p>
                                 <p>${order.total}</p>
 
-                                <button
-                                    type="button"
-                                    className="cancel-order-btn"
-                                    onClick={() => handleCancelOrder(order.id)}
-                                >
-                                    Cancel Order
-                                </button>
+                                {order.order_status === "received" && (
+                                    <button
+                                        type="button"
+                                        className="cancel-order-btn"
+                                        onClick={() => handleCancelOrder(order.id)}
+                                    >
+                                        Cancel Order
+                                    </button>
+                                )}
+
                             </article>
 
                         ))
