@@ -88,7 +88,7 @@ function Orders() {
                                 <p>{order.order_status}</p>
                                 <p>${order.total}</p>
 
-                                {displayCancelOrder(order) && order.order_status === "received" && (
+                                {displayCancelOrder(order) && (
                                     <button
                                         type="button"
                                         className="cancel-order-btn"
