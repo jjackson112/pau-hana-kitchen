@@ -34,11 +34,13 @@ function Orders() {
 
     function displayCancelOrder(order) {
         const createdAt = new Date(order.created_at).getTime()
+        const age = Date.now() - createdAt
 
         return (
             order.order_status === "received" &&
             Number(isFinite(createdAt)) && // ensures that the date is a finite value
-            Date.now() - createdAt < 30 * 60 * 1000
+            age >= 0 &&
+            age < 30 * 60 * 1000
         )
     }
         
