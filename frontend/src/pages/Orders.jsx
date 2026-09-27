@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 function Orders() {
     const [orders, setOrders] = useState([])
+    const [now, setNow] = useState(Date.now())
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState("")
 
@@ -43,6 +44,15 @@ function Orders() {
             age < 30 * 60 * 1000
         )
     }
+
+    // cancel order btn should stop after 30 mins
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setNow(Date.now())
+        }, 60_000)
+
+        return () => clearInterval(timer)
+    })
         
     async function handleCancelOrder(orderId) {
         if (!window.confirm("Cancel this order?")) return;
