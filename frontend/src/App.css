@@ -225,6 +225,12 @@ nav a:hover {
   gap: .75rem;
 }
 
+.category-pill:hover {
+  background-color: var(--pauhana-red-dark);
+  color: var(--pauhana-surface);
+  cursor: pointer;
+}
+
 .category-pill {
   background-color: var(--pauhana-gold);
   border-radius: 999px;
@@ -684,6 +690,10 @@ nav a:hover {
 .status-cancelled {
   background-color: #fef3c7;
   color: #854d0e;
+}
+
+.order-type {
+  text-transform: uppercase;
 }
 
 .cancel-order-btn {

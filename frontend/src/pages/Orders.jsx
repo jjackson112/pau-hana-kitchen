@@ -108,6 +108,7 @@ function Orders() {
                                     }`}
                                 >
                                     {order.order_status}</p>
+                                <p className="order-type">{order.order_type}</p>
                                 <p>${order.total}</p>
 
                                 {displayCancelOrder(order) && (

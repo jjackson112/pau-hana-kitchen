@@ -37,14 +37,14 @@ function Home() {
 
             <section className="categories-section">
                 <h2 className="categories-title">Menu Categories</h2>
-                <div className="menu-categories">
+                <nav className="menu-categories" aria-label="Menu categories">
                     {categories.map((category) => (
                         <MenuCategory 
                             key={category}
                             category={category} 
                         />
                     ))}
-                </div>
+                </nav>
             </section>
         </main>
     )
