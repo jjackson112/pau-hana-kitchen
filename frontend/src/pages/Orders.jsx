@@ -39,6 +39,10 @@ function Orders() {
         return () => clearInterval(timer)
     })
 
+    // render guards
+    if (loading) return "Loading orders..."
+    if (error) return <p>{error}</p>
+
     function displayCancelOrder(order) {
         const createdAt = new Date(order.created_at).getTime()
         const age = now - createdAt
@@ -70,9 +74,6 @@ function Orders() {
         }
     }
 
-    if (loading) return "Loading orders..."
-    if (error) return <p>{error}</p>
-
     return (
         <>
             <main className="orders-page">
@@ -97,7 +98,16 @@ function Orders() {
                                 </Link>
 
                                 <p>{order.created_at}</p>
-                                <p>{order.order_status}</p>
+                                <p
+                                    className={`order-status ${
+                                        order.order_status === "received"
+                                        ? "status-received"
+                                        : order.order_status === "cancelled"
+                                            ? "status-cancelled"
+                                            : ""
+                                    }`}
+                                >
+                                    {order.order_status}</p>
                                 <p>${order.total}</p>
 
                                 {displayCancelOrder(order) && (
