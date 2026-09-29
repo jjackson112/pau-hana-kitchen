@@ -30,12 +30,18 @@ function Orders() {
         fetchOrders()
     }, [])
 
-    if (loading) return "Loading orders..."
-    if (error) return <p>{error}</p>
+    // cancel order btn should stop after 30 mins
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setNow(Date.now())
+        }, 60_000)
+
+        return () => clearInterval(timer)
+    })
 
     function displayCancelOrder(order) {
         const createdAt = new Date(order.created_at).getTime()
-        const age = Date.now() - createdAt
+        const age = now - createdAt
 
         return (
             order.order_status === "received" &&
@@ -45,15 +51,6 @@ function Orders() {
         )
     }
 
-    // cancel order btn should stop after 30 mins
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setNow(Date.now())
-        }, 60_000)
-
-        return () => clearInterval(timer)
-    })
-        
     async function handleCancelOrder(orderId) {
         if (!window.confirm("Cancel this order?")) return;
 
@@ -72,6 +69,9 @@ function Orders() {
             console.log("Cannot cancel order.")
         }
     }
+
+    if (loading) return "Loading orders..."
+    if (error) return <p>{error}</p>
 
     return (
         <>
