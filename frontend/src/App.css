@@ -19,6 +19,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 #root {
@@ -239,6 +243,10 @@ nav a:hover {
 }
 
 /* Menu Styles */
+
+.menu-section {
+  scroll-margin-top: 100px;
+}
 
 .menu-title {
   color: var(--pauhana-red-dark);
@@ -861,5 +869,11 @@ nav a:hover {
   }
   .order-information p {
       align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+      scroll-behavior: auto;
   }
 }
