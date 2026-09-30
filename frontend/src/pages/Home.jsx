@@ -42,13 +42,13 @@ function Home() {
 
                 <nav className="menu-categories" aria-label="Menu categories">
                     {categories.map((category) => (
-                        <a 
+                        <Link 
                             key={category}
                             to={`/menu#${categoryId(category)}`}
                             className="category-pill" 
                         >
                             {category}
-                        </a>
+                        </Link>
                     ))}
                 </nav>
             </section>
