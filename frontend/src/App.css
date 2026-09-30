@@ -262,7 +262,23 @@ nav a:hover {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  min-height: 350px;
+  min-height: 320px;
+  border-radius: 12px;
+}
+
+.history {
+  line-height: 1.7;
+}
+
+.history h3 {
+  color: var(--pauhana-red);
+  margin-top: 0;
+  margin: 2rem 1rem;
+}
+
+.history span {
+  color: var(--pauhana-red);
+  font-weight: 700;
 }
 
 /* Menu Styles */
@@ -859,6 +875,12 @@ nav a:hover {
 @media (max-width: 900px) {
   .popular-dishes, .menu-category-items {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brand-container {
+    grid-template-columns: 1fr;
+    margin: 2rem 1rem;
+    padding: 1.25rem;
   }
 
   .checkout-page {

@@ -58,8 +58,8 @@ function Home() {
                 <div className="restaurant-interior"></div>
                 <div className="history">
                     <h3>Pau Hana Kitchen began with a simple idea: a good day’s work deserves a good meal.</h3>
-                    <p>Inspired by Hawaiʻi’s local food traditions, our fictional neighborhood kitchen brings together plate lunches, fresh poke, musubi, and sweet treats. What started as meals shared with friends after work grew into a welcoming spot to unwind and enjoy familiar favorites.</p>
-                    <p>Our name means “finished with work”—an invitation to take a break, grab a plate, and enjoy a little time together.</p>
+                    <p>Inspired by Hawaiʻi’s local food traditions, our neighborhood kitchen brings together plate lunches, fresh poke, musubi, and sweet treats. What started as meals shared with friends after work grew into a welcoming spot to unwind and enjoy familiar favorites.</p>
+                    <p><span>Our name</span> means <span>“finished with work”</span>—an invitation to take a break, grab a plate, and enjoy a little time together.</p>
                 </div>
             </section>
 
