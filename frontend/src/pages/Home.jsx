@@ -7,6 +7,9 @@ function Home() {
     // Set keeps only unique values - no "Plate Lunches " & "Plate Lunches"
     const categories = [...new Set(menuItems.map((item) => item.category))]
 
+    // match the id of the menu section to the href - anchor logic
+    const categoryId = (category) => category.toLowerCase()
+
     return (
         <main className="home-container">
             <section className="hero-container">
@@ -39,10 +42,12 @@ function Home() {
                 <h2 className="categories-title">Menu Categories</h2>
                 <nav className="menu-categories" aria-label="Menu categories">
                     {categories.map((category) => (
-                        <MenuCategory 
+                        <a 
                             key={category}
-                            category={category} 
-                        />
+                            className="category-pill" 
+                        >
+
+                        </a>
                     ))}
                 </nav>
             </section>
