@@ -1,9 +1,16 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import MenuItem from "../components/MenuItem";
 import menuItems from "../data/menu";
 
 function Menu() {
+    const { hash } = useLocation()
+
     // Set keeps only unique values - no "Plate Lunches " & "Plate Lunches"
     const categories = [...new Set(menuItems.map((item) => item.category))]
+
+    // match the id of the menu section to the href - anchor logic
+    const categoryId = (category) => category.trim().toLowerCase().replace(/\s+/g, "-")
 
     return (
         <main className="menu-page">
