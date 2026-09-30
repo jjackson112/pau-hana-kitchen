@@ -12,6 +12,15 @@ function Menu() {
     // match the id of the menu section to the href - anchor logic
     const categoryId = (category) => category.trim().toLowerCase().replace(/\s+/g, "-")
 
+    // scroll to matching section after page renders
+    useEffect(() => {
+        if (!hash) return
+
+        const sectionId = decodeURIComponent(hash.slice(1))
+        const section = document.getElementById(sectionId)
+
+    }, [hash])
+
     return (
         <main className="menu-page">
             <section className="full-menu">
