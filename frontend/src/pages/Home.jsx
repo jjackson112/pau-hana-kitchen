@@ -44,7 +44,7 @@ function Home() {
                     {categories.map((category) => (
                         <a 
                             key={category}
-                            to={`#${categoryId(category)}`}
+                            to={`/menu#${categoryId(category)}`}
                             className="category-pill" 
                         >
                             {category}
