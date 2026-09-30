@@ -19,7 +19,11 @@ function Menu() {
                         )
 
                         return (
-                            <section key={category} className="menu-category-section">
+                            <section 
+                                key={category} 
+                                id={categoryId(category)}
+                                className="menu-category-section"
+                            >
                                 <h2 className="category-title">{category}</h2>
                                 <div className="menu-category-items">
                                     {categoryItems.map((item) => (
