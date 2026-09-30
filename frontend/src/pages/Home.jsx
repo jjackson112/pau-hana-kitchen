@@ -57,6 +57,7 @@ function Home() {
             <section className="brand-container">
                 <div className="restaurant-interior"></div>
                 <div className="history">
+                    <h2>Our Story</h2>
                     <h3>Pau Hana Kitchen began with a simple idea: a good day’s work deserves a good meal.</h3>
                     <p>Inspired by Hawaiʻi’s local food traditions, our neighborhood kitchen brings together plate lunches, fresh poke, musubi, and sweet treats. What started as meals shared with friends after work grew into a welcoming spot to unwind and enjoy familiar favorites.</p>
                     <p><span>Our name</span> means <span>“finished with work”</span>—an invitation to take a break, grab a plate, and enjoy a little time together.</p>
