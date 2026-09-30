@@ -1,3 +1,5 @@
+import chickenKatsu from "../assets/chicken-katsu.png";
+
 const menuItems = [
         {
         id: 1,
@@ -6,7 +8,8 @@ const menuItems = [
         price: 14.95,
         category: "Plate Lunches",
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: chickenKatsu
     },
     {
         id: 2,

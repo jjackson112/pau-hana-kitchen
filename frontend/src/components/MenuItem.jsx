@@ -23,6 +23,15 @@ function MenuItem({ item }) {
 
     return (
         <div className="menu-item-card">
+            {item.image && (
+                <img 
+                    src={item.image}
+                    alt={item.name}
+                    className="menu-item-image"
+                    loading="lazy"
+                />
+            )}
+
             <h3>{item.name}</h3>
             <p>{item.description}</p>
             <p>${item.price}</p>
