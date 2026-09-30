@@ -37,22 +37,21 @@ function Home() {
                 </div>
             </section>
 
-            {categories.map((category) => (
-                <section className="categories-section">
-                    <h2 className="categories-title">Menu Categories</h2>
-                    <nav className="menu-categories" aria-label="Menu categories">
-                        {categories.map((category) => (
-                            <a 
-                                key={category}
-                                href={`#${categoryId(category)}`}
-                                className="category-pill" 
-                            >
+            <section className="categories-section">
+                <h2 className="categories-title">Menu Categories</h2>
 
-                            </a>
-                        ))}
-                    </nav>
-                </section>
-            ))}   
+                <nav className="menu-categories" aria-label="Menu categories">
+                    {categories.map((category) => (
+                        <a 
+                            key={category}
+                            to={`#${categoryId(category)}`}
+                            className="category-pill" 
+                        >
+                            {category}
+                        </a>
+                    ))}
+                </nav>
+            </section>
         </main>
     )
 }
