@@ -1,7 +1,17 @@
 import chickenKatsu from "../assets/chicken-katsu.png";
+import locoMoco from "../assets/loco-moco.png";
+import kalbiPlate from "../assets/kalbi-plate.png";
+import huliHuliChicken from "../assets/madhurima-basak-R25pvpErlsl-unsplash.jpg";
+import kaluaPork from "../assets/kalua-pork.png";
+import shoyuChicken from "../assets/dennis-zhang-NseBwyq-UOY-unsplash.jpg";
+import garlicShrimp from "../assets/durenne-loris-aEHCeaGSgKA-unsplash.jpg";
+
+
+
+
 
 const menuItems = [
-        {
+    {
         id: 1,
         name: "Chicken Katsu",
         description: "Crispy chicken katsu served with rice and macaroni salad.",
@@ -18,7 +28,8 @@ const menuItems = [
         price: 15.95,
         category: "Plate Lunches",
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: locoMoco
     },
     {
         id: 3,
@@ -27,16 +38,18 @@ const menuItems = [
         price: 17.95,
         category: "Plate Lunches",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: kalbiPlate
     },
-        {
+    {
         id: 4,
         name: "Huli Huli Chicken",
         description: "Sweet and savory grilled chicken rotated over an open fire with mac salad.",
         price: 11.99,
         category: "Plate Lunches",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: huliHuliChicken
     },
     {
         id: 5,
@@ -45,7 +58,8 @@ const menuItems = [
         price: 18.99,
         category: "Plate Lunches",
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: kaluaPork
     },
     {
         id: 6,
@@ -54,7 +68,8 @@ const menuItems = [
         price: 15.99,
         category: "Plate Lunches",
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: shoyuChicken
     },
     {
         id: 7,
@@ -63,7 +78,8 @@ const menuItems = [
         price: 16.99,
         category: "Plate Lunches", 
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: garlicShrimp
     },
     {
         id: 8,
@@ -72,7 +88,8 @@ const menuItems = [
         price: 12.95, 
         category: "Plate Lunches",
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: laulau
     },
     {
         id: 9,
@@ -81,7 +98,8 @@ const menuItems = [
         price: 14.95,
         category: "Plate Lunches",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: teriyakiBeef
     },
     {
         id: 10,
@@ -90,7 +108,8 @@ const menuItems = [
         price: 15.95,
         category: "Poke",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: salmonPoke
     },
     {
         id: 11,
@@ -99,7 +118,8 @@ const menuItems = [
         price: 13.99,
         category: "Poke",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: shoyuAhiPoke
     },
     {
         id: 12,
@@ -108,7 +128,8 @@ const menuItems = [
         price: 15.99,
         category: "Poke",
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: spicyTunaPoke
     },
     {
         id: 13,
@@ -117,7 +138,8 @@ const menuItems = [
         price: 17.99,
         category: "Poke",
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: gingerPonzuSalmonPoke
     },
     {
         id: 14, 
@@ -126,7 +148,8 @@ const menuItems = [
         price: 4.95,
         category: "Musubi",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: portugueseSausageMusubi
     },
     {
         id: 15,
@@ -135,7 +158,8 @@ const menuItems = [
         price: 4.59,
         category: "Musubi",
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: spamMusubi
     },
     {
         id: 16,
@@ -144,7 +168,8 @@ const menuItems = [
         price: 4.95,
         category: "Musubi",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: teriyakiChickenMusubi
     },
     {
         id: 17,
@@ -153,7 +178,8 @@ const menuItems = [
         price: 4.95,
         category: "Musubi",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: chickenKatsuMusubi
     },
     {
         id: 18,
@@ -162,7 +188,8 @@ const menuItems = [
         price: 9.95,
         category: "Soup/Stew",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: chickenLongRice
     },
     {
         id: 19,
@@ -171,7 +198,8 @@ const menuItems = [
         price: 11.95,
         category: "Soup/Stew",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: beefStew
     },
     {
         id: 20,
@@ -180,7 +208,8 @@ const menuItems = [
         price: 10.95,
         category: "Soup/Stew",
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: saimin
     },
     {
         id: 21,
@@ -189,7 +218,8 @@ const menuItems = [
         price: 11.95,
         category: "Soup/Stew",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: portugueseBeanSoup
     },
     {
         id: 22,
@@ -198,7 +228,8 @@ const menuItems = [
         price: 8.95,
         category: "Vegetarian",
         popular: false,
-        vegetarian: true
+        vegetarian: true,
+        image: luauStew
     },
     {
         id: 23,
@@ -207,7 +238,8 @@ const menuItems = [
         price: 10.95, 
         category: "Vegetarian",
         popular: true,
-        vegetarian: true
+        vegetarian: true,
+        image: vegetarianLaulau
     },
     {
         id: 24,
@@ -216,7 +248,8 @@ const menuItems = [
         price: 9.95,
         category: "Vegetarian",
         popular: false,
-        vegetarian: true
+        vegetarian: true,
+        image: sweetPotatoTaroPlate
     },
         {
         id: 25,
@@ -225,7 +258,8 @@ const menuItems = [
         price: 10.95,
         category: "Vegetarian",
         popular: false,
-        vegetarian: true
+        vegetarian: true,
+        image: avocadoPoke
     },
     {
         id: 26,
@@ -234,7 +268,8 @@ const menuItems = [
         price: 5.59,
         category: "Vegetarian",
         popular: true,
-        vegetarian: true
+        vegetarian: true,
+        image: avocadoMusubi
     },
     {
         id: 27,
@@ -243,7 +278,8 @@ const menuItems = [
         price: 3.95,
         category: "Sides",
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: macaroniSalad
     },
     {
         id: 28,
@@ -252,7 +288,8 @@ const menuItems = [
         price: 3.95,
         category: "Sides",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: frenchFries
     },
     {
         id: 29,
@@ -261,7 +298,8 @@ const menuItems = [
         price: 5.95,
         category: "Sides",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: garlicEdamame
     },
     {
         id: 30,
@@ -270,7 +308,8 @@ const menuItems = [
         price: 4.59,
         category: "Sides",
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: grilledPineapple
     },
     {
         id: 31,
@@ -279,7 +318,8 @@ const menuItems = [
         price: 6.95,
         category: "Sides",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: seaweedSalad
     },
     {
         id: 32,
@@ -288,7 +328,8 @@ const menuItems = [
         price: 4.95,
         category: "Sides",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: greenSalad
     },
     {
         id: 33,
@@ -297,7 +338,8 @@ const menuItems = [
         price: 6.95,
         category: "Sides",
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: lomiLomiSalmon
     },
     {
         id: 34,
@@ -306,7 +348,8 @@ const menuItems = [
         price: 3.59,
         category: "Sides",
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: poi
     },
     {
         id: 35,
@@ -315,7 +358,8 @@ const menuItems = [
         price: 5.95,
         category: "Desserts",
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: haupia
     },
     {
         id: 36,
@@ -324,7 +368,8 @@ const menuItems = [
         price: 6.95,
         category: "Desserts",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: butterMochi
     },
     {
         id: 37,
@@ -333,7 +378,8 @@ const menuItems = [
         price: 7.99,
         category: "Desserts",
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: malasadas
     },
     {
         id: 38,
@@ -342,7 +388,8 @@ const menuItems = [
         price: 4.25,
         category: "Drinks",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: pogjuice
     },
     {
         id: 39,
@@ -351,7 +398,8 @@ const menuItems = [
         price: 3.25,
         category: "Drinks",
         popular: false,
-        vegetarian: false
+        vegetarian: false,
+        image: hawaiianSunGuava
     },
     {
         id: 40,
@@ -360,7 +408,8 @@ const menuItems = [
         price: 3.95,
         category: "Drinks",
         popular: true,
-        vegetarian: false
+        vegetarian: false,
+        image: lilikoiLemonade
     }
 ]
 
