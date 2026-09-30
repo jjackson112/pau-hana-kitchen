@@ -1,14 +1,43 @@
 import chickenKatsu from "../assets/chicken-katsu.png";
 import locoMoco from "../assets/loco-moco.png";
 import kalbiPlate from "../assets/kalbi-plate.png";
-import huliHuliChicken from "../assets/madhurima-basak-R25pvpErlsl-unsplash.jpg";
+import huliHuliChicken from "../assets/huli-huli-chicken.png";
 import kaluaPork from "../assets/kalua-pork.png";
-import shoyuChicken from "../assets/dennis-zhang-NseBwyq-UOY-unsplash.jpg";
-import garlicShrimp from "../assets/durenne-loris-aEHCeaGSgKA-unsplash.jpg";
-
-
-
-
+import shoyuChicken from "../assets/shoyu-chicken.png";
+import garlicShrimp from "../assets/garlic-shrimp.png";
+import laulau from "../assets/laulau.png";
+import teriyakiBeef from "../assets/teriyaki-beef.png";
+import salmonPoke from "../assets/salmon-poke.png";
+import shoyuAhiPoke from "../assets/shoyu-ahi-poke.png";
+import spicyTunaPoke from "../assets/spicy-tuna-poke.png";
+import gingerPonzuSalmonPoke from "../assets/ginger-ponzu-salmon-poke.png";
+import portugueseSausageMusubi from "../assets/portuguese-sausage-musubi.png";
+import spamMusubi from "../assets/spam-musubi.png";
+import teriyakiChickenMusubi from "../assets/teriyaki-chicken-musubi.png";
+import chickenKatsuMusubi from "../assets/chicken-katsu-musubi.png";
+import chickenLongRice from "../assets/chicken-long-rice.png";
+import beefStew from "../assets/beef-stew.png";
+import saimin from "../assets/saimin.png";
+import portugueseBeanSoup from "../assets/portuguese-bean-soup.png";
+import luauStew from "../assets/luau-stew.png";
+import vegetarianLaulau from "../assets/vegetarian-laulau.png";
+import sweetPotatoTaroPlate from "../assets/sweet-potato-taro-plate.png";
+import avocadoPoke from "../assets/avocado-poke.png";
+import avocadoMusubi from "../assets/avocado-musubi.png";
+import macSalad from "../assets/mac-salad.png";
+import frenchFries from "../assets/french-fries.png";
+import garlicEdamame from "../assets/garlic-edamame.png";
+import grilledPineapple from "../assets/grilled-pineapple.png";
+import seaweedSalad from "../assets/seaweed-salad.png";
+import greenSalad from "../assets/green-salad.png";
+import lomiLomiSalmon from "../assets/lomi-lomi-salmon.png";
+import poi from "../assets/poi.png";
+import haupia from "../assets/haupia.png";
+import butterMochi from "../assets/butter-mochi.png";
+import malasadas from "../assets/malasadas.png";
+import pogJuice from "../assets/pog-juice.png";
+import hawaiianSunGuava from "../assets/hawaiian-sun-guava.png";
+import lilikoiLemonade from "../assets/lilikoi-lemonade.png";
 
 const menuItems = [
     {
@@ -273,13 +302,13 @@ const menuItems = [
     },
     {
         id: 27,
-        name: "Macaroni Salad",
+        name: "Mac Salad",
         description: "Creamy local-style macaroni salad.",
         price: 3.95,
         category: "Sides",
         popular: true,
         vegetarian: false,
-        image: macaroniSalad
+        image: macSalad
     },
     {
         id: 28,
@@ -389,7 +418,7 @@ const menuItems = [
         category: "Drinks",
         popular: false,
         vegetarian: false,
-        image: pogjuice
+        image: pogJuice
     },
     {
         id: 39,
