@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import MenuItem from "../components/MenuItem";
-import MenuCategory from "../components/MenuCategory";
 import menuItems from "../data/menu";
 
 function Home() {
@@ -8,7 +7,7 @@ function Home() {
     const categories = [...new Set(menuItems.map((item) => item.category))]
 
     // match the id of the menu section to the href - anchor logic
-    const categoryId = (category) => category.toLowerCase()
+    const categoryId = (category) => category.trim().toLowerCase().replace(/\s+/g, "-")
 
     return (
         <main className="home-container">
@@ -38,19 +37,22 @@ function Home() {
                 </div>
             </section>
 
-            <section className="categories-section">
-                <h2 className="categories-title">Menu Categories</h2>
-                <nav className="menu-categories" aria-label="Menu categories">
-                    {categories.map((category) => (
-                        <a 
-                            key={category}
-                            className="category-pill" 
-                        >
+            {categories.map((category) => (
+                <section className="categories-section">
+                    <h2 className="categories-title">Menu Categories</h2>
+                    <nav className="menu-categories" aria-label="Menu categories">
+                        {categories.map((category) => (
+                            <a 
+                                key={category}
+                                href={`#${categoryId(category)}`}
+                                className="category-pill" 
+                            >
 
-                        </a>
-                    ))}
-                </nav>
-            </section>
+                            </a>
+                        ))}
+                    </nav>
+                </section>
+            ))}   
         </main>
     )
 }
