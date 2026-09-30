@@ -19,6 +19,10 @@ function Menu() {
         const sectionId = decodeURIComponent(hash.slice(1))
         const section = document.getElementById(sectionId)
 
+        section?.scrollIntoView({
+            block: "start"
+        })
+
     }, [hash])
 
     return (
