@@ -8,6 +8,15 @@ function Orders() {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState("")
 
+    const formatOrderDate = (date) =>
+        new Date(date).toLocaleString(undefined, {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+            hour: "numeric",
+            minute: "2-digit"
+        });
+
     // fetch orders
     useEffect(() => {
         const fetchOrders = async () => {
@@ -97,7 +106,7 @@ function Orders() {
                                     <p>Order #{order.id}</p>
                                 </Link>
 
-                                <p>{order.created_at}</p>
+                                <p>{formatOrderDate(order.created_at)}</p>
                                 <p
                                     className={`order-status ${
                                         order.order_status === "received"
