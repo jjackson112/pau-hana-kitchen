@@ -251,11 +251,76 @@ nav a:hover {
 .info-section {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: center;
   background-color: var(--pauhana-coral);
+  gap: 1.5rem;
+  max-width: 1100px;
   margin: 3rem auto;
-  padding: 2rem;
+  padding: 0;
   border-radius: 16px;
+  line-height: 1.6;
+}
+
+.store-info,
+.ordering-options {
+  padding: 2rem;
+  background: var(--pauhana-surface, #fff);
+  border: 1px solid var(--pauhana-border);
+  border-top: 4px solid var(--pauhana-gold, #E9A23B);
+  border-radius: 16px;
+}
+
+.info-section h2 {
+  margin: 0.75rem 0 1.5rem;
+  color: var(--pauhana-red);
+  font-size: 1.5rem;
+}
+
+.info-section h3 {
+  margin: 0 0 0.5rem;
+  color: var(--pauhana-text, #302724);
+}
+
+.info-section p {
+  line-height: 1.6;
+}
+
+.info-section svg {
+  width: 28px;
+  height: 28px;
+  color: var(--pauhana-red);
+  flex-shrink: 0;
+}
+
+/* Pickup and delivery rows */
+.ordering-options > div {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  column-gap: 1rem;
+  padding: 1rem 0;
+}
+
+.ordering-options > div > svg {
+  grid-row: span 2;
+}
+
+.ordering-options > div > p {
+  grid-column: 2;
+  margin: 0;
+}
+
+.ordering-options > div + div {
+  border-top: 1px solid var(--pauhana-border);
+}
+
+.store-location {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.store-location svg {
+  flex-shrink: 0;
 }
 
 .brand-container {
@@ -897,10 +962,15 @@ nav a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .brand-container {
+  .info-section, .brand-container {
     grid-template-columns: 1fr;
     margin: 2rem 1rem;
     padding: 1.25rem;
+  }
+
+  .store-info,
+  .ordering-options {
+    padding: 1.5rem;
   }
 
   .checkout-page {

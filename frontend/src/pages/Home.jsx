@@ -56,27 +56,32 @@ function Home() {
             </section>
 
             <section className="info-section">
-                <div className="store-info">
-                    <Clock />
-                    <h4>Store Hours</h4>
-                    <p><strong>Mon-Sat</strong> 11am - 9pm</p>
-                    <p><strong>Sun</strong> 12pm - 8pm</p>
-                    <MapPin />
-                    <p>72 Lehua Kai Way, Hāna Town, HI</p>
-                </div>
 
                 <div className="ordering-options">
                     <h3>Your favorites, your way</h3>
-                    <div>
-                        <PaperBag />
+
+                    <div className="pickup-option">
+                        <PaperBag aria-hidden="true" />
                         <h4>Pick up</h4>
                         <p>Order ahead and collect your meal from Pau Hana Kitchen.</p>
                     </div>
 
-                    <div>
-                        <Car />
+                    <div className="delivery-option">
+                        <Car aria-hidden="true" />
                         <h4>Delivery</h4>
                         <p>Enjoy your local favorites at home. Choose delivery at checkout.</p>
+                    </div>
+                </div>
+
+                <div className="store-info">
+                    <Clock aria-hidden="true" />
+                    <h4>Hours & Location</h4>
+                    <p><strong>Mon-Sat</strong> 11am - 9pm</p>
+                    <p><strong>Sun</strong> 12pm - 8pm</p>
+
+                    <div className="store-location">
+                        <MapPin aria-hidden="true" />
+                        <p>72 Lehua Kai Way, Hāna Town, HI</p>
                     </div>
                 </div>
             </section>
