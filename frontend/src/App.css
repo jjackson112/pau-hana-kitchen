@@ -301,20 +301,23 @@ nav a:hover {
   border-top: 1px solid var(--pauhana-border);
 }
 
-.pickup-option, .delivery-option, .hours {
-  display: flex;
-  align-items: center;
+.pickup-option, .delivery-option, .hours, .store-location {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  align-items: start;
+  gap: 1rem
 }
 
-.store-location {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
+.pickup-info h4,
+.delivery-info h4,
+.hours-info h4 {
+  margin: 0 0 0.5rem;
 }
 
-.store-location svg {
-  flex-shrink: 0;
+.pickup-info p,
+.delivery-info p,
+.delivery-address p {
+  margin: 0;
 }
 
 .brand-container {
