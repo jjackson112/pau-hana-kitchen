@@ -32,9 +32,9 @@ function MenuItem({ item }) {
                 />
             )}
 
-            <h3>{item.name}</h3>
-            <p>{item.description}</p>
-            <p>${item.price}</p>
+            <h3 className="menu-item-name">{item.name}</h3>
+            <p className="menu-item-description">{item.description}</p>
+            <p className="menu-item-price">${item.price.toFixed(2)}</p>
             <p className="category-badge">{item.category}</p>
             <button 
                 onClick={handleAddToCart} 

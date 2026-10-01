@@ -177,6 +177,11 @@ nav a:hover {
   border-radius: 12px;
 }
 
+.menu-item-price {
+  color: var(--pauhana-text);
+  font-weight: 700;
+}
+
 .category-badge {
   display: inline-block;
   align-self: flex-start;
@@ -268,6 +273,11 @@ nav a:hover {
 
 .history {
   line-height: 1.7;
+}
+
+.history h2 {
+  color: var(--pauhana-red-dark);
+  text-align: center;
 }
 
 .history h3 {
