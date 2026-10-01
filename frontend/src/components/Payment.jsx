@@ -35,6 +35,8 @@ function Payment({ handleCreateOrder, payment, setPayment }) {
                 Cardholder
                 <input
                     type="text"
+                    aria-label="Cardholder name"
+                    value={handlePaymentDetailChange.cardholder}
                     className="payment-field"
                     placeholder="Name on card"
                 />
@@ -44,6 +46,8 @@ function Payment({ handleCreateOrder, payment, setPayment }) {
                 Card number
                 <input
                     type="text"
+                    aria-label="Card number"
+                    value={handlePaymentDetailChange.cardNumber}
                     className="payment-field"
                     placeholder="4242 4242 4242 4242"
                 />
@@ -54,6 +58,8 @@ function Payment({ handleCreateOrder, payment, setPayment }) {
                     Expiration
                     <input
                         type="text"
+                        aria-label="Expiration date"
+                        value={handlePaymentDetailChange.expiration}
                         className="payment-field"
                         placeholder="MM/YY"
                     />
@@ -63,6 +69,8 @@ function Payment({ handleCreateOrder, payment, setPayment }) {
                     CVV
                     <input
                         type="text"
+                        aria-label="security code"
+                        value={handlePaymentDetailChange.cvv}
                         className="payment-field"
                         placeholder="123"
                     />
