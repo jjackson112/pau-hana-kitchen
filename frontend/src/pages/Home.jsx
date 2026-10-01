@@ -61,27 +61,48 @@ function Home() {
                     <h3>Your favorites, your way</h3>
 
                     <div className="pickup-option">
-                        <PaperBag aria-hidden="true" />
-                        <h4>Pick up</h4>
-                        <p>Order ahead and collect your meal from Pau Hana Kitchen.</p>
+                        <div className="pickup-icon">
+                            <PaperBag aria-hidden="true" />
+                        </div>
+
+                        <div className="pickup-info">
+                            <h4>Pick up</h4>
+                            <p>Order ahead and collect your meal from Pau Hana Kitchen.</p>
+                        </div>
                     </div>
 
                     <div className="delivery-option">
-                        <Car aria-hidden="true" />
-                        <h4>Delivery</h4>
-                        <p>Enjoy your local favorites at home. Choose delivery at checkout.</p>
+                        <div className="delivery-icon">
+                            <Car aria-hidden="true" />
+                        </div>
+
+                        <div className="delivery-info">
+                            <h4>Delivery</h4>
+                            <p>Enjoy your local favorites at home. Choose delivery at checkout.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div className="store-info">
-                    <Clock aria-hidden="true" />
-                    <h4>Hours & Location</h4>
-                    <p><strong>Mon-Sat</strong> 11am - 9pm</p>
-                    <p><strong>Sun</strong> 12pm - 8pm</p>
+                    <div className="hours">
+                        <div className="hours-icon">
+                            <Clock aria-hidden="true" />
+                        </div>
+
+                        <div className="hours-info">
+                            <h4>Hours & Location</h4>
+                            <p><strong>Mon-Sat</strong> 11am - 9pm</p>
+                            <p><strong>Sun</strong> 12pm - 8pm</p>
+                        </div>
+                    </div>
 
                     <div className="store-location">
-                        <MapPin aria-hidden="true" />
-                        <p>72 Lehua Kai Way, Hāna Town, HI</p>
+                        <div className="map-icon">
+                            <MapPin aria-hidden="true" />
+                        </div>
+                        <div className="delivery-address">
+                            <p>72 Lehua Kai Way, Hāna Town, HI</p>
+                        </div>
                     </div>
                 </div>
             </section>

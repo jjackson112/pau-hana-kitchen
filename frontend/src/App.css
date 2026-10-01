@@ -298,17 +298,13 @@ nav a:hover {
   padding: 1rem 0;
 }
 
-.ordering-options > div > svg {
-  grid-row: span 2;
-}
-
-.ordering-options > div > p {
-  grid-column: 2;
-  margin: 0;
-}
-
 .ordering-options > div + div {
   border-top: 1px solid var(--pauhana-border);
+}
+
+.pickup-option, .delivery-option, .hours {
+  display: flex;
+  align-items: center;
 }
 
 .store-location {
@@ -486,6 +482,13 @@ nav a:hover {
 }
 
 .checkout-btn, .empty-cart-btn {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   padding: .75rem;
   font: inherit;
   font-weight: 600;
