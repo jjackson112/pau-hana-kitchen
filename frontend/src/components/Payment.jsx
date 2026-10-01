@@ -1,4 +1,13 @@
+import { useState } from "react";
+
 function Payment({ handleCreateOrder }) {
+    const [payment, setPayment] = useState({
+        cardholder: "",
+        cardNumber: "",
+        expiration: "",
+        cvv: ""
+    })
+
     return (
         <section className="payment-container">
             <h3>Payment</h3>
@@ -9,7 +18,7 @@ function Payment({ handleCreateOrder }) {
                 <input
                     type="text"
                     className="payment-field"
-                    placeholder="Name on card"
+                    placeholder="Cardholder"
                 />
             </label>
 

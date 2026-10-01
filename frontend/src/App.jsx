@@ -15,6 +15,7 @@ import Time from './components/Time';
 import Coupon from './components/Coupon';
 import LocationMap from './components/LocationMap';
 import Payment from './components/Payment';
+import BackToTop from './components/BackToTop';
 
 function App() {
 

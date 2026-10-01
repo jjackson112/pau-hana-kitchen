@@ -15,18 +15,18 @@ export default function scrollToTop() {
         }
     }
 
+    useEffect(() => {
+        window.addEventListener('scroll', toggleVisibility)
+
+        return () => window.removeEventListener('scroll', toggleVisibility)
+    }, [])
+    
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
             behavior: "instant"
         })
     }
-
-    useEffect(() => {
-        window.addEventListener('scroll', toggleVisibility)
-
-        return () => window.removeEventListener('scroll', toggleVisibility)
-    }, [])
 
     return (
         <div>
@@ -42,7 +42,7 @@ export default function scrollToTop() {
                     width: '48px',
                     height: '48px',
                     borderRadius: '30px',
-                    backgroundColor: '#000',
+                    backgroundColor: '#E9A23B',
                     color: '#fff',
                     border: 'none',
                     cursor: 'pointer'
