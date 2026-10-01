@@ -108,9 +108,8 @@ nav a:hover {
 }
 
 .hero-text {
-  background-color: #000000;
+  background-color: rgb(0 0 0 / 80%);
   padding: 1.25rem;
-  opacity: .8;
   border-radius: 20px;
 }
 
