@@ -35,9 +35,16 @@ export default function scrollToTop() {
                 onClick={scrollToTop}
                 aria-label="Back to top"
                 style={{
-                    borderRadius: '5px',
+                    position: 'fixed',
+                    bottom: '1.5rem', 
+                    right: '1.5rem',
+                    zIndex: 20,
+                    width: '48px',
+                    height: '48px',
+                    borderRadius: '30px',
                     backgroundColor: '#000',
                     color: '#fff',
+                    border: 'none',
                     cursor: 'pointer'
                 }}
             >
