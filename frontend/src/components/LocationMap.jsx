@@ -4,6 +4,10 @@ function LocationMap({ orderType, deliveryAddress, setDeliveryAddress }) {
     const restaurantAddress = "72 Lehua Kai Way, Hāna Town, HI"
     const isPickup = orderType === "pickup"
 
+    const populateDeliveryAddress = () => {
+        setDeliveryAddress("123 Pīkake Alanui, Hāna Town, HI")
+    }
+
     return (
         <section className="location-map">
             <div className="location-header">
@@ -32,12 +36,20 @@ function LocationMap({ orderType, deliveryAddress, setDeliveryAddress }) {
             ) : (
                 <div className="delivery-location">
                     <input 
-                        className="delivery-location-field"
                         type="text"
+                        className="delivery-location-field"
+                        aria-label="Delivery address"
                         placeholder="Enter delivery address"
                         value={deliveryAddress}
                         onChange={(e) => setDeliveryAddress(e.target.value)}
                     />
+
+                    <button
+                        type="button"
+                        onClick={populateDeliveryAddress}
+                    >
+                        Use demo address
+                    </button>
                 </div>
             )}
 
