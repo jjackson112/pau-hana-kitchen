@@ -17,6 +17,15 @@ function Payment({ handleCreateOrder, payment, setPayment }) {
         })
     }
 
+    const handlePaymentDetailChange = (e) => {
+        const { name, value } = e.target.value
+
+        setPayment((current) => ({
+            ...current,
+            [name]: value
+        }))
+    }
+
     return (
         <section className="payment-container">
             <h3>Payment</h3>
