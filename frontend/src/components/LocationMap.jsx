@@ -46,6 +46,7 @@ function LocationMap({ orderType, deliveryAddress, setDeliveryAddress }) {
 
                     <button
                         type="button"
+                        className="demo-address-btn"
                         onClick={populateDeliveryAddress}
                     >
                         Use demo address

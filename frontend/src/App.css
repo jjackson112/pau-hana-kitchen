@@ -606,8 +606,28 @@ nav a:hover {
   height: 200px;
 }
 
+.delivery-location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
 .delivery-location-field {
-  width: 100%;
+  width: 70%;
+}
+
+.demo-address-btn {
+  background-color: var(--pauhana-coral);
+  color: var(--pauhana-surface);
+  border: none;
+  border-radius: 12px;
+  padding: .75rem;
+  cursor: pointer;
+}
+
+.demo-address-btn:hover {
+  background-color: var(--pauhana-muted);
 }
 
 .order-type {
