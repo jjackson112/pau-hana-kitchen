@@ -5,7 +5,9 @@ export default function scrollToTop() {
     const [isVisible, setIsVisible ] = useState(false)
 
     // show btn when page is scrolled past 300px
-    const toggleVisibility = () = {
+    const toggleVisibility = () => {
+        if (!isVisible) return null
+
         if (window.scrollY > 300) {
             setIsVisible(true)
         } else {
@@ -13,7 +15,7 @@ export default function scrollToTop() {
         }
     }
 
-    const scrollToTop = () = {
+    const scrollToTop = () => {
         window.scrollTo({
             top: 0,
             behavior: "instant"
@@ -24,12 +26,14 @@ export default function scrollToTop() {
         window.addEventListener('scroll', toggleVisibility)
 
         return () => window.removeEventListener('scroll', toggleVisibility)
-    })
+    }, [])
 
     return (
         <div>
             <button
+                type="button"
                 onClick={scrollToTop}
+                aria-label="Back to top"
                 style={{
                     borderRadius: '5px',
                     backgroundColor: '#000',
