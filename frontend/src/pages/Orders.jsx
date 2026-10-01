@@ -47,7 +47,7 @@ function Orders() {
         }, 60_000)
 
         return () => clearInterval(timer)
-    })
+    }, [])
 
     // render guards
     if (loading) return "Loading orders..."
@@ -59,7 +59,7 @@ function Orders() {
 
         return (
             order.order_status === "received" &&
-            Number(isFinite(createdAt)) && // ensures that the date is a finite value
+            Number.isFinite(createdAt) && // ensures that the date is a finite value
             age >= 0 &&
             age < 5 * 60 * 1000
         )
