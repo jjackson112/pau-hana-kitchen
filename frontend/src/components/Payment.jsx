@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Payment({ handleCreateOrder, payment, setPayment }) {
+function Payment({ handleCreateOrder }) {
     const [payment, setPayment] = useState({
         cardholder: "",
         cardNumber: "",
@@ -18,7 +18,7 @@ function Payment({ handleCreateOrder, payment, setPayment }) {
     }
 
     const handlePaymentDetailChange = (e) => {
-        const { name, value } = e.target.value
+        const { name, value } = e.target
 
         setPayment((current) => ({
             ...current,
@@ -35,6 +35,7 @@ function Payment({ handleCreateOrder, payment, setPayment }) {
                 Cardholder
                 <input
                     type="text"
+                    name="cardholder"
                     aria-label="Cardholder name"
                     value={payment.cardholder}
                     onChange={handlePaymentDetailChange}
@@ -47,6 +48,7 @@ function Payment({ handleCreateOrder, payment, setPayment }) {
                 Card number
                 <input
                     type="text"
+                    name="cardNumber"
                     aria-label="Card number"
                     value={payment.cardNumber}
                     onChange={handlePaymentDetailChange}
@@ -60,6 +62,7 @@ function Payment({ handleCreateOrder, payment, setPayment }) {
                     Expiration
                     <input
                         type="text"
+                        name="expiration"
                         aria-label="Expiration date"
                         value={payment.expiration}
                         onChange={handlePaymentDetailChange}
@@ -72,6 +75,7 @@ function Payment({ handleCreateOrder, payment, setPayment }) {
                     CVV
                     <input
                         type="text"
+                        name="cvv"
                         aria-label="security code"
                         value={payment.cvv}
                         onChange={handlePaymentDetailChange}
