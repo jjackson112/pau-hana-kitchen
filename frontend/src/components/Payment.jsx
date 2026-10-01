@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Payment({ handleCreateOrder }) {
+function Payment({ handleCreateOrder, payment, setPayment }) {
     const [payment, setPayment] = useState({
         cardholder: "",
         cardNumber: "",
@@ -62,7 +62,7 @@ function Payment({ handleCreateOrder }) {
 
             <button 
                 className="place-order-btn" 
-                onClick={handleCreateOrder}
+                onClick={() => { populatePaymentDetails(), handleCreateOrder()}}
                 type="button"
             >
                 Place Demo Order
