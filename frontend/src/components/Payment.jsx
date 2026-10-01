@@ -36,7 +36,8 @@ function Payment({ handleCreateOrder, payment, setPayment }) {
                 <input
                     type="text"
                     aria-label="Cardholder name"
-                    value={handlePaymentDetailChange.cardholder}
+                    value={payment.cardholder}
+                    onChange={handlePaymentDetailChange}
                     className="payment-field"
                     placeholder="Name on card"
                 />
@@ -47,7 +48,8 @@ function Payment({ handleCreateOrder, payment, setPayment }) {
                 <input
                     type="text"
                     aria-label="Card number"
-                    value={handlePaymentDetailChange.cardNumber}
+                    value={payment.cardNumber}
+                    onChange={handlePaymentDetailChange}
                     className="payment-field"
                     placeholder="4242 4242 4242 4242"
                 />
@@ -59,7 +61,8 @@ function Payment({ handleCreateOrder, payment, setPayment }) {
                     <input
                         type="text"
                         aria-label="Expiration date"
-                        value={handlePaymentDetailChange.expiration}
+                        value={payment.expiration}
+                        onChange={handlePaymentDetailChange}
                         className="payment-field"
                         placeholder="MM/YY"
                     />
@@ -70,7 +73,8 @@ function Payment({ handleCreateOrder, payment, setPayment }) {
                     <input
                         type="text"
                         aria-label="security code"
-                        value={handlePaymentDetailChange.cvv}
+                        value={payment.cvv}
+                        onChange={handlePaymentDetailChange}
                         className="payment-field"
                         placeholder="123"
                     />
