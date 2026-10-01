@@ -8,17 +8,26 @@ function Payment({ handleCreateOrder }) {
         cvv: ""
     })
 
+    const populatePaymentDetails = () => {
+        setPayment({
+            cardholder: "Jane Doe",
+            cardNumber: "4242 1350 0022 8932",
+            expiration: "12/28",
+            cvv: "123"
+        })
+    }
+
     return (
         <section className="payment-container">
             <h3>Payment</h3>
             <p style={{ color: "red" }}><strong>Demo checkout - no real payment will be processed</strong></p>
 
             <label>
-                Name on card
+                Cardholder
                 <input
                     type="text"
                     className="payment-field"
-                    placeholder="Cardholder"
+                    placeholder="Name on card"
                 />
             </label>
 
