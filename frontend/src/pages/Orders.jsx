@@ -98,6 +98,7 @@ function Orders() {
 
                 <div className="cancellation-window-message">
                     <p>Orders can be cancelled within 5 mins of being placed.</p>
+                    {cancellationMessage}
                 </div>
 
                 <section className="orders-list">
@@ -135,7 +136,7 @@ function Orders() {
                                 <div className="order-total-row">
                                     <p className="order-type">{order.order_type}</p>
                                     <Dot size={24} />
-                                    <p><strong>${order.total}</strong></p>
+                                    <p><strong>${Number(order.total).toFixed(2)}</strong></p>
                                 </div>
 
                                 <Link 
