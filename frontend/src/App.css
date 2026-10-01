@@ -787,6 +787,12 @@ nav a:hover {
   text-align: center;
 }
 
+.cancellation-window-message {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
 .orders-list {
   display: flex;
   justify-content: center;
@@ -805,6 +811,12 @@ nav a:hover {
   gap: 0.7rem;
   padding: 1.5rem;
   border-radius: 12px;
+}
+
+.order-detail-header {
+  display: flex;
+  justify-content: flex-start;
+  gap: .75rem;
 }
 
 .order-id-link {
@@ -840,6 +852,12 @@ nav a:hover {
 .status-cancelled {
   background-color: #fef3c7;
   color: #854d0e;
+}
+
+.order-total-row {
+  display: flex;
+  flex-direction: row;
+  gap: .75rem;
 }
 
 .order-type {

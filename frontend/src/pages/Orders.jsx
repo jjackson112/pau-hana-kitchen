@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from '../api/api';
 import { Link } from "react-router-dom";
+import { Dot } from "lucide-react";
 
 function Orders() {
     const [orders, setOrders] = useState([])
@@ -90,6 +91,10 @@ function Orders() {
                     <h1>Order History</h1>
                 </div>
 
+                <div className="cancellation-window-message">
+                    <p>Orders can be cancelled up to 5 mins - after this window, all orders are final.</p>
+                </div>
+
                 <section className="orders-list">
                     {orders.length === 0 ? (
                         <p>No orders yet.</p>
@@ -99,26 +104,41 @@ function Orders() {
                                 className="order-detail-card"
                                 key={order.id}
                             >
-                                <Link 
-                                    to={`/orders/${order.id}`}
-                                    className="order-id-link"
-                                >
-                                    <p>Order #{order.id}</p>
-                                </Link>
+                                <div className="order-detail-header">
+                                    <Link 
+                                        to={`/orders/${order.id}`}
+                                        className="order-id-link"
+                                    >
+                                        <p>Order #{order.id}</p>
+                                    </Link>
+
+                                    <p
+                                        className={`order-status ${
+                                            order.order_status === "received"
+                                            ? "status-received"
+                                            : order.order_status === "cancelled"
+                                                ? "status-cancelled"
+                                                : ""
+                                            }`}
+                                    >
+                                        {order.order_status}
+                                    </p>
+                                </div>
 
                                 <p>{formatOrderDate(order.created_at)}</p>
-                                <p
-                                    className={`order-status ${
-                                        order.order_status === "received"
-                                        ? "status-received"
-                                        : order.order_status === "cancelled"
-                                            ? "status-cancelled"
-                                            : ""
-                                    }`}
+
+                                <div className="order-total-row">
+                                    <p className="order-type">{order.order_type}</p>
+                                    <Dot size={24} />
+                                    <p><strong>${order.total}</strong></p>
+                                </div>
+
+                                <Link 
+                                    to={`/orders/${order.id}`}
+                                    className="view-order-btn"
                                 >
-                                    {order.order_status}</p>
-                                <p className="order-type">{order.order_type}</p>
-                                <p>${order.total}</p>
+                                    View details
+                                </Link>
 
                                 {displayCancelOrder(order) && (
                                     <button
