@@ -815,7 +815,8 @@ nav a:hover {
 
 .order-detail-header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
+  align-items: center;
   gap: .75rem;
 }
 
@@ -854,9 +855,16 @@ nav a:hover {
   color: #854d0e;
 }
 
+.order-id-link p,
+.order-detail-card > p,
+.order-status,
+.order-total-row p {
+  margin: 0;
+}
+
 .order-total-row {
   display: flex;
-  flex-direction: row;
+  align-items: center;
   gap: .75rem;
 }
 
