@@ -51,7 +51,7 @@ function Orders() {
             order.order_status === "received" &&
             Number(isFinite(createdAt)) && // ensures that the date is a finite value
             age >= 0 &&
-            age < 30 * 60 * 1000
+            age < 5 * 60 * 1000
         )
     }
 
