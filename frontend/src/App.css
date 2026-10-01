@@ -835,7 +835,7 @@ nav a:hover {
 
 .order-detail-header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   gap: .75rem;
 }

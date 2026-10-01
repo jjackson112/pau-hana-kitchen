@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from '../api/api';
 import { Link } from "react-router-dom";
-import { Dot } from "lucide-react";
+import { Dot, MoveRight } from "lucide-react";
 
 function Orders() {
     const [orders, setOrders] = useState([])
@@ -141,9 +141,9 @@ function Orders() {
 
                                 <Link 
                                     to={`/orders/${order.id}`}
-                                    className="view-order-btn"
+                                    className="view-order-link"
                                 >
-                                    View details
+                                    <MoveRight />
                                 </Link>
 
                                 {displayCancelOrder(order) && (
