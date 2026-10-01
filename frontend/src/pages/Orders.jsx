@@ -6,6 +6,8 @@ import { Dot } from "lucide-react";
 function Orders() {
     const [orders, setOrders] = useState([])
     const [now, setNow] = useState(Date.now())
+    const [cancellationMessage, setCancellationMessage] = useState("")
+
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState("")
 
@@ -40,7 +42,7 @@ function Orders() {
         fetchOrders()
     }, [])
 
-    // cancel order btn should stop after 30 mins
+    // cancel order btn should stop after 5 mins
     useEffect(() => {
         const timer = setInterval(() => {
             setNow(Date.now())
@@ -68,6 +70,8 @@ function Orders() {
     async function handleCancelOrder(orderId) {
         if (!window.confirm("Cancel this order?")) return;
 
+        setCancellationMessage("")
+
         try {
             const result = await api.patch(`/orders/${orderId}`, {
                 order_status: "cancelled"
@@ -80,7 +84,8 @@ function Orders() {
                     order.id === orderId ? result.order : order))
 
         } catch (err) {
-            console.log("Cannot cancel order.")
+            console.error("Cannot cancel order.", err)
+            setCancellationMessage("Cannot cancel the order. Please try again.")
         }
     }
 
@@ -92,7 +97,7 @@ function Orders() {
                 </div>
 
                 <div className="cancellation-window-message">
-                    <p>Orders can be cancelled up to 5 mins - after this window, all orders are final.</p>
+                    <p>Orders can be cancelled within 5 mins of being placed.</p>
                 </div>
 
                 <section className="orders-list">
