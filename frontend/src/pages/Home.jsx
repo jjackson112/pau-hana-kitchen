@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import MenuItem from "../components/MenuItem";
 import menuItems from "../data/menu";
+import { PaperBag, Car, Clock, MapPin } from "lucide-react";
 
 function Home() {
     // Set keeps only unique values - no "Plate Lunches " & "Plate Lunches"
@@ -51,6 +52,32 @@ function Home() {
 
                 <div className="menu-link-container">
                     <Link to="/menu" className="menu-link-btn">View Full Menu</Link>
+                </div>
+            </section>
+
+            <section className="info-section">
+                <div className="store-info">
+                    <Clock />
+                    <h4>Store Hours</h4>
+                    <p><strong>Mon-Sat</strong> 11am - 9pm</p>
+                    <p><strong>Sun</strong> 12pm - 8pm</p>
+                    <MapPin />
+                    <p>72 Lehua Kai Way, Hāna Town, HI</p>
+                </div>
+
+                <div className="ordering-options">
+                    <h3>Your favorites, your way</h3>
+                    <div>
+                        <PaperBag />
+                        <h4>Pick up</h4>
+                        <p>Order ahead and collect your meal from Pau Hana Kitchen.</p>
+                    </div>
+
+                    <div>
+                        <Car />
+                        <h4>Delivery</h4>
+                        <p>Enjoy your local favorites at home. Choose delivery at checkout.</p>
+                    </div>
                 </div>
             </section>
 
