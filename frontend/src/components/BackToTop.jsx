@@ -22,12 +22,22 @@ export default function scrollToTop() {
 
     useEffect(() => {
         window.addEventListener('scroll', toggleVisibility)
+
+        return () => window.removeEventListener('scroll', toggleVisibility)
     })
 
     return (
         <div>
-            <button>
-                <MoveUp />
+            <button
+                onClick={scrollToTop}
+                style={{
+                    borderRadius: '5px',
+                    backgroundColor: '#000',
+                    color: '#fff',
+                    cursor: 'pointer'
+                }}
+            >
+                <MoveUp aria-hidden="true" />
             </button>
         </div>
     )
