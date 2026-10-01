@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import MenuItem from "../components/MenuItem";
 import menuItems from "../data/menu";
 import { PaperBag, Car, Clock, MapPin } from "lucide-react";
+import BackToTop from "../components/BackToTop";
 
 function Home() {
     // Set keeps only unique values - no "Plate Lunches " & "Plate Lunches"
@@ -94,7 +95,8 @@ function Home() {
                     <p><span>Our name</span> means <span>“finished with work”</span>—an invitation to take a break, grab a plate, and enjoy a little time together.</p>
                 </div>
             </section>
-
+            
+            <BackToTop />
         </main>
     )
 }
