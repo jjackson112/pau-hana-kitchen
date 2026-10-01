@@ -14,7 +14,14 @@ function Menu() {
 
     // scroll to matching section after page renders
     useEffect(() => {
-        if (!hash) return
+        if (!hash) {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "instant"
+            })
+            return
+        }
 
         const sectionId = decodeURIComponent(hash.slice(1))
         const section = document.getElementById(sectionId)

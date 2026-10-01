@@ -56,7 +56,6 @@ function Home() {
             </section>
 
             <section className="info-section">
-
                 <div className="ordering-options">
                     <h3>Your favorites, your way</h3>
 
