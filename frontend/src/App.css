@@ -835,7 +835,7 @@ nav a:hover {
 
 .order-detail-header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   gap: .75rem;
 }
@@ -843,7 +843,7 @@ nav a:hover {
 .order-id-link {
   background-color: var(--pauhana-coral);
   border-radius: 12px;
-  width: 80px;
+  width: 100px;
   height: 30px;
   font-weight: 600;
   text-align: center;
@@ -882,14 +882,20 @@ nav a:hover {
   margin: 0;
 }
 
-.order-total-row {
+.view-order-link {
+  background-color: var(--pauhana-gold);
+  border-radius: 999px;
   display: flex;
   align-items: center;
-  gap: .75rem;
+  padding: 0.5rem;
+  margin: .5rem;
+  width: 30px;
+  height: 30px;
 }
 
-.order-type {
-  text-transform: uppercase;
+.view-order-link:hover {
+  background-color: var(--pauhana-muted);
+  color: var(--pauhana-surface);
 }
 
 .cancel-order-btn {

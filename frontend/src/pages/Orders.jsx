@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { api } from '../api/api';
 import { Link } from "react-router-dom";
-import { Dot, MoveRight } from "lucide-react";
+import { MoveRight } from "lucide-react";
 
 function Orders() {
     const [orders, setOrders] = useState([])
     const [now, setNow] = useState(Date.now())
     const [cancellationMessage, setCancellationMessage] = useState("")
+    
+
+    const [page, setPage] = useState(1)
+    const [pages, setPages] = useState(0)
 
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState("")
@@ -134,8 +138,7 @@ function Orders() {
                                 <p>{formatOrderDate(order.created_at)}</p>
 
                                 <div className="order-total-row">
-                                    <p className="order-type">{order.order_type}</p>
-                                    <Dot size={24} />
+                                    <p className="order-type">{(order.order_type).toUpperCase()}</p>
                                     <p><strong>${Number(order.total).toFixed(2)}</strong></p>
                                 </div>
 
