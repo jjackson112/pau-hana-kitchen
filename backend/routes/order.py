@@ -122,9 +122,27 @@ def get_order(id):
 # get list of orders
 @order_bp.route("", methods=["GET"])
 def get_orders_list():
-    orders = Order.query.order_by(Order.created_at.desc()).all()
 
-    return jsonify([order.to_dict() for order in orders]), 200
+    page = request.args.get("page", 1, type=int)
+    per_page = min(
+        request.args.get("per_page", 10, type=int), 100 # limit is slightly inconsistent
+    )
+
+    # pagination order
+    pagination = (
+        Order.query
+        .order_by(Order.created_at.desc()).all()
+        .paginate(page=page, per_page=per_page, error_out=False)
+    )
+
+    return jsonify(
+        [order.to_dict() for order in orders]),
+        "page": pagination.page,
+        "per_page": pagination.per_page,
+        "pages": pagination.pages,
+        "has_next": pagination.has_next,
+        "has_prev": pagination.has_prev
+    , 200
 
 # PATCH route to update order status
 @order_bp.route("/<int:id>", methods=["PATCH"])
