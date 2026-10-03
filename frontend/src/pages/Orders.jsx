@@ -11,6 +11,8 @@ function Orders() {
 
     const [page, setPage] = useState(1)
     const [pages, setPages] = useState(0)
+    const [hasPrev, setHasPrev] = useState(false)
+    const [hasNext, setHasNext] = useState(false)
 
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState("")
@@ -35,6 +37,7 @@ function Orders() {
                 console.log("Orders fetched", data)
 
                 setOrders(Array.isArray(data) ? data : [])
+                setPages(data.pages || [])
 
             } catch (err) {
                 console.log("Failed to get orders", err)
@@ -164,6 +167,25 @@ function Orders() {
                         ))
                     )}
                 </section>
+
+                <section className="pagination">
+                    <nav className="pagination-nav" aria-label="Orders pagination">
+                        <button
+                            type="button"
+                            disabled={!hasPrev || loading}
+                        >
+                            Previous
+                        </button>
+
+                        <button
+                            type="button"
+                            disabled={!hasNext || loading}
+                        >
+                            Next
+                        </button>
+                    </nav>
+                </section>
+
             </main>
         </>
     )
