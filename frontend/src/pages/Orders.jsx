@@ -169,27 +169,29 @@ function Orders() {
                 </section>
 
                 <section className="pagination">
-                    <nav className="pagination-nav" aria-label="Orders pagination">
-                        <button
-                            type="button"
-                            disabled={!hasPrev || loading}
-                            onClick={() => setPage((current) => current - 1)}
-                        >
-                            Previous
-                        </button>
+                    {pages > 1 && (
+                        <nav className="pagination-nav" aria-label="Orders pagination">
+                            <button
+                                type="button"
+                                disabled={!hasPrev || loading}
+                                onClick={() => setPage((current) => current - 1)}
+                            >
+                                Previous
+                            </button>
 
-                        <span>
-                            {page} of {pages}
-                        </span>
+                            <span>
+                                {page} of {pages}
+                            </span>
 
-                        <button
-                            type="button"
-                            disabled={!hasNext || loading}
-                            onClick={() => setPage((current) => current + 1)}
-                        >
-                            Next
-                        </button>
-                    </nav>
+                            <button
+                                type="button"
+                                disabled={!hasNext || loading}
+                                onClick={() => setPage((current) => current + 1)}
+                            >
+                                Next
+                            </button>
+                        </nav>
+                    )}
                 </section>
 
             </main>
