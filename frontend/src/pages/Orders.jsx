@@ -173,13 +173,19 @@ function Orders() {
                         <button
                             type="button"
                             disabled={!hasPrev || loading}
+                            onClick={() => setPage((current) => current - 1)}
                         >
                             Previous
                         </button>
 
+                        <span>
+                            {page} of {pages}
+                        </span>
+
                         <button
                             type="button"
                             disabled={!hasNext || loading}
+                            onClick={() => setPage((current) => current + 1)}
                         >
                             Next
                         </button>
