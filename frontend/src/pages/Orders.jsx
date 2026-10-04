@@ -27,13 +27,13 @@ function Orders() {
         });
 
     // fetch orders
-    useEffect(() => {
+    useEffect(() => {        
         const fetchOrders = async () => {
             try {
                 setLoading(true)
                 setError("")
                 
-                const data = await api.get("/orders")
+                const data = await api.get("/orders?page=${page}&per_page=10")
                 console.log("Orders fetched", data)
 
                 setOrders(Array.isArray(data) ? data : [])
@@ -42,6 +42,7 @@ function Orders() {
             } catch (err) {
                 console.log("Failed to get orders", err)
                 setError("Failed to fetch orders")
+
             } finally {
                 setLoading(false)
             }
