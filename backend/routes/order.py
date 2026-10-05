@@ -132,7 +132,7 @@ def get_orders_list():
     # pagination order
     pagination = (
         Order.query
-        .order_by(Order.created_at.desc()).all()
+        .order_by(Order.created_at.desc(), Order.id.desc())
         .paginate(page=page, per_page=per_page, error_out=False)
     )
 
