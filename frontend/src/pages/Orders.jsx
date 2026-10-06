@@ -93,6 +93,8 @@ function Orders() {
                 current.map((order) => 
                     order.id === orderId ? result.order : order))
 
+            setCancellationMessage(`Order #${orderId} was cancelled`)
+
         } catch (err) {
             console.error("Cannot cancel order.", err)
             setCancellationMessage("Cannot cancel the order. Please try again.")
