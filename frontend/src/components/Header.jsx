@@ -9,7 +9,7 @@ function Header() {
 
     const [open, setOpen] = useState(false)
 
-    function handleOpen = () => {
+    function handleOpen() {
         setOpen(false)
         dispatch(openCartSidebar())
     }
@@ -17,10 +17,14 @@ function Header() {
     return (
         <header className="header-container">
 
-            <div className="brand-icon">
-                <Utensils size={20} />
-                <h4 className="app-title">Pau Hana Kitchen</h4>
-            </div>
+            <Link 
+                to="/"
+                className="brand-icon"
+                onClick={() => setOpen(false)}
+            >
+                <Utensils size={20} aria-hidden="true" />
+                <span className="app-title">Pau Hana Kitchen</span>
+            </Link>
 
             <div className={`nav-menu ${open ? "open" : ""}`}>
                 <nav>
