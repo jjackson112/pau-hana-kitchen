@@ -911,15 +911,10 @@ nav a:hover {
   cursor: pointer;
 }
 
-.pagination {
+.pagination-nav {
   display: flex;
   justify-content: center;
-  padding: 1rem;
-  font-weight: 500;
-}
-
-.pagination span {
-  padding: 1rem;
+  gap: 1rem;
 }
 
 .pagination button {
@@ -928,11 +923,22 @@ nav a:hover {
   border-radius: 12px;
   border: none;
   cursor: pointer;
+  font: inherit;
 }
 
-.pagination button:hover {
+.pagination button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
   background-color: var(--pauhana-muted);
   color: var(--pauhana-surface);
+}
+
+.pagination button:focus-visible {
+  outline: 2px solid var(--pauhana-text);
+  outline-offset: 3px;
 }
 
 /* Single Order Detail */ 
