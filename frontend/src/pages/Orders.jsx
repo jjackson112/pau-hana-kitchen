@@ -110,7 +110,10 @@ function Orders() {
 
                 <div className="cancellation-window-message">
                     <p>Orders can be cancelled within 5 mins of being placed.</p>
-                    {cancellationMessage}
+                </div>
+
+                <div className="cancellation-feedback">
+                    {cancellationMessage && <p>{cancellationMessage}</p>}
                 </div>
 
                 <section className="orders-list">
