@@ -146,29 +146,32 @@ function Orders() {
                                     </p>
                                 </div>
 
-                                <p>{formatOrderDate(order.created_at)}</p>
+                                <p className="order-date">{formatOrderDate(order.created_at)}</p>
 
                                 <div className="order-total-row">
                                     <p className="order-type">{(order.order_type).toUpperCase()}</p>
                                     <p><strong>${Number(order.total).toFixed(2)}</strong></p>
                                 </div>
 
-                                <Link 
-                                    to={`/orders/${order.id}`}
-                                    className="view-order-link"
-                                >
-                                    <MoveRight />
-                                </Link>
-
-                                {displayCancelOrder(order) && (
-                                    <button
-                                        type="button"
-                                        className="cancel-order-btn"
-                                        onClick={() => handleCancelOrder(order.id)}
+                                <div className="order-card-actions">
+                                    <Link 
+                                        to={`/orders/${order.id}`}
+                                        className="view-order-link"
                                     >
-                                        Cancel Order
-                                    </button>
-                                )}
+                                        View Details
+                                        <MoveRight size={18} aria-hidden="true" />
+                                    </Link>
+
+                                    {displayCancelOrder(order) && (
+                                        <button
+                                            type="button"
+                                            className="cancel-order-btn"
+                                            onClick={() => handleCancelOrder(order.id)}
+                                        >
+                                            Cancel Order
+                                        </button>
+                                    )}
+                                </div>
 
                             </article>
 
