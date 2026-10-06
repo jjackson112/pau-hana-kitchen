@@ -814,17 +814,17 @@ nav a:hover {
 }
 
 .orders-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 1.5rem;
 }
 
 .order-detail-card {
   background-color: var(--pauhana-surface);
   border: 1px solid var(--pauhana-muted);
-  max-width: 300px;
   width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -916,7 +916,7 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .pagination button {
