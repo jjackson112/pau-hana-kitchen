@@ -37,7 +37,7 @@ function Orders() {
                 console.log("Orders fetched", data)
 
                 setOrders(data.orders || [])
-                setPages(data.pages || [])
+                setPages(data.pages ?? 0)
                 setHasPrev(data.has_prev)
                 setHasNext(data.has_next)
 
