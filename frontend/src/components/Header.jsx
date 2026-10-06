@@ -1,10 +1,18 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { openCartSidebar } from "../store/cartSlice";
 import { Link } from "react-router-dom";
-import { Utensils, ShoppingCart } from "lucide-react";
+import { Menu, X, Utensils, ShoppingCart } from "lucide-react";
 
 function Header() {
     const dispatch = useDispatch()
+
+    const [open, setOpen] = useState(false)
+
+    function handleOpen = () => {
+        setOpen(false)
+        dispatch(openCartSidebar())
+    }
 
     return (
         <header className="header-container">
