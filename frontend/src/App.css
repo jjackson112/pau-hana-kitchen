@@ -362,6 +362,36 @@ nav a:hover {
   color: var(--pauhana-red);
   font-weight: 700;
 }
+.hero-container {
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.hero-text {
+  width: 100%;
+  max-width: 650px;
+  box-sizing: border-box;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+.categories-section {
+  padding: 1rem;
+}
+
+.menu-item-card {
+  min-width: 0;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.info-section,
+.brand-container {
+  width: min(calc(100% - 2rem), 1100px);
+  box-sizing: border-box;
+}
 
 /* Menu Styles */
 
@@ -1114,14 +1144,13 @@ nav a:hover {
 }
 
 @media (max-width: 900px) {
-  .popular-dishes, .menu-category-items {
-    grid-template-columns: repeat(2, 1fr);
+  .popular-dishes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .info-section, .brand-container {
+  .info-section,
+  .brand-container {
     grid-template-columns: 1fr;
-    margin: 2rem 1rem;
-    padding: 1.25rem;
   }
 
   .store-info,
@@ -1152,8 +1181,27 @@ nav a:hover {
 }
 
 @media (max-width: 600px) {
-  .popular-dishes, .menu-category-items {
+  .popular-dishes {
     grid-template-columns: 1fr;
+  }
+
+  .store-info,
+  .ordering-options {
+    padding: 1.25rem;
+    margin: 0.75rem;
+  }
+
+  .brand-container {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .restaurant-interior {
+    min-height: 220px;
+  }
+
+  .history h3 {
+    margin: 1rem 0;
   }
 }
 

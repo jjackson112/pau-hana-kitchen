@@ -6,7 +6,7 @@ import BackToTop from "../components/BackToTop";
 
 function Home() {
     // Set keeps only unique values - no "Plate Lunches " & "Plate Lunches"
-    const categories = [...new Set(menuItems.map((item) => item.category))]
+    const categories = [...new Set(menuItems.map((item) => item.category.trim()))]
 
     // match the id of the menu section to the href - anchor logic
     const categoryId = (category) => category.trim().toLowerCase().replace(/\s+/g, "-")
