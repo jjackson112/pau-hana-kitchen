@@ -27,7 +27,7 @@ function Cart() {
 
         const timer = setTimeout(() => {
             dispatch(closeCartSidebar())
-        }, 6000)
+        }, 4000)
 
         return () => clearTimeout(timer)
     }, [isOpen, dispatch])

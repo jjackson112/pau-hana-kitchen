@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import MenuItem from "../components/MenuItem";
 import menuItems from "../data/menu";
+import BackToTop from "../components/BackToTop";
 
 function Menu() {
     const { hash } = useLocation()
@@ -65,6 +66,8 @@ function Menu() {
                     })}
                 </div>
             </section>
+
+            <BackToTop />
         </main>
     )
 }
