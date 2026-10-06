@@ -842,6 +842,7 @@ nav a:hover {
 
 .order-id-link {
   background-color: var(--pauhana-coral);
+  color: var(--pauhana-text);
   border-radius: 12px;
   width: 100px;
   height: 30px;
@@ -851,6 +852,7 @@ nav a:hover {
 
 .order-id-link:hover {
   background-color: var(--pauhana-gold);
+  color: var(--pauhana-surface);
 }
 
 .order-status {
@@ -916,7 +918,7 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .pagination button {

@@ -24,6 +24,8 @@ function Checkout() {
     const [appliedCoupon, setAppliedCoupon] = useState(null)
     const [deliveryAddress, setDeliveryAddress] = useState("")
 
+    const [orderError, setOrderError] = useState("")
+
     // use reducer function - outputs a single value - to find subtotal
     const subtotal = cartItems.reduce(
         (sum, item) => sum + item.totalPrice,
@@ -52,7 +54,12 @@ function Checkout() {
 
     // test out Create Order process - POST order route
     async function handleCreateOrder() {
-        if (cartItems.length === 0) return;
+        setOrderError("")
+
+        if (cartItems.length === 0) {
+            setOrderError("Add at least one item to your cart before placing an order.")
+            return
+        }
         
         console.log("PLACE ORDER CLICKED")
 
