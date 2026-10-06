@@ -33,7 +33,7 @@ function Orders() {
                 setLoading(true)
                 setError("")
                 
-                const data = await api.get("/orders?page=${page}&per_page=10")
+                const data = await api.get(`/orders?page=${page}&per_page=10`)
                 console.log("Orders fetched", data)
 
                 setOrders(data.orders || [])
