@@ -24,18 +24,6 @@ function Home() {
                 </div>
             </section>
 
-            <section className="popular-section"> 
-                <h2 className="popular-title">Popular Dishes</h2>
-                <div className="popular-dishes">
-                    {menuItems.slice(0, 4).map((item) => (
-                        <MenuItem 
-                            key={item.id}
-                            item={item} 
-                        />
-                    ))}
-                </div>
-            </section>
-
             <section className="categories-section">
                 <h2 className="categories-title">Menu Categories</h2>
 
@@ -53,6 +41,18 @@ function Home() {
 
                 <div className="menu-link-container">
                     <Link to="/menu" className="menu-link-btn">View Full Menu</Link>
+                </div>
+            </section>
+
+            <section className="popular-section"> 
+                <h2 className="popular-title">Popular Dishes</h2>
+                <div className="popular-dishes">
+                    {menuItems.slice(0, 4).map((item) => (
+                        <MenuItem 
+                            key={item.id}
+                            item={item} 
+                        />
+                    ))}
                 </div>
             </section>
 

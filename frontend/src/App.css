@@ -610,7 +610,7 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .delivery-location-field {
@@ -801,6 +801,7 @@ nav a:hover {
 .payment-row {
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 /* Orders Styles */
@@ -1116,6 +1117,11 @@ nav a:hover {
   }
   .order-information p {
       align-items: flex-start;
+  }
+
+  .delivery-location {
+    display: flex;
+    flex-direction: column;
   }
 }
 
