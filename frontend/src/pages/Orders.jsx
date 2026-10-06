@@ -36,8 +36,10 @@ function Orders() {
                 const data = await api.get("/orders?page=${page}&per_page=10")
                 console.log("Orders fetched", data)
 
-                setOrders(Array.isArray(data) ? data : [])
+                setOrders(data.orders || [])
                 setPages(data.pages || [])
+                setHasPrev(data.has_prev)
+                setHasNext(data.has_next)
 
             } catch (err) {
                 console.log("Failed to get orders", err)
@@ -48,7 +50,7 @@ function Orders() {
             }
         }
         fetchOrders()
-    }, [])
+    }, [page])
 
     // cancel order btn should stop after 5 mins
     useEffect(() => {

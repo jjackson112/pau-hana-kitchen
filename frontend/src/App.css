@@ -911,6 +911,30 @@ nav a:hover {
   cursor: pointer;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  font-weight: 500;
+}
+
+.pagination span {
+  padding: 1rem;
+}
+
+.pagination button {
+  background-color: var(--pauhana-coral);
+  padding: .7rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: var(--pauhana-muted);
+  color: var(--pauhana-surface);
+}
+
 /* Single Order Detail */ 
 
 .order-link {
