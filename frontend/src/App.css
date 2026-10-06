@@ -779,6 +779,14 @@ nav a:hover {
   font-weight: 700;
 }
 
+.order-error {
+  color: var(--pauhana-text);
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
 .payment-container {
   display: flex;
   flex-direction: column;

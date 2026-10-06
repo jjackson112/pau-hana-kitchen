@@ -60,7 +60,7 @@ function Checkout() {
             setOrderError("Add at least one item to your cart before placing an order.")
             return
         }
-        
+
         console.log("PLACE ORDER CLICKED")
 
         // use existing Redux cart state to map over menu items
@@ -87,6 +87,7 @@ function Checkout() {
             navigate("/orders")
 
         } catch (err) {
+            setOrderError("Cannot create the order. Please try again.")
             console.error("Cannot create the order. Please try again.", err)
         }
     }
@@ -96,6 +97,10 @@ function Checkout() {
 
             <section className="checkout-components">
                 <h1 className="checkout-title">Checkout</h1>
+                {orderError && (
+                    <p className="order-error" role="alert">{orderError}</p>
+                )}
+
                 <LocationMap orderType={orderType} deliveryAddress={deliveryAddress} setDeliveryAddress={setDeliveryAddress} />
                 <OrderType orderType={orderType} setOrderType={setOrderType} />
                 <Time orderType={orderType} />
@@ -110,6 +115,7 @@ function Checkout() {
                 <TipSelector subtotal={subtotal} orderType={orderType} />
 
                 <Total total={total} />
+
                 <Payment handleCreateOrder={handleCreateOrder} /> 
             </aside>
         </main> 
