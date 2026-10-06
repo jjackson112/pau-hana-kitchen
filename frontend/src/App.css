@@ -133,7 +133,7 @@ nav a:hover {
 .cta-btn {
   background-color: var(--pauhana-red);
   color: var(--pauhana-surface);
-  padding: 0.6rem;
+  padding: 0.75rem 1.25rem;
   border-radius: 10px;
 }
 
@@ -191,9 +191,21 @@ nav a:hover {
   font-weight: 600;
 }
 
+.cta-btn,
+.menu-link-btn,
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
 .add-cart-btn {
   background-color: var(--pauhana-gold);
   width: 40px;
+  min-height: 40px;
   padding: 0.3rem;
   border-radius: 12px;
   border: none;
