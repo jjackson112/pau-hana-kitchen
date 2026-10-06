@@ -39,7 +39,7 @@ function LocationMap({ orderType, deliveryAddress, setDeliveryAddress }) {
                         type="text"
                         className="delivery-location-field"
                         aria-label="Delivery address"
-                        placeholder="Enter delivery address"
+                        placeholder="Enter delivery address or use demo address"
                         value={deliveryAddress}
                         onChange={(e) => setDeliveryAddress(e.target.value)}
                     />
