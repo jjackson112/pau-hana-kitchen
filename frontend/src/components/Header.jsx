@@ -26,17 +26,31 @@ function Header() {
                 <span className="app-title">Pau Hana Kitchen</span>
             </Link>
 
-            <div className={`nav-menu ${open ? "open" : ""}`}>
-                <nav>
-                    <Link to="/" onClick={() => setOpen(false)}>Home</Link>
-                    <Link to="/menu" onClick={() => setOpen(false)}>Menu</Link>
-                    <Link to="/orders" onClick={() => setOpen(false)}>Orders</Link>
-                    <Link to="/menu" onClick={() => dispatch(openCartSidebar())}>
-                        <ShoppingCart className="cart-icon" size={18} />
-                        <span>Cart</span>
-                    </Link>
-                </nav>
-            </div>
+            <button
+                type="button"
+                className="nav-toggle"
+                aria-expanded={open}
+                aria-controls="header-navigation"
+                onClick={() => setOpen((current) => !current)}
+            >
+                {open
+                ? <X aria-hidden="true" />
+                : <Menu aria-hidden="true" />}
+            </button>
+
+            <nav 
+                className={`nav-menu ${open ? "open" : ""}`}
+                aria-label="Main navigation"
+            >
+                <Link to="/" onClick={() => setOpen(false)}>Home</Link>
+                <Link to="/menu" onClick={() => setOpen(false)}>Menu</Link>
+                <Link to="/orders" onClick={() => setOpen(false)}>Orders</Link>
+                
+                <Link to="/menu" onClick={() => dispatch(openCartSidebar())}>
+                    <ShoppingCart className="cart-icon" size={18} />
+                    <span>Cart</span>
+                </Link>
+            </nav>
         </header>
     )
 }
