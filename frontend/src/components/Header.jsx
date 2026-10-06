@@ -46,10 +46,14 @@ function Header() {
                 <Link to="/menu" onClick={() => setOpen(false)}>Menu</Link>
                 <Link to="/orders" onClick={() => setOpen(false)}>Orders</Link>
                 
-                <Link to="/menu" onClick={() => dispatch(openCartSidebar())}>
-                    <ShoppingCart className="cart-icon" size={18} />
+                <button 
+                    type="button" 
+                    className="header-cart-btn"
+                    onClick={handleOpen}
+                >
+                    <ShoppingCart size={18} aria-hidden="true" />
                     <span>Cart</span>
-                </Link>
+                </button>
             </nav>
         </header>
     )
