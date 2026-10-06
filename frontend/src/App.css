@@ -817,7 +817,7 @@ nav a:hover {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .order-detail-card {
@@ -913,14 +913,16 @@ nav a:hover {
 
 .pagination-nav {
   display: flex;
+  align-items: center;
   justify-content: center;
   gap: 1rem;
+  padding: 1.5rem;
 }
 
 .pagination button {
-  background-color: var(--pauhana-coral);
-  padding: .7rem;
-  border-radius: 12px;
+  background-color: var(--pauhana-gold);
+  padding: .5rem;
+  border-radius: 16px;
   border: none;
   cursor: pointer;
   font: inherit;
