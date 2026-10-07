@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from extensions import db
-from decimal import Decimal
+from decimal import Decimal, InvalidOperation
 from models.order import Order
 from models.order_item import OrderItem
 from models.menu_item import MenuItem
@@ -65,7 +65,14 @@ def create_order():
 
     discount = Decimal("0.00")
     tax = subtotal * Decimal("0.08")
-    tip = Decimal("0.00")
+
+    # tip cannot remain "0.00" - use InvalidOperation from the decimal module (a Python exception)
+    # read + validate the tip sent by Checkout
+    try:
+        tip = Decimal(str(data.get("tip", 0)))
+    except(InvalidOperation, ValueError, TypeError):
+        return jsonify({"error": "Tip amount must be a valid amount."}), 400
+
     total = subtotal - discount + tax + tip
 
     try: 
