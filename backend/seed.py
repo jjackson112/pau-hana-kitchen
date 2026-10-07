@@ -1,4 +1,5 @@
 import json
+import pathlib import Path
 
 from app import create_app
 from extensions import db
@@ -6,8 +7,11 @@ from models.menu_item import MenuItem
 
 app = create_app()
 
+# 
+menu_path = Path(__file__).parent / "data" / "menu.json"
+
 # read menu data from frontend into a Python list
-with open("data/menu.json", "r", encoding="utf-8") as file:
+with menu_path.open("data/menu.json", "r", encoding="utf-8") as file:
     menu_items = json.load(file)
 
 with app.app_context():
