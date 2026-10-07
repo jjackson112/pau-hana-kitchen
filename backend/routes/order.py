@@ -63,16 +63,18 @@ def create_order():
             "quantity": quantity
         })
 
-    discount = Decimal("0.00")
-    tax = subtotal * Decimal("0.08")
-
     # tip cannot remain "0.00" - use InvalidOperation from the decimal module (a Python exception)
     # read + validate the tip sent by Checkout
     try:
         tip = Decimal(str(data.get("tip", 0)))
+
     except(InvalidOperation, ValueError, TypeError):
         return jsonify({"error": "Tip amount must be a valid amount."}), 400
 
+    tip = tip.quantize(Decimal("0.01")) # specify number of decimal places
+
+    discount = Decimal("0.00")
+    tax = subtotal * Decimal("0.08")
     total = subtotal - discount + tax + tip
 
     try: 
