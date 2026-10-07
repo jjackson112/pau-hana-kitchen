@@ -9,12 +9,19 @@ def create_app():
     app = Flask(__name__)
 
 # db configuration
+# Read the database URL before using it
+    database_url = os.environ.get(
+        "DATABASE_URL",
+        "sqlite:///pauhanakitchen.db"
+    )
+
     if database_url.startswith("postgres://"):
         database_url = database_url.replace(
             "postgres://",
             "postgresql+psycopg://",
             1
         )
+        
     elif database_url.startswith("postgres://"):
         database_url = database_url.replace(
             "postgres://",
