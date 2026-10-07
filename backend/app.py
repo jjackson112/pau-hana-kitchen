@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 from extensions import db
+import os
 from routes.health import health_bp
 from routes.order import order_bp
 
@@ -14,7 +15,7 @@ def create_app():
 # connect sql to app
     db.init_app(app)
 
-    CORS(app, resources={ r"/api/*": { "origins":"http://localhost:5173"}})
+    CORS(app, resources={ r"/api/*": { "origins": ["http://localhost:5173", os.environ.get("FRONTEND_URL", "http://localhost:5173")]}})
 
 # Import models so SQLAlchemy knows what tables to create
     from models.order import Order
