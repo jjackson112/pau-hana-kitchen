@@ -75,7 +75,9 @@ function Checkout() {
             "customer_name": "Jane Doe",
             "customer_email": "jane@mail.com",
             "customer_phone_number": "555-555-5555",
-            "menu_items": menuItems
+            "menu_items": menuItems,
+            "tip": tip,
+            "coupon_code": appliedCoupon?.code ?? null
         }
 
         try {
