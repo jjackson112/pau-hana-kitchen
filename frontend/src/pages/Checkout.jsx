@@ -80,6 +80,9 @@ function Checkout() {
             "coupon_code": appliedCoupon?.code ?? null
         }
 
+        console.log("tip sent to checkout", orderData.tip)
+        console.log("type of tip", typeof orderData.tip)
+
         try {
             const result = await api.post("/orders", orderData)
 
