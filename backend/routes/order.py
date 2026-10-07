@@ -71,6 +71,9 @@ def create_order():
     except(InvalidOperation, ValueError, TypeError):
         return jsonify({"error": "Tip amount must be a valid amount."}), 400
 
+    if tip.is_finite() or tip < 0:
+        return jsonify({"error": "Tip amount must be a non-negative, finite number."}), 400
+
     tip = tip.quantize(Decimal("0.01")) # specify number of decimal places
 
     discount = Decimal("0.00")
