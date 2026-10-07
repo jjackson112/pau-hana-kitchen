@@ -18,6 +18,7 @@ with app.app_context():
     # create a MenuItem loop 
     for item in menu_items:
         menu_item = MenuItem(
+            id = item["id"],
             name = item["name"],
             description = item["description"],
             price = item["price"],
