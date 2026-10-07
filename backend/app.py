@@ -21,11 +21,11 @@ def create_app():
             "postgresql+psycopg://",
             1
         )
-        
+
     elif database_url.startswith("postgres://"):
         database_url = database_url.replace(
             "postgres://",
-            "postgres+psycopg://",
+            "postgresql+psycopg://",
             1
         )
 
