@@ -63,6 +63,13 @@ def create_order():
             "quantity": quantity
         })
 
+    # delivery fee logic
+    delivery_fee = (
+        Decimal("3.99")
+        if data["order_type"] == "delivery"
+        else Decimal("0.00")
+    )
+
     # tip cannot remain "0.00" - use InvalidOperation from the decimal module (a Python exception)
     # read + validate the tip sent by Checkout
     try:
@@ -78,7 +85,7 @@ def create_order():
 
     discount = Decimal("0.00")
     tax = subtotal * Decimal("0.08")
-    total = subtotal - discount + tax + tip
+    total = subtotal - discount + tax + tip + delivery_fee
 
     try: 
         order = Order(
