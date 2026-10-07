@@ -8,6 +8,7 @@ class Order(db.Model):
     order_status = db.Column(db.String(25), nullable=False, default="received")
     subtotal = db.Column(db.Numeric(10,2), nullable=False)
     discount = db.Column(db.Numeric(10,2), nullable=False, default=0)
+    delivery_fee = db.Column(db.Numeric(10,2), nullable=False, default=0)
     tax = db.Column(db.Numeric(10,2), nullable=False)
     tip = db.Column(db.Numeric(10,2), nullable=False, default=0)
     total = db.Column(db.Numeric(10,2), nullable=False)
@@ -31,6 +32,7 @@ class Order(db.Model):
             "order_status": self.order_status,
             "subtotal": float(self.subtotal),
             "discount": float(self.discount),
+            "delivery_fee": float(self.delivery_fee),
             "tax": float(self.tax),
             "tip": float(self.tip),
             "total" : float(self.total),
