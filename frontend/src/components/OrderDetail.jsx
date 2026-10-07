@@ -98,6 +98,11 @@ function OrderDetail() {
                     </p>
 
                     <p>
+                        <span>Delivery Fee</span>
+                        <span>${orderDetails.delivery_fee ?? 0}</span>
+                    </p>
+
+                    <p>
                         <span>Tax</span>
                         <span>${orderDetails.tax}</span>
                     </p>
