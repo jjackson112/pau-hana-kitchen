@@ -93,6 +93,7 @@ def create_order():
             order_status="received",
             subtotal=subtotal,
             discount=discount,
+            delivery_fee=delivery_fee,
             tax=tax,
             tip=tip,
             total=total,
