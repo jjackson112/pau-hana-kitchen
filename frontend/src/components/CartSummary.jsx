@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { Dot, Utensils } from "lucide-react";
+import { Link } from "react-router-dom";
 
 function CartSummary() {
     const cartItems = useSelector((state) => state.cart.itemList)
@@ -12,6 +13,12 @@ function CartSummary() {
                 <h3>Pau Hana Kitchen</h3>
                 <Dot aria-hidden="true" />
                 <p>{totalQuantity} {totalQuantity === 1 ? "item" : "items"}</p> 
+                <Link
+                    to="/menu"
+                    className="add-more-items-btn"
+                >
+                    Add more items
+                </Link>
             </div>
 
             <div className="cart-summary-items">

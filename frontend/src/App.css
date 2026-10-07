@@ -803,6 +803,22 @@ a {
   gap: 1rem;
 }
 
+.add-more-items-btn {
+  background-color: var(--pauhana-muted);
+  color: var(--pauhana-surface);
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  min-height: 40px;
+  padding: .75rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.add-more-items-btn:hover {
+  background-color: var(--pauhana-gold);
+}
+
 .location-map, .estimated-time, .cart-summary, .fees, .payment-container {
   background-color: var(--pauhana-surface);
   border: 1px solid var(--pauhana-border);
