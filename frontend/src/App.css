@@ -215,6 +215,12 @@ a {
   background-color: var(--pauhana-red-dark);
 }
 
+.categories-description {
+  color: var(--pauhana-red);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 .popular-section {
   padding: 1rem 1.5rem;
 }
@@ -486,10 +492,18 @@ a {
   scroll-margin-top: 100px;
 }
 
-.menu-title {
-  color: var(--pauhana-red-dark);
+.menu-title, .menu-instructions {
   text-align: center;
   padding: 1.5rem 1rem 0;
+}
+
+.menu-title {
+  color: var(--pauhana-red-dark);
+}
+
+.menu-instructions {
+  color: var(--pauhana-text);
+  font-weight: 600;
 }
 
 .menu-container {
@@ -963,7 +977,7 @@ a {
 }
 
 .cancellation-window-message {
-  color: var(--pauhana-muted);
+  color: var(--pauhana-text);
 }
 
 .cancellation-feedback {

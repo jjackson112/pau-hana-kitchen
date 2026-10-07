@@ -26,6 +26,7 @@ function Home() {
 
             <section className="categories-section">
                 <h2 className="categories-title">Menu Categories</h2>
+                <h3 className="categories-description">Click any menu category below to view our menu.</h3>
 
                 <nav className="menu-categories" aria-label="Menu categories">
                     {categories.map((category) => (

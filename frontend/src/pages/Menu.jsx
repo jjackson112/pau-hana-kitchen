@@ -36,8 +36,10 @@ function Menu() {
     return (
         <main className="menu-page">
             <section className="full-menu">
-                <div className="menu-title">
-                    <h1>Pau Hana Kitchen Menu</h1>
+                <h1 className="menu-title">Pau Hana Kitchen Menu</h1>
+                <div className="menu-instructions">
+                    <p>Add menu items by clicking the "+" icon and your cart will appear.</p>
+                    <p>When you're done adding menu items, scroll to the bottom of your cart and click the checkout button.</p>
                 </div>
 
                 <div className="menu-container">
