@@ -41,7 +41,7 @@ function MenuItem({ item }) {
                 className="add-cart-btn"
                 aria-label={`Add ${item.name} to cart`}
             >
-                <Plus size={18} />
+                <Plus size={18} aria-hidden="true" />
             </button>
         </div>
     )

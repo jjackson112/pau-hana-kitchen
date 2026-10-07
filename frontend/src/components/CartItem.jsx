@@ -30,7 +30,7 @@ function CartItem({ item }) {
                     onClick={handleDecrease}
                     aria-label={`Decrease quantity of ${item.name}`}
                 >
-                    <Minus size={14} />
+                    <Minus size={14} aria-hidden="true" />
                 </button>
                 <span>{item.quantity}</span>
                 <button 
@@ -38,7 +38,7 @@ function CartItem({ item }) {
                     onClick={handleIncrease}
                     aria-label={`Increase quantity of ${item.name}`}
                 >
-                    <Plus size={14} />
+                    <Plus size={14} aria-hidden="true" />
                 </button>
             </div>
             <div className="delete-item-div">
@@ -47,7 +47,7 @@ function CartItem({ item }) {
                     onClick={handleDelete}
                     aria-label={`Delete ${item.name} from cart`}
                 >
-                    <Trash2 size={18} />
+                    <Trash2 size={18} aria-hidden="true" />
                 </button>
             </div>
         </article>
