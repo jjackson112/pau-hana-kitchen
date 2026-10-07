@@ -82,6 +82,7 @@ function Checkout() {
 
         console.log("tip sent to checkout", orderData.tip)
         console.log("type of tip", typeof orderData.tip)
+        console.log("Checkout totals:", { tip, total })
 
         try {
             const result = await api.post("/orders", orderData)
