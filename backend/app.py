@@ -1,7 +1,7 @@
+import os
 from flask import Flask
 from flask_cors import CORS
 from extensions import db
-import os
 from routes.health import health_bp
 from routes.order import order_bp
 
