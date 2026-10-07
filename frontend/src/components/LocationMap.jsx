@@ -12,7 +12,7 @@ function LocationMap({ orderType, deliveryAddress, setDeliveryAddress }) {
         <section className="location-map">
             <div className="location-header">
                 <PaperBag aria-hidden="true" size={22} />
-                <h3>{isPickup ? "Pickup at" : "Deliver to"}</h3>
+                <h3>{isPickup ? "Pickup at" : "Deliver from"}</h3>
             </div>
 
             <div className="restaurant-location">
