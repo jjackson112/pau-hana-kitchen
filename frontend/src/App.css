@@ -278,6 +278,7 @@ a {
 
 .add-cart-btn {
   background-color: var(--pauhana-gold);
+  color: var(--pauhana-text);
   width: 40px;
   min-height: 40px;
   padding: 0.3rem;
@@ -563,6 +564,7 @@ a {
   margin-right: auto;
   border: 0;
   background: var(--pauhana-gold);
+  color: var(--pauhana-text);
   padding: .5rem;
   border-radius: 50%;
   cursor: pointer;
