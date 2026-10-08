@@ -26,6 +26,15 @@ function Checkout() {
 
     const [orderError, setOrderError] = useState("")
 
+    // ensure Checkout scroll position remains at the top after clicking the checkout btn in cart
+    useEffect(() => {
+            window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "instant"
+        })
+    }, [])
+
     // use reducer function - outputs a single value - to find subtotal
     const subtotal = cartItems.reduce(
         (sum, item) => sum + item.totalPrice,
