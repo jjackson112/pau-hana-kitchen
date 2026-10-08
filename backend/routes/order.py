@@ -89,6 +89,8 @@ def create_order():
     if coupon_code is None:
         coupon_code = ""
 
+    coupon_code = coupon_code.strip().upper()
+    
     discount = Decimal("0.00")
 
     if coupon_code == "PAUHANA5":
@@ -103,7 +105,7 @@ def create_order():
     discounted_subtotal = subtotal - discount
 
     tax = (discounted_subtotal * Decimal("0.08")).quantize(Decimal("0.01"))
-    
+
     total = subtotal - discount + tax + tip + delivery_fee
 
     try: 
