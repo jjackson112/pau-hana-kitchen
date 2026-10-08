@@ -72,6 +72,11 @@ function OrderDetail() {
                     <span>{orderDetails.customer_name}</span>
                 </p>
 
+                <p>
+                    <span>Deliver to</span>
+                    <span>{orderDetails.delivery_address}</span>
+                </p>
+
                 <section className="order-items">
                     <h2>Items</h2>
 
