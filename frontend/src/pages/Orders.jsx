@@ -111,13 +111,13 @@ function Orders() {
                     <h1>Order History</h1>
                 </div>
 
-                {confirmationMessage && (
-                    <p>{confirmationMessage}</p>
-                )}
-
                 <div className="cancellation-window-message">
                     <p>Orders can be cancelled within 5 mins of being placed.</p>
                 </div>
+
+                {confirmationMessage && (
+                    <p className="order-confirmation" role="status">{confirmationMessage}</p>
+                )}
 
                 <div className="cancellation-feedback">
                     {cancellationMessage && <p>{cancellationMessage}</p>}

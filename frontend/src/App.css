@@ -1061,7 +1061,16 @@ a {
   text-align: center;
 }
 
-.cancellation-window-message, .cancellation-feedback {
+.order-confirmation {
+  font-size: 1.25rem;
+  background: #dcfce7;
+  color: #166534;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 100%;
+}
+
+.cancellation-window-message, .cancellation-feedback, .order-confirmation {
   text-align: center;
   margin: 0 0 1.5rem;
   font-weight: 600;
