@@ -83,7 +83,14 @@ def create_order():
 
     tip = tip.quantize(Decimal("0.01")) # specify number of decimal places
 
+    # discount cannot remain "0.00"
+    coupon_code = data.get("coupon_code")
+
+    if coupon_code is None:
+        coupon_code = ""
+
     discount = Decimal("0.00")
+
     tax = subtotal * Decimal("0.08")
     total = subtotal - discount + tax + tip + delivery_fee
 
