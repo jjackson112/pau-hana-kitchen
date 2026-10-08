@@ -52,8 +52,7 @@ function OrderDetail() {
 
             <section className="order-information">
                 <p>
-                    <h3>Order #</h3>
-                    <h3>{orderDetails.id}</h3>
+                    <h3>Order #{orderDetails.id}</h3>
                 </p>
 
                 <p>
@@ -67,7 +66,7 @@ function OrderDetail() {
                 </p>
                     
                 <p>
-                    <span><Date></Date></span>
+                    <span>Date</span>
                     <span>{orderDetails.created_at}</span>
                 </p>
                     
