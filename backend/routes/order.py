@@ -91,6 +91,13 @@ def create_order():
 
     discount = Decimal("0.00")
 
+    if coupon_code == "PAUHANA5":
+        discount = Decimal("5.00")
+    elif coupon_code == "ALOHA10":
+        discount = subtotal * Decimal("0.10")
+    elif coupon_code:
+        return jsonify({"error": "Invalid coupon code"}), 400
+
     tax = subtotal * Decimal("0.08")
     total = subtotal - discount + tax + tip + delivery_fee
 
