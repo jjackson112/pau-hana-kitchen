@@ -98,6 +98,8 @@ def create_order():
     elif coupon_code:
         return jsonify({"error": "Invalid coupon code"}), 400
 
+    discount = min(discount, subtotal).quantize(Decimal("0.01"))
+
     tax = subtotal * Decimal("0.08")
     total = subtotal - discount + tax + tip + delivery_fee
 
