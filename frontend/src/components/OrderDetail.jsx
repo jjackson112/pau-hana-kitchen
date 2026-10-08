@@ -105,32 +105,32 @@ function OrderDetail() {
                 <section className="order-totals">
                     <p>
                         <span>Subtotal</span>
-                        <span>${orderDetails.subtotal}</span>
+                        <span>${formatMoney(orderDetails.subtotal)}</span>
                     </p>
 
                     <p>
                         <span>Delivery Fee</span>
-                        <span>${orderDetails.delivery_fee ?? 0}</span>
+                        <span>${formatMoney(orderDetails.delivery_fee ?? 0)}</span>
                     </p>
 
                     <p>
                         <span>Tax</span>
-                        <span>${orderDetails.tax}</span>
+                        <span>${formatMoney(orderDetails.tax)}</span>
                     </p>
 
                     <p>
                         <span>Tip</span> 
-                        <span>${orderDetails.tip}</span>
+                        <span>${formatMoney(orderDetails.tip)}</span>
                     </p>
 
                     <p>
                         <span>Discount</span>
-                        <span>-${orderDetails.discount}</span>
+                        <span>-${formatMoney(orderDetails.discount)}</span>
                     </p>
                     
                     <p>
                         <span>Total</span> 
-                        <span>${orderDetails.total}</span>
+                        <span>${formatMoney(orderDetails.total)}</span>
                     </p>
                 </section>
             </section>
