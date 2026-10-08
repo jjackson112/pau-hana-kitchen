@@ -9,6 +9,10 @@ function OrderDetail() {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState("")
 
+    // format money amounts to show 2 decimal places - quantize() just rounds the saved amount on the backend
+    const formatMoney = (value) =>
+        Number(value ?? 0).toFixed(2)
+
     useEffect(() => {
         const fetchOrderDetails = async () => {
 
