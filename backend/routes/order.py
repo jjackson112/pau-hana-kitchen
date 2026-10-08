@@ -100,7 +100,9 @@ def create_order():
 
     discount = min(discount, subtotal).quantize(Decimal("0.01"))
 
-    tax = subtotal * Decimal("0.08")
+    discounted_subtotal = subtotal - discount
+
+    tax = (discounted_subtotal * Decimal("0.08"))
     total = subtotal - discount + tax + tip + delivery_fee
 
     try: 
