@@ -798,10 +798,18 @@ a {
   gap: 1rem;
 }
 
+.cart-summary-header {
+  flex-wrap: wrap;
+}
+
 .estimated-time h3,
 .estimated-time p,
 .cart-summary-header h3, .cart-summary-header p {
   margin: 0;
+}
+
+.cart-summary-header p {
+  color: var(--pauhana-muted);
 }
 
 .cart-summary-items {
@@ -822,17 +830,100 @@ a {
 .add-more-items-btn {
   background-color: var(--pauhana-muted);
   color: var(--pauhana-surface);
+  display: inline-flex;
   border-radius: 12px;
   border: none;
   cursor: pointer;
   min-height: 40px;
   padding: .75rem;
   font-weight: 600;
-  text-align: center;
+  align-items: center;
 }
 
 .add-more-items-btn:hover {
   background-color: var(--pauhana-gold);
+}
+
+.cart-summary-items {
+  display: grid;
+  margin-top: 1rem;
+  border-top: 1px solid var(--pauhana-border);
+}
+
+.cart-summary-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 0;
+}
+
+.cart-summary-item + .cart-summary-item {
+  border-top: 1px solid var(--pauhana-border);
+}
+
+.cart-summary-item p {
+  margin: 0;
+}
+
+.summary-item-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  overflow-wrap: anywhere;
+}
+
+.summary-item-price {
+  align-self: start;
+  text-align: right;
+  font-weight: 600;
+}
+
+.summary-quantity-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-self: start;
+}
+
+.summary-quantity-controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--pauhana-cream);
+  color: var(--pauhana-text);
+  border: 1px solid var(--pauhana-border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.summary-quantity-controls button:hover {
+  background: var(--pauhana-gold);
+}
+
+.summary-quantity-controls span {
+  min-width: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.summary-remove-btn {
+  justify-self: end;
+  min-height: 44px;
+  padding: 0.25rem;
+  background: transparent;
+  color: var(--pauhana-red-dark);
+  border: none;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cart-summary a:focus-visible,
+.cart-summary button:focus-visible {
+  outline: 2px solid var(--pauhana-text);
+  outline-offset: 3px;
 }
 
 .location-map, .estimated-time, .cart-summary, .fees, .payment-container {
