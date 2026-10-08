@@ -90,6 +90,8 @@ function Checkout() {
             console.log("ORDER CREATED", result)
 
             dispatch(emptyCart())
+
+            // send the message to Orders page
             navigate("/orders", {
                 state: {
                     confirmationMessage:

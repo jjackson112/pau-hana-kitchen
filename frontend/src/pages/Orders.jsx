@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from '../api/api';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { MoveRight } from "lucide-react";
 
 function Orders() {
@@ -8,11 +8,14 @@ function Orders() {
     const [now, setNow] = useState(Date.now())
     const [cancellationMessage, setCancellationMessage] = useState("")
     
-
     const [page, setPage] = useState(1)
     const [pages, setPages] = useState(0)
     const [hasPrev, setHasPrev] = useState(false)
     const [hasNext, setHasNext] = useState(false)
+
+    // read the confirmation message
+    const location = useLocation()
+    const confirmationMessage = location.state?.confirmationMessage
 
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState("")
