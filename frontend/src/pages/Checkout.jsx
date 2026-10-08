@@ -90,7 +90,12 @@ function Checkout() {
             console.log("ORDER CREATED", result)
 
             dispatch(emptyCart())
-            navigate("/orders")
+            navigate("/orders", {
+                state: {
+                    confirmationMessage:
+                    `Order #${result.order.id} placed successfully!`
+                }
+            })
 
         } catch (err) {
             setOrderError("Cannot create the order. Please try again.")
